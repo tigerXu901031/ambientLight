@@ -1,0 +1,968 @@
+L166 LINKER/LOCATER V5.25                                                               07/04/2019  22:27:16  PAGE 1
+
+
+L166 LINKER/LOCATER V5.25, INVOKED BY:
+C:\PROGRAM FILES\KEIL4INF\C166\BIN\L166.EXE ..\bin\ledCtrl.obj, ..\bin\main.obj, ..\bin\task.obj, ..\bin\can.obj, ..\bin
+>> \led.obj, ..\bin\ccu60.obj, ..\bin\clk.obj, ..\bin\pwm.obj, ..\bin\SCS.obj, ..\bin\START_V3.obj TO ..\bin\ambientLigh
+>> t PRINT (.\ambientLight.m66) CLASSES (ICODE (0XC00000-0XC0FFFF), NCODE (0XC00000-0XC0FFFF), FCONST (0XC00000-0XCBFFFF
+>> ), HCONST (0XC00000-0XCBFFFF), XCONST (0XC00000-0XCBFFFF), NCONST (0XC04000-0XC07FFF), NDATA (0XE00000-0XE03FFF), NDA
+>> TA0 (0XE00000-0XE03FFF), SDATA (0XC000-0XDFFF, 0XF600-0XFDFF), SDATA0 (0XC000-0XDFFF, 0XF600-0XFDFF), IDATA (0XF600-0
+>> XFDFF), IDATA0 (0XF600-0XFDFF), FDATA (0XA000-0XDFFF, 0XE00000-0XE0FFFF), FDATA0 (0XA000-0XDFFF, 0XE00000-0XE0FFFF), 
+>> HDATA (0XA000-0XDFFF, 0XE00000-0XE0FFFF), HDATA0 (0XA000-0XDFFF, 0XE00000-0XE0FFFF), XDATA (0XA000-0XDFFF, 0XE00000-0
+>> XE0FFFF), XDATA0 (0XA000-0XDFFF, 0XE00000-0XE0FFFF)) CINITTAB (0XC00000-0XCBFFFF)
+
+
+CPU TYPE:     C167 or derivative
+CPU MODE:     SEGMENTED
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\bin\ledCtrl.obj (LEDCTRL)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\main.obj (MAIN)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\task.obj (TASK)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\can.obj (CAN)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\led.obj (LED)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\ccu60.obj (CCU60)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\clk.obj (CLK)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\pwm.obj (PWM)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\SCS.obj (SCS)
+         COMMENT TYPE 128: C166 V7.00
+  ..\bin\START_V3.obj (?C_STARTUP)
+         COMMENT TYPE 128: A166 V5.33
+  C:\PROGRAM FILES\KEIL4INF\C166\LIB\C167S.LIB (?C_ENDINIT)
+         COMMENT TYPE 128: A166 V5.33
+
+
+INTERRUPT PROCEDURES OF MODULE:  ..\bin\ambientLight (LEDCTRL)
+
+
+INTERRUPT PROCEDURE                 INT  INTERRUPT NAME
+=======================================================
+CCU60_viNodeI0                       48  ---  
+?C_RESET                              0  RESET
+
+
+MEMORY MAP OF MODULE:  ..\bin\ambientLight (LEDCTRL)
+
+
+START     STOP      LENGTH    TYPE  RTYP  ALIGN  TGR  GRP  COMB  CLASS   SECTION NAME
+=====================================================================================
+00F600H   00F7FFH   000200H   DATA  REL   WORD   ---    3  PUBL  IDATA   ?C_SYSSTACK
+00FC00H   00FC1FH   000020H   DATA  ---   BYTE   ---  ---  ---   *REG*   ?C_MAINREGISTERS
+C00000H   C00003H   000004H   ---   ---   ---    ---  ---  ---   * INTVECTOR TABLE *
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 2
+
+
+C00004H   C00005H   000002H   XDATA REL   WORD   ---  ---  GLOB  ---     ?C_INITSEC
+C00006H   C0000BH   000006H   CONST ABS   WORD   ---  ---  PRIV  ---     ?C_CLRMEMSEC
+C0000CH   C000B7H   0000ACH   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?CLK
+C000B8H   C000BDH   000006H   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?MAIN
+C000C0H   C000C3H   000004H   ---   ---   ---    ---  ---  ---   * INTVECTOR TABLE *
+C000C4H   C00355H   000292H   CODE  REL   WORD   ---  ---  PRIV  ICODE   ?C_STARTUP_CODE
+C00356H   C005B3H   00025EH   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?TASK
+C005B4H   C0070DH   00015AH   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?SCS
+C0070EH   C0083DH   000130H   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?CCU60
+C0083EH   C0095BH   00011EH   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?LED
+C0095CH   C00981H   000026H   CODE  REL   WORD   ---    1  PUBL  NCODE   ?PR?PWM
+E00000H   E001FFH   000200H   DATA  REL   WORD   ---    2  PUBL  NDATA   ?C_USERSTACK
+E00200H   E0021FH   000020H   DATA  REL   WORD   ---    2  PUBL  NDATA   ?C_USERSTACK1
+E00220H   E0023FH   000020H   DATA  REL   WORD   ---    2  PUBL  NDATA   ?C_USERSTACK2
+E00240H   E002A2H   000063H   DATA  REL   BYTE   ---    2  PUBL  NDATA0  ?ND0?LED
+
+
+
+GROUP LIST OF MODULE:  ..\bin\ambientLight (LEDCTRL)
+
+
+GROUP NAME                           TYPE  TGR  GRP  CLASS       SECTION NAME
+=============================================================================
+NCODE                                CODE  ---    1  NCODE       ?PR?MAIN
+                                                     NCODE       ?PR?TASK
+                                                     NCODE       ?PR?LED
+                                                     NCODE       ?PR?CCU60
+                                                     NCODE       ?PR?CLK
+                                                     NCODE       ?PR?PWM
+                                                     NCODE       ?PR?SCS
+
+NDATA                                DATA  ---    2  NDATA0      ?ND0?LED
+                                                     NDATA       ?C_USERSTACK
+                                                     NDATA       ?C_USERSTACK1
+                                                     NDATA       ?C_USERSTACK2
+
+SDATA                                DATA  ---    3  IDATA       ?C_SYSSTACK
+
+
+
+
+PUBLIC SYMBOLS OF MODULE:  ..\bin\ambientLight (LEDCTRL)
+
+
+      VALUE       PUBLIC SYMBOL NAME               REP   TGR  CLASS   SECTION
+      =======================================================================
+      C00006H     ?C_CLRMEMSECSTART                VAR   ---  ---     ---
+      C00004H     ?C_ENDINIT                       VAR   ---  ---     ?C_INITSEC
+      C00004H     ?C_INITSECSTART                  VAR   ---  ---     ---
+      C00000H     ?C_NCONSTBASE                    CONST ---  ---     ---
+      0000C0H     ?C_NCONSTBASESEG                 CONST ---  ---     ---
+      DF8000H     ?C_NDATABASE                     CONST ---  ---     ---
+      0000DFH     ?C_NDATABASESEG                  CONST ---  ---     ---
+      000000H     ?C_PAGEDPP0                      CONST ---  ---     ---
+      000301H     ?C_PAGEDPP1                      CONST ---  ---     ---
+      000380H     ?C_PAGEDPP2                      CONST ---  ---     ---
+      C000C4H     ?C_STARTUP                       LABEL ---  ICODE   ?C_STARTUP_CODE
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 3
+
+
+      00F600H     ?C_SYSSTKBOT                     VAR   ---  IDATA   ?C_SYSSTACK
+      00F800H     ?C_SYSSTKTOP                     VAR   ---  IDATA   ?C_SYSSTACK
+      E00000H     ?C_USRSTKBOT                     VAR   ---  NDATA   ?C_USERSTACK
+      000000H     ?L?VECSC                         CONST ---  ---     ---
+      C0070EH     CCU60_vInit                      LABEL ---  NCODE   ?PR?CCU60
+      C00796H     CCU60_viNodeI0                   LABEL ---  NCODE   ?PR?CCU60
+      C005DAH     DisableVcoBypass                 LABEL ---  NCODE   ?PR?SCS
+      C005CCH     EnableVcoBypass                  LABEL ---  NCODE   ?PR?SCS
+      C0000CH     MAIN_vChangeFreq                 LABEL ---  NCODE   ?PR?CLK
+      C0006CH     MAIN_vLockProtecReg              LABEL ---  NCODE   ?PR?CLK
+      C0003EH     MAIN_vUnlockProtecReg            LABEL ---  NCODE   ?PR?CLK
+      000000H     RESET                            INTNO ---  ---     ---
+      C006A8H     SCS_CountClocksWithTimer         LABEL ---  NCODE   ?PR?SCS
+      C005F2H     SCS_StartXtalOsc                 LABEL ---  NCODE   ?PR?SCS
+      C00616H     SCS_SwitchSystemClock            LABEL ---  NCODE   ?PR?SCS
+      C006A2H     SCS_SwitchToHighPrecBandgap      LABEL ---  NCODE   ?PR?SCS
+      C005B4H     SetK2                            LABEL ---  NCODE   ?PR?SCS
+      C005E8H     WaitForTimer13Stop               LABEL ---  NCODE   ?PR?SCS
+      C0083EH     ledInit                          LABEL ---  NCODE   ?PR?LED
+      C0086CH     ledSignalBitTx                   LABEL ---  NCODE   ?PR?LED
+      E00240H     ledStrip_Obj                     VAR   ---  NDATA0  ?ND0?LED
+      C000B8H     main                             LABEL ---  NCODE   ?PR?MAIN
+      C0095CH     setPwmDutyCyc                    LABEL ---  NCODE   ?PR?PWM
+      C00840H     setSingleLed                     LABEL ---  NCODE   ?PR?LED
+      C00370H     task10Hz                         LABEL ---  NCODE   ?PR?TASK
+      C005ACH     task800kHz                       LABEL ---  NCODE   ?PR?TASK
+      C00356H     taskInit                         LABEL ---  NCODE   ?PR?TASK
+
+
+
+SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (LEDCTRL)
+
+      VALUE       TYPE      REP       LENGTH  TGR   SYMBOL NAME
+      =========================================================
+      C000B8H     GLOBAL    LABEL     ---     ---   main
+
+      C000B8H     BLOCK     LVL=0     0006H   ---   main
+      C000B8H     LINE      ---       ---     ---   #3
+      C000B8H     LINE      ---       ---     ---   #5
+      C000BCH     LINE      ---       ---     ---   #7
+      C000BCH     LINE      ---       ---     ---   #10
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C005ACH     PUBLIC    LABEL     ---     ---   task800kHz
+      C00370H     PUBLIC    LABEL     ---     ---   task10Hz
+      C00356H     PUBLIC    LABEL     ---     ---   taskInit
+
+      C00356H     BLOCK     LVL=0     001AH   ---   taskInit
+      C00356H     LINE      ---       ---     ---   #3
+      C00356H     LINE      ---       ---     ---   #7
+      C00358H     LINE      ---       ---     ---   #21
+      C0035CH     LINE      ---       ---     ---   #23
+      C00360H     LINE      ---       ---     ---   #31
+      C00364H     LINE      ---       ---     ---   #39
+      C00368H     LINE      ---       ---     ---   #46
+      C0036CH     LINE      ---       ---     ---   #49
+      C0036EH     LINE      ---       ---     ---   #50
+      ---         BLOCKEND  LVL=0     ---     ---   
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 4
+
+
+
+      C00370H     BLOCK     LVL=0     023CH   ---   task10Hz
+      C00372H     BLOCK     LVL=1     0236H   ---   
+      000000H     SYMBOL    AUTO      ---     ---   rgbVal
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C00370H     LINE      ---       ---     ---   #56
+      C00372H     LINE      ---       ---     ---   #57
+      C00372H     LINE      ---       ---     ---   #61
+      C00386H     LINE      ---       ---     ---   #62
+      C003A0H     LINE      ---       ---     ---   #64
+      C003B4H     LINE      ---       ---     ---   #65
+      C003CEH     LINE      ---       ---     ---   #67
+      C003E2H     LINE      ---       ---     ---   #68
+      C003FCH     LINE      ---       ---     ---   #70
+      C00410H     LINE      ---       ---     ---   #71
+      C0042AH     LINE      ---       ---     ---   #73
+      C0043EH     LINE      ---       ---     ---   #74
+      C00458H     LINE      ---       ---     ---   #76
+      C0046EH     LINE      ---       ---     ---   #77
+      C00488H     LINE      ---       ---     ---   #79
+      C0049EH     LINE      ---       ---     ---   #80
+      C004B8H     LINE      ---       ---     ---   #82
+      C004CEH     LINE      ---       ---     ---   #83
+      C004E8H     LINE      ---       ---     ---   #85
+      C004FEH     LINE      ---       ---     ---   #86
+      C00518H     LINE      ---       ---     ---   #88
+      C0052EH     LINE      ---       ---     ---   #89
+      C00548H     LINE      ---       ---     ---   #91
+      C0055EH     LINE      ---       ---     ---   #92
+      C00578H     LINE      ---       ---     ---   #94
+      C0058EH     LINE      ---       ---     ---   #95
+      C005A8H     LINE      ---       ---     ---   #96
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C005ACH     BLOCK     LVL=0     0008H   ---   task800kHz
+      C005ACH     LINE      ---       ---     ---   #102
+      C005ACH     LINE      ---       ---     ---   #105
+      C005B2H     LINE      ---       ---     ---   #108
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C0083EH     PUBLIC    LABEL     ---     ---   ledInit
+      C00840H     PUBLIC    LABEL     ---     ---   setSingleLed
+      C0086CH     PUBLIC    LABEL     ---     ---   ledSignalBitTx
+      E00240H     PUBLIC    VAR       ---     ---   ledStrip_Obj
+
+      C0083EH     BLOCK     LVL=0     0002H   ---   ledInit
+      C0083EH     LINE      ---       ---     ---   #11
+      C0083EH     LINE      ---       ---     ---   #14
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C00840H     BLOCK     LVL=0     002CH   ---   setSingleLed
+      000008H     SYMBOL    REG       ---     ---   ledStripIdx
+      000049H     SYMBOL    REG       ---     ---   ledIdx
+      000000H     SYMBOL    AUTO      ---     ---   rgbVal
+      C00840H     LINE      ---       ---     ---   #19
+      C00840H     LINE      ---       ---     ---   #21
+      C0085AH     LINE      ---       ---     ---   #22
+      C00862H     LINE      ---       ---     ---   #23
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 5
+
+
+      C0086AH     LINE      ---       ---     ---   #24
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C0086CH     BLOCK     LVL=0     00F0H   ---   ledSignalBitTx
+      00000DH     SYMBOL    REG       ---     ---   ledStripIdx
+      C00872H     BLOCK     LVL=1     00E4H   ---   
+      00004EH     SYMBOL    REG       ---     ---   curBit
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C0086CH     LINE      ---       ---     ---   #29
+      C00872H     LINE      ---       ---     ---   #30
+      C00872H     LINE      ---       ---     ---   #31
+      C00874H     LINE      ---       ---     ---   #34
+      C00884H     LINE      ---       ---     ---   #36
+      C0089EH     LINE      ---       ---     ---   #37
+      C008A0H     LINE      ---       ---     ---   #38
+      C008ACH     LINE      ---       ---     ---   #40
+      C008CCH     LINE      ---       ---     ---   #41
+      C008CEH     LINE      ---       ---     ---   #42
+      C008DAH     LINE      ---       ---     ---   #44
+      C008FAH     LINE      ---       ---     ---   #45
+      C008FAH     LINE      ---       ---     ---   #51
+      C008FAH     LINE      ---       ---     ---   #54
+      C00900H     LINE      ---       ---     ---   #57
+      C0090CH     LINE      ---       ---     ---   #58
+      C0090EH     LINE      ---       ---     ---   #59
+      C00914H     LINE      ---       ---     ---   #62
+      C00920H     LINE      ---       ---     ---   #63
+      C00920H     LINE      ---       ---     ---   #66
+      C00920H     LINE      ---       ---     ---   #69
+      C00930H     LINE      ---       ---     ---   #71
+      C00936H     LINE      ---       ---     ---   #72
+      C00938H     LINE      ---       ---     ---   #74
+      C0093EH     LINE      ---       ---     ---   #75
+      C00948H     LINE      ---       ---     ---   #77
+      C0094EH     LINE      ---       ---     ---   #78
+      C00950H     LINE      ---       ---     ---   #80
+      C00956H     LINE      ---       ---     ---   #81
+      C00956H     LINE      ---       ---     ---   #82
+      C00956H     LINE      ---       ---     ---   #83
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C0070EH     PUBLIC    LABEL     ---     ---   CCU60_vInit
+      C00796H     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
+
+      C0070EH     BLOCK     LVL=0     0088H   ---   CCU60_vInit
+      C0070EH     LINE      ---       ---     ---   #122
+      C0070EH     LINE      ---       ---     ---   #137
+      C00714H     LINE      ---       ---     ---   #139
+      C00716H     LINE      ---       ---     ---   #140
+      C00718H     LINE      ---       ---     ---   #141
+      C0071AH     LINE      ---       ---     ---   #142
+      C0071CH     LINE      ---       ---     ---   #158
+      C00724H     LINE      ---       ---     ---   #178
+      C00728H     LINE      ---       ---     ---   #180
+      C00730H     LINE      ---       ---     ---   #181
+      C00738H     LINE      ---       ---     ---   #200
+      C0073EH     LINE      ---       ---     ---   #219
+      C00742H     LINE      ---       ---     ---   #238
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 6
+
+
+      C00746H     LINE      ---       ---     ---   #251
+      C0074AH     LINE      ---       ---     ---   #255
+      C00750H     LINE      ---       ---     ---   #258
+      C00758H     LINE      ---       ---     ---   #261
+      C00760H     LINE      ---       ---     ---   #286
+      C00766H     LINE      ---       ---     ---   #289
+      C0076EH     LINE      ---       ---     ---   #300
+      C00776H     LINE      ---       ---     ---   #301
+      C0077AH     LINE      ---       ---     ---   #302
+      C0077EH     LINE      ---       ---     ---   #304
+      C00786H     LINE      ---       ---     ---   #314
+      C0078CH     LINE      ---       ---     ---   #323
+      C00794H     LINE      ---       ---     ---   #330
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C00796H     BLOCK     LVL=0     00A8H   ---   CCU60_viNodeI0
+      C00796H     LINE      ---       ---     ---   #361
+      C007BCH     LINE      ---       ---     ---   #367
+      C007C4H     LINE      ---       ---     ---   #375
+      C007CEH     LINE      ---       ---     ---   #376
+      C007CEH     LINE      ---       ---     ---   #378
+      C007D6H     LINE      ---       ---     ---   #385
+      C007DAH     LINE      ---       ---     ---   #389
+      C007E4H     LINE      ---       ---     ---   #390
+      C007E4H     LINE      ---       ---     ---   #392
+      C007ECH     LINE      ---       ---     ---   #400
+      C007F6H     LINE      ---       ---     ---   #401
+      C007F6H     LINE      ---       ---     ---   #403
+      C007FEH     LINE      ---       ---     ---   #411
+      C00808H     LINE      ---       ---     ---   #412
+      C00808H     LINE      ---       ---     ---   #414
+      C00810H     LINE      ---       ---     ---   #422
+      C0081AH     LINE      ---       ---     ---   #423
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C0000CH     PUBLIC    LABEL     ---     ---   MAIN_vChangeFreq
+      C0006CH     PUBLIC    LABEL     ---     ---   MAIN_vLockProtecReg
+      C0003EH     PUBLIC    LABEL     ---     ---   MAIN_vUnlockProtecReg
+
+      C0000CH     BLOCK     LVL=0     0032H   ---   MAIN_vChangeFreq
+      C0000CH     LINE      ---       ---     ---   #25
+      C0000CH     LINE      ---       ---     ---   #27
+      C00010H     LINE      ---       ---     ---   #33
+      C0001AH     LINE      ---       ---     ---   #39
+      C00020H     LINE      ---       ---     ---   #40
+      C00026H     LINE      ---       ---     ---   #42
+      C00028H     LINE      ---       ---     ---   #46
+      C00036H     LINE      ---       ---     ---   #50
+      C00038H     LINE      ---       ---     ---   #52
+      C0003AH     LINE      ---       ---     ---   #59
+      C0003CH     LINE      ---       ---     ---   #60
+      C0003CH     LINE      ---       ---     ---   #63
+      C0003CH     LINE      ---       ---     ---   #65
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C0003EH     BLOCK     LVL=0     002EH   ---   MAIN_vUnlockProtecReg
+      C0003EH     BLOCK     LVL=1     002CH   ---   
+      000005H     SYMBOL    REG       ---     ---   uwPASSWORD
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 7
+
+
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C0003EH     LINE      ---       ---     ---   #90
+      C0003EH     LINE      ---       ---     ---   #91
+      C0003EH     LINE      ---       ---     ---   #94
+      C00044H     LINE      ---       ---     ---   #95
+      C00048H     LINE      ---       ---     ---   #97
+      C00050H     LINE      ---       ---     ---   #98
+      C0005AH     LINE      ---       ---     ---   #100
+      C00064H     LINE      ---       ---     ---   #101
+      C0006AH     LINE      ---       ---     ---   #103
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C0006CH     BLOCK     LVL=0     004CH   ---   MAIN_vLockProtecReg
+      C0006CH     BLOCK     LVL=1     004AH   ---   
+      000005H     SYMBOL    REG       ---     ---   uwPASSWORD
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C0006CH     LINE      ---       ---     ---   #128
+      C0006CH     LINE      ---       ---     ---   #129
+      C0006CH     LINE      ---       ---     ---   #132
+      C00072H     LINE      ---       ---     ---   #133
+      C00076H     LINE      ---       ---     ---   #135
+      C0007EH     LINE      ---       ---     ---   #136
+      C00088H     LINE      ---       ---     ---   #138
+      C00092H     LINE      ---       ---     ---   #139
+      C00098H     LINE      ---       ---     ---   #141
+      C000A2H     LINE      ---       ---     ---   #142
+      C000ACH     LINE      ---       ---     ---   #143
+      C000B6H     LINE      ---       ---     ---   #145
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C0095CH     PUBLIC    LABEL     ---     ---   setPwmDutyCyc
+
+      C0095CH     BLOCK     LVL=0     0026H   ---   setPwmDutyCyc
+      000048H     SYMBOL    REG       ---     ---   pwmPort
+      000049H     SYMBOL    REG       ---     ---   dutyCyc
+      C0095CH     LINE      ---       ---     ---   #3
+      C0095CH     LINE      ---       ---     ---   #4
+      C0095CH     LINE      ---       ---     ---   #5
+      C0095CH     LINE      ---       ---     ---   #12
+      C0096AH     LINE      ---       ---     ---   #14
+      C0096AH     LINE      ---       ---     ---   #15
+      C00970H     LINE      ---       ---     ---   #16
+      C00972H     LINE      ---       ---     ---   #17
+      C00972H     LINE      ---       ---     ---   #18
+      C00978H     LINE      ---       ---     ---   #19
+      C0097AH     LINE      ---       ---     ---   #20
+      C0097AH     LINE      ---       ---     ---   #21
+      C00980H     LINE      ---       ---     ---   #22
+      C00980H     LINE      ---       ---     ---   #23
+      C00980H     LINE      ---       ---     ---   #24
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C005CCH     PUBLIC    LABEL     ---     ---   EnableVcoBypass
+      C006A8H     PUBLIC    LABEL     ---     ---   SCS_CountClocksWithTimer
+      C005DAH     PUBLIC    LABEL     ---     ---   DisableVcoBypass
+      C005E8H     PUBLIC    LABEL     ---     ---   WaitForTimer13Stop
+      C006A2H     PUBLIC    LABEL     ---     ---   SCS_SwitchToHighPrecBandgap
+      C00616H     PUBLIC    LABEL     ---     ---   SCS_SwitchSystemClock
+      C005B4H     PUBLIC    LABEL     ---     ---   SetK2
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 8
+
+
+      C005F2H     PUBLIC    LABEL     ---     ---   SCS_StartXtalOsc
+
+      C005B4H     BLOCK     LVL=0     0018H   ---   SetK2
+      000008H     SYMBOL    REG       ---     ---   K2
+      C005B4H     LINE      ---       ---     ---   #208
+      C005B4H     LINE      ---       ---     ---   #214
+      C005BEH     LINE      ---       ---     ---   #217
+      C005C2H     LINE      ---       ---     ---   #221
+      C005C2H     LINE      ---       ---     ---   #238
+      C005CAH     LINE      ---       ---     ---   #239
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C005CCH     BLOCK     LVL=0     000EH   ---   EnableVcoBypass
+      C005CCH     LINE      ---       ---     ---   #262
+      C005CCH     LINE      ---       ---     ---   #265
+      C005D0H     LINE      ---       ---     ---   #268
+      C005D0H     LINE      ---       ---     ---   #285
+      C005D8H     LINE      ---       ---     ---   #286
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C005DAH     BLOCK     LVL=0     000EH   ---   DisableVcoBypass
+      C005DAH     LINE      ---       ---     ---   #309
+      C005DAH     LINE      ---       ---     ---   #312
+      C005DEH     LINE      ---       ---     ---   #315
+      C005DEH     LINE      ---       ---     ---   #332
+      C005E6H     LINE      ---       ---     ---   #333
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C005E8H     BLOCK     LVL=0     000AH   ---   WaitForTimer13Stop
+      C005E8H     LINE      ---       ---     ---   #358
+      C005E8H     LINE      ---       ---     ---   #361
+      C005E8H     LINE      ---       ---     ---   #370
+      C005F0H     LINE      ---       ---     ---   #371
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C005F2H     BLOCK     LVL=0     0024H   ---   SCS_StartXtalOsc
+      000008H     SYMBOL    REG       ---     ---   UseTimer
+      C005FCH     BLOCK     LVL=1     0010H   ---   
+      000004H     SYMBOL    REG       ---     ---   K2?1?SetK2
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C005F2H     LINE      ---       ---     ---   #406
+      C005F2H     LINE      ---       ---     ---   #427
+      C005F8H     LINE      ---       ---     ---   #430
+      C005FCH     LINE      ---       ---     ---   #442
+      C005FCH     LINE      ---       ---     ---   #214
+      C00602H     LINE      ---       ---     ---   #217
+      C00604H     LINE      ---       ---     ---   #221
+      C00604H     LINE      ---       ---     ---   #238
+      C0060CH     LINE      ---       ---     ---   #445
+      C00614H     LINE      ---       ---     ---   #446
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C00616H     BLOCK     LVL=0     008CH   ---   SCS_SwitchSystemClock
+      000008H     SYMBOL    REG       ---     ---   UseTimer
+      C00622H     BLOCK     LVL=1     0010H   ---   
+      000004H     SYMBOL    REG       ---     ---   K2?3?SetK2
+      ---         BLOCKEND  LVL=1     ---     ---   
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 9
+
+
+      C0064CH     BLOCK     LVL=1     0010H   ---   
+      000004H     SYMBOL    REG       ---     ---   K2?5?SetK2
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C00668H     BLOCK     LVL=1     0010H   ---   
+      000004H     SYMBOL    REG       ---     ---   K2?7?SetK2
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C00678H     BLOCK     LVL=1     0010H   ---   
+      000004H     SYMBOL    REG       ---     ---   K2?8?SetK2
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C00616H     LINE      ---       ---     ---   #485
+      C00616H     LINE      ---       ---     ---   #487
+      C0061AH     LINE      ---       ---     ---   #361
+      C0061AH     LINE      ---       ---     ---   #370
+      C00622H     LINE      ---       ---     ---   #502
+      C00622H     LINE      ---       ---     ---   #214
+      C00628H     LINE      ---       ---     ---   #217
+      C0062AH     LINE      ---       ---     ---   #221
+      C0062AH     LINE      ---       ---     ---   #238
+      C00632H     LINE      ---       ---     ---   #504
+      C00632H     LINE      ---       ---     ---   #509
+      C00638H     LINE      ---       ---     ---   #265
+      C0063AH     LINE      ---       ---     ---   #268
+      C0063AH     LINE      ---       ---     ---   #285
+      C00642H     LINE      ---       ---     ---   #534
+      C00648H     LINE      ---       ---     ---   #558
+      C0064CH     LINE      ---       ---     ---   #563
+      C0064CH     LINE      ---       ---     ---   #214
+      C00650H     LINE      ---       ---     ---   #217
+      C00654H     LINE      ---       ---     ---   #221
+      C00654H     LINE      ---       ---     ---   #238
+      C0065CH     LINE      ---       ---     ---   #312
+      C00660H     LINE      ---       ---     ---   #315
+      C00660H     LINE      ---       ---     ---   #332
+      C00668H     LINE      ---       ---     ---   #569
+      C00668H     LINE      ---       ---     ---   #214
+      C0066EH     LINE      ---       ---     ---   #217
+      C00670H     LINE      ---       ---     ---   #221
+      C00670H     LINE      ---       ---     ---   #238
+      C00678H     LINE      ---       ---     ---   #576
+      C00678H     LINE      ---       ---     ---   #214
+      C0067EH     LINE      ---       ---     ---   #217
+      C00680H     LINE      ---       ---     ---   #221
+      C00680H     LINE      ---       ---     ---   #238
+      C00688H     LINE      ---       ---     ---   #587
+      C0068EH     LINE      ---       ---     ---   #589
+      C00692H     LINE      ---       ---     ---   #591
+      C00696H     LINE      ---       ---     ---   #593
+      C0069AH     LINE      ---       ---     ---   #595
+      C006A0H     LINE      ---       ---     ---   #597
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C006A2H     BLOCK     LVL=0     0006H   ---   SCS_SwitchToHighPrecBandgap
+      C006A2H     LINE      ---       ---     ---   #627
+      C006A2H     LINE      ---       ---     ---   #674
+      C006A6H     LINE      ---       ---     ---   #676
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 10
+
+
+      C006A8H     BLOCK     LVL=0     0066H   ---   SCS_CountClocksWithTimer
+      000008H     SYMBOL    REG       ---     ---   Source
+      000009H     SYMBOL    REG       ---     ---   Clocks
+      C006AAH     BLOCK     LVL=1     0060H   ---   
+      000000H     SYMBOL    AUTO      ---     ---   Work
+      ---         BLOCKEND  LVL=1     ---     ---   
+      C006A8H     LINE      ---       ---     ---   #717
+      C006AAH     LINE      ---       ---     ---   #718
+      C006AAH     LINE      ---       ---     ---   #733
+      C006B4H     LINE      ---       ---     ---   #735
+      C006BAH     LINE      ---       ---     ---   #740
+      C006C4H     LINE      ---       ---     ---   #756
+      C006CCH     LINE      ---       ---     ---   #759
+      C006D4H     LINE      ---       ---     ---   #775
+      C006DCH     LINE      ---       ---     ---   #805
+      C006EAH     LINE      ---       ---     ---   #817
+      C006F8H     LINE      ---       ---     ---   #839
+      C00702H     LINE      ---       ---     ---   #857
+      C0070AH     LINE      ---       ---     ---   #860
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C000C4H     PUBLIC    LABEL     ---     ---   ?C_STARTUP
+      000000H     PUBLIC    CONST     ---     ---   ?L?VECSC
+      E00000H     PUBLIC    VAR       ---     ---   ?C_USRSTKBOT
+      00F600H     PUBLIC    VAR       ---     ---   ?C_SYSSTKBOT
+      00F800H     PUBLIC    VAR       ---     ---   ?C_SYSSTKTOP
+      000000H     GLOBAL    INTNO     ---     ---   RESET
+      000000H     SYMBOL    RBANK     ---     ---   ?C_MAINREGISTERS
+      E00200H     SYMBOL    VAR       ---     ---   ?C_USERSTKTOP
+      E00220H     SYMBOL    VAR       ---     ---   ?C_USERSTKTOP1
+      E00240H     SYMBOL    VAR       ---     ---   ?C_USERSTKTOP2
+      E00200H     SYMBOL    VAR       ---     ---   ?C_USRSTKBOT1
+      E00220H     SYMBOL    VAR       ---     ---   ?C_USRSTKBOT2
+      00FE10H     SYMBOL    SFR       ---     ---   CP
+      00FE00H     SYMBOL    SFR       ---     ---   DPP0
+      00FE02H     SYMBOL    SFR       ---     ---   DPP1
+      00FE04H     SYMBOL    SFR       ---     ---   DPP2
+      00FE06H     SYMBOL    SFR       ---     ---   DPP3
+      00F1B4H     SYMBOL    ESFR      ---     ---   HPOSCCON
+      000400H     SYMBOL    CONST     ---     ---   KB
+      00F1B8H     SYMBOL    ESFR      ---     ---   PLLCON0
+      00F1B9H.7   SYMBOL    ESBIT     ---     ---   PLLCON0_NACK
+      00F1BAH     SYMBOL    ESFR      ---     ---   PLLCON1
+      00F1BBH.7   SYMBOL    ESBIT     ---     ---   PLLCON1_PACK
+      00F1BCH     SYMBOL    ESFR      ---     ---   PLLCON2
+      00F1BDH.7   SYMBOL    ESBIT     ---     ---   PLLCON2_K1ACK
+      00F1BEH     SYMBOL    ESFR      ---     ---   PLLCON3
+      00F1BFH.7   SYMBOL    ESBIT     ---     ---   PLLCON3_K2ACK
+      00F0BCH     SYMBOL    ESFR      ---     ---   PLLSTAT
+      00FF10H     SYMBOL    SFR       ---     ---   PSW
+      00FE12H     SYMBOL    SFR       ---     ---   SP
+      00FF0CH     SYMBOL    SFR       ---     ---   SPSEG
+      000200H     SYMBOL    CONST     ---     ---   SSTSZ
+      00F0E2H     SYMBOL    ESFR      ---     ---   STATCLR1
+      00FE14H     SYMBOL    SFR       ---     ---   STKOV
+      00FE16H     SYMBOL    SFR       ---     ---   STKUN
+      000020H     SYMBOL    CONST     ---     ---   UST1SZ
+      000020H     SYMBOL    CONST     ---     ---   UST2SZ
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 11
+
+
+      000200H     SYMBOL    CONST     ---     ---   USTSZ
+      000000H     SYMBOL    CONST     ---     ---   _AOSCSEL
+      00F600H     SYMBOL    VAR       ---     ---   _BOS
+      000000H     SYMBOL    CONST     ---     ---   _HPOSCCON
+      000000H     SYMBOL    CONST     ---     ---   _HP_EMCLKEN
+      000000H     SYMBOL    CONST     ---     ---   _HP_EMFINDISEN
+      000001H     SYMBOL    CONST     ---     ---   _K1DIV
+      000001H     SYMBOL    CONST     ---     ---   _K2DIV
+      000000H     SYMBOL    CONST     ---     ---   _MODE
+      000013H     SYMBOL    CONST     ---     ---   _NDIV
+      000000H     SYMBOL    CONST     ---     ---   _OSCSEL
+      000000H     SYMBOL    CONST     ---     ---   _OSCWDTRST
+      000000H     SYMBOL    CONST     ---     ---   _PDIV
+      001305H     SYMBOL    CONST     ---     ---   _PLLCON0
+      000000H     SYMBOL    CONST     ---     ---   _PLLCON1
+      000000H     SYMBOL    CONST     ---     ---   _PLLPWD
+      000000H     SYMBOL    CONST     ---     ---   _PLL_EMCLKEN
+      000000H     SYMBOL    CONST     ---     ---   _PLL_EMFINDISEN
+      000000H     SYMBOL    CONST     ---     ---   _SHBY
+      000002H     SYMBOL    CONST     ---     ---   _TMP_K2DIV
+      00F800H     SYMBOL    VAR       ---     ---   _TOS
+      000000H     SYMBOL    CONST     ---     ---   _VCOBY
+      000000H     SYMBOL    CONST     ---     ---   _VCOPWD
+      000001H     SYMBOL    CONST     ---     ---   _VCOSEL
+      000000H     SYMBOL    CONST     ---     ---   _VECSC
+      000000H     SYMBOL    CONST     ---     ---   _X1DEN
+
+      C000C4H     BLOCK     LVL=0     01CAH   ---   ?C_RESET
+      C000C4H     LINE      ---       ---     ---   #1414
+      C000C8H     LINE      ---       ---     ---   #1424
+      C000CCH     LINE      ---       ---     ---   #1425
+      C000D0H     LINE      ---       ---     ---   #1426
+      C000D4H     LINE      ---       ---     ---   #1427
+      C000D8H     LINE      ---       ---     ---   #1588
+      C000DAH     LINE      ---       ---     ---   #1589
+      C000DEH     LINE      ---       ---     ---   #1591
+      C000E0H     LINE      ---       ---     ---   #1593
+      C000E2H     LINE      ---       ---     ---   #1594
+      C000E6H     LINE      ---       ---     ---   #1595
+      C000EAH     LINE      ---       ---     ---   #1596
+      C000ECH     LINE      ---       ---     ---   #1597
+      C000F0H     LINE      ---       ---     ---   #1598
+      C000F4H     LINE      ---       ---     ---   #1606
+      C000F6H     LINE      ---       ---     ---   #1607
+      C000FAH     LINE      ---       ---     ---   #1608
+      C000FEH     LINE      ---       ---     ---   #1621
+      C00100H     LINE      ---       ---     ---   #1625
+      C00104H     LINE      ---       ---     ---   #1628
+      C00106H     LINE      ---       ---     ---   #1629
+      C0010AH     LINE      ---       ---     ---   #1630
+      C0010CH     LINE      ---       ---     ---   #1631
+      C0010EH     LINE      ---       ---     ---   #1632
+      C00112H     LINE      ---       ---     ---   #1633
+      C00116H     LINE      ---       ---     ---   #1634
+      C00118H     LINE      ---       ---     ---   #1637
+      C0011AH     LINE      ---       ---     ---   #1638
+      C0011EH     LINE      ---       ---     ---   #1639
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 12
+
+
+      C00122H     LINE      ---       ---     ---   #1645
+      C00124H     LINE      ---       ---     ---   #1646
+      C00128H     LINE      ---       ---     ---   #1650
+      C0012CH     LINE      ---       ---     ---   #1651
+      C00130H     LINE      ---       ---     ---   #1655
+      C00132H     LINE      ---       ---     ---   #1656
+      C00136H     LINE      ---       ---     ---   #1661
+      C00138H     LINE      ---       ---     ---   #1662
+      C0013CH     LINE      ---       ---     ---   #1664
+      C0013EH     LINE      ---       ---     ---   #1665
+      C00142H     LINE      ---       ---     ---   #1666
+      C00146H     LINE      ---       ---     ---   #1668
+      C00148H     LINE      ---       ---     ---   #1669
+      C0014CH     LINE      ---       ---     ---   #1671
+      C00150H     LINE      ---       ---     ---   #1672
+      C00154H     LINE      ---       ---     ---   #1675
+      C00156H     LINE      ---       ---     ---   #1676
+      C0015AH     LINE      ---       ---     ---   #1680
+      C0015CH     LINE      ---       ---     ---   #1681
+      C00160H     LINE      ---       ---     ---   #1683
+      C00162H     LINE      ---       ---     ---   #1684
+      C00166H     LINE      ---       ---     ---   #1686
+      C00168H     LINE      ---       ---     ---   #1687
+      C0016CH     LINE      ---       ---     ---   #1692
+      C0016EH     LINE      ---       ---     ---   #1693
+      C00172H     LINE      ---       ---     ---   #1715
+      C00176H     LINE      ---       ---     ---   #1717
+      C0017AH     LINE      ---       ---     ---   #1718
+      C0017EH     LINE      ---       ---     ---   #1722
+      C00182H     LINE      ---       ---     ---   #1724
+      C00186H     LINE      ---       ---     ---   #1728
+      C0018AH     LINE      ---       ---     ---   #1729
+      C0018EH     LINE      ---       ---     ---   #1733
+      C00192H     LINE      ---       ---     ---   #1734
+      C00196H     LINE      ---       ---     ---   #1738
+      C0019AH     LINE      ---       ---     ---   #1741
+      C0019EH     LINE      ---       ---     ---   #1793
+      C001A2H     LINE      ---       ---     ---   #1794
+      C001A6H     LINE      ---       ---     ---   #1795
+      C001A8H     LINE      ---       ---     ---   #1796
+      C001AAH     LINE      ---       ---     ---   #1797
+      C001ACH     LINE      ---       ---     ---   #1803
+      C001AEH     LINE      ---       ---     ---   #1804
+      C001B0H     LINE      ---       ---     ---   #1805
+      C001B2H     LINE      ---       ---     ---   #1806
+      C001B4H     LINE      ---       ---     ---   #1807
+      C001B6H     LINE      ---       ---     ---   #1808
+      C001B8H     LINE      ---       ---     ---   #1809
+      C001BAH     LINE      ---       ---     ---   #1810
+      C001BEH     LINE      ---       ---     ---   #1811
+      C001C2H     LINE      ---       ---     ---   #1813
+      C001C4H     LINE      ---       ---     ---   #1814
+      C001C6H     LINE      ---       ---     ---   #1815
+      C001C8H     LINE      ---       ---     ---   #1816
+      C001CCH     LINE      ---       ---     ---   #1817
+      C001CEH     LINE      ---       ---     ---   #1818
+      C001D0H     LINE      ---       ---     ---   #1819
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 13
+
+
+      C001D2H     LINE      ---       ---     ---   #1820
+      C001D4H     LINE      ---       ---     ---   #1821
+      C001D6H     LINE      ---       ---     ---   #1822
+      C001D8H     LINE      ---       ---     ---   #1823
+      C001DAH     LINE      ---       ---     ---   #1824
+      C001DCH     LINE      ---       ---     ---   #1825
+      C001DEH     LINE      ---       ---     ---   #1827
+      C001E0H     LINE      ---       ---     ---   #1828
+      C001E2H     LINE      ---       ---     ---   #1833
+      C001E4H     LINE      ---       ---     ---   #1834
+      C001E6H     LINE      ---       ---     ---   #1835
+      C001E8H     LINE      ---       ---     ---   #1836
+      C001EAH     LINE      ---       ---     ---   #1837
+      C001EEH     LINE      ---       ---     ---   #1838
+      C001F0H     LINE      ---       ---     ---   #1839
+      C001F2H     LINE      ---       ---     ---   #1840
+      C001F4H     LINE      ---       ---     ---   #1846
+      C001F6H     LINE      ---       ---     ---   #1847
+      C001F8H     LINE      ---       ---     ---   #1848
+      C001FAH     LINE      ---       ---     ---   #1849
+      C001FCH     LINE      ---       ---     ---   #1850
+      C001FEH     LINE      ---       ---     ---   #1911
+      C00202H     LINE      ---       ---     ---   #1912
+      C00206H     LINE      ---       ---     ---   #1918
+      C0020AH     LINE      ---       ---     ---   #1919
+      C0020CH     LINE      ---       ---     ---   #1920
+      C0020EH     LINE      ---       ---     ---   #1921
+      C00210H     LINE      ---       ---     ---   #1922
+      C00212H     LINE      ---       ---     ---   #1923
+      C00214H     LINE      ---       ---     ---   #1924
+      C00218H     LINE      ---       ---     ---   #1925
+      C0021AH     LINE      ---       ---     ---   #1926
+      C0021EH     LINE      ---       ---     ---   #1927
+      C00220H     LINE      ---       ---     ---   #1928
+      C00222H     LINE      ---       ---     ---   #1929
+      C00224H     LINE      ---       ---     ---   #1930
+      C00226H     LINE      ---       ---     ---   #1931
+      C00228H     LINE      ---       ---     ---   #1932
+      C0022AH     LINE      ---       ---     ---   #1933
+      C0022CH     LINE      ---       ---     ---   #1934
+      C0022EH     LINE      ---       ---     ---   #1935
+      C00230H     LINE      ---       ---     ---   #1936
+      C00232H     LINE      ---       ---     ---   #1937
+      C00236H     LINE      ---       ---     ---   #1938
+      C0023AH     LINE      ---       ---     ---   #1939
+      C0023CH     LINE      ---       ---     ---   #1940
+      C0023EH     LINE      ---       ---     ---   #1941
+      C00240H     LINE      ---       ---     ---   #1942
+      C00242H     LINE      ---       ---     ---   #1943
+      C00244H     LINE      ---       ---     ---   #1944
+      C00246H     LINE      ---       ---     ---   #1945
+      C00248H     LINE      ---       ---     ---   #1946
+      C0024AH     LINE      ---       ---     ---   #1947
+      C0024CH     LINE      ---       ---     ---   #1948
+      C0024EH     LINE      ---       ---     ---   #1949
+      C00252H     LINE      ---       ---     ---   #1950
+      C00256H     LINE      ---       ---     ---   #1951
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 14
+
+
+      C0025AH     LINE      ---       ---     ---   #1952
+      C0025EH     LINE      ---       ---     ---   #1957
+      C00260H     LINE      ---       ---     ---   #1958
+      C00262H     LINE      ---       ---     ---   #1959
+      C00266H     LINE      ---       ---     ---   #1960
+      C00268H     LINE      ---       ---     ---   #1961
+      C0026AH     LINE      ---       ---     ---   #1962
+      C0026CH     LINE      ---       ---     ---   #1964
+      C0026EH     LINE      ---       ---     ---   #1965
+      C00270H     LINE      ---       ---     ---   #1966
+      C00274H     LINE      ---       ---     ---   #1967
+      C00276H     LINE      ---       ---     ---   #1968
+      C00278H     LINE      ---       ---     ---   #1969
+      C0027AH     LINE      ---       ---     ---   #1970
+      C0027EH     LINE      ---       ---     ---   #1971
+      C00280H     LINE      ---       ---     ---   #1972
+      C00282H     LINE      ---       ---     ---   #1973
+      C00284H     LINE      ---       ---     ---   #1974
+      C00286H     LINE      ---       ---     ---   #1975
+      C00288H     LINE      ---       ---     ---   #1976
+      C0028AH     LINE      ---       ---     ---   #2065
+      C0028AH     SYMBOL    LABEL     ---     ---   EndInit
+      C00286H     SYMBOL    LABEL     ---     ---   StoreBit
+      C00284H     SYMBOL    LABEL     ---     ---   SetBit
+      C0026CH     SYMBOL    LABEL     ---     ---   InitBit
+      C0025EH     SYMBOL    LABEL     ---     ---   NoDPP3Adj
+      C00242H     SYMBOL    LABEL     ---     ---   CopyInitVal
+      C0022AH     SYMBOL    LABEL     ---     ---   LenLoad
+      C00206H     SYMBOL    LABEL     ---     ---   RepeatInit
+      C001FEH     SYMBOL    LABEL     ---     ---   Init_Vars
+      C001FEH     SYMBOL    LABEL     ---     ---   EndClear
+      C001F4H     SYMBOL    LABEL     ---     ---   ClearNear
+      C001E2H     SYMBOL    LABEL     ---     ---   RepClearFar
+      C001DEH     SYMBOL    LABEL     ---     ---   ClearFar
+      C001C2H     SYMBOL    LABEL     ---     ---   ClearBit
+      C001ACH     SYMBOL    LABEL     ---     ---   RepeatClear
+      C0019EH     SYMBOL    LABEL     ---     ---   Clr_Memory
+      C0014CH     SYMBOL    LABEL     ---     ---   WNBY
+      C0013CH     SYMBOL    LABEL     ---     ---   WLOK
+      C0010CH     SYMBOL    LABEL     ---     ---   WBY
+      C000E0H     SYMBOL    LABEL     ---     ---   WHPO
+      ---         BLOCKEND  LVL=0     ---     ---   
+
+      C0028EH     BLOCK     LVL=0     00C8H   ---   ?C_UTILFUNCS
+      C0028EH     LINE      ---       ---     ---   #2071
+      C00292H     LINE      ---       ---     ---   #2072
+      C00294H     LINE      ---       ---     ---   #2073
+      C00296H     LINE      ---       ---     ---   #2074
+      C00298H     LINE      ---       ---     ---   #2076
+      C0029CH     LINE      ---       ---     ---   #2077
+      C0029EH     LINE      ---       ---     ---   #2078
+      C002A0H     LINE      ---       ---     ---   #2079
+      C002A2H     LINE      ---       ---     ---   #2081
+      C002A6H     LINE      ---       ---     ---   #2082
+      C002AAH     LINE      ---       ---     ---   #2083
+      C002ACH     LINE      ---       ---     ---   #2084
+      C002AEH     LINE      ---       ---     ---   #2086
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 15
+
+
+      C002B2H     LINE      ---       ---     ---   #2088
+      C002B6H     LINE      ---       ---     ---   #2089
+      C002BAH     LINE      ---       ---     ---   #2091
+      C002BCH     LINE      ---       ---     ---   #2092
+      C002BEH     LINE      ---       ---     ---   #2093
+      C002C2H     LINE      ---       ---     ---   #2094
+      C002C6H     LINE      ---       ---     ---   #2096
+      C002C8H     LINE      ---       ---     ---   #2099
+      C002CCH     LINE      ---       ---     ---   #2100
+      C002D0H     LINE      ---       ---     ---   #2101
+      C002D2H     LINE      ---       ---     ---   #2102
+      C002D4H     LINE      ---       ---     ---   #2104
+      C002D8H     LINE      ---       ---     ---   #2106
+      C002DCH     LINE      ---       ---     ---   #2107
+      C002E0H     LINE      ---       ---     ---   #2109
+      C002E2H     LINE      ---       ---     ---   #2110
+      C002E4H     LINE      ---       ---     ---   #2112
+      C002E8H     LINE      ---       ---     ---   #2113
+      C002ECH     LINE      ---       ---     ---   #2115
+      C002EEH     LINE      ---       ---     ---   #2118
+      C002F2H     LINE      ---       ---     ---   #2119
+      C002F4H     LINE      ---       ---     ---   #2120
+      C002F8H     LINE      ---       ---     ---   #2121
+      C002FAH     LINE      ---       ---     ---   #2122
+      C002FCH     LINE      ---       ---     ---   #2123
+      C00300H     LINE      ---       ---     ---   #2124
+      C00302H     LINE      ---       ---     ---   #2126
+      C00304H     LINE      ---       ---     ---   #2127
+      C00308H     LINE      ---       ---     ---   #2128
+      C0030CH     LINE      ---       ---     ---   #2129
+      C00310H     LINE      ---       ---     ---   #2130
+      C00314H     LINE      ---       ---     ---   #2131
+      C00316H     LINE      ---       ---     ---   #2132
+      C00318H     LINE      ---       ---     ---   #2133
+      C0031CH     LINE      ---       ---     ---   #2134
+      C00320H     LINE      ---       ---     ---   #2135
+      C00322H     LINE      ---       ---     ---   #2138
+      C00326H     LINE      ---       ---     ---   #2139
+      C00328H     LINE      ---       ---     ---   #2140
+      C0032CH     LINE      ---       ---     ---   #2141
+      C0032EH     LINE      ---       ---     ---   #2142
+      C00330H     LINE      ---       ---     ---   #2143
+      C00334H     LINE      ---       ---     ---   #2144
+      C00336H     LINE      ---       ---     ---   #2146
+      C00338H     LINE      ---       ---     ---   #2147
+      C0033CH     LINE      ---       ---     ---   #2148
+      C00340H     LINE      ---       ---     ---   #2149
+      C00344H     LINE      ---       ---     ---   #2150
+      C00348H     LINE      ---       ---     ---   #2151
+      C0034AH     LINE      ---       ---     ---   #2152
+      C0034CH     LINE      ---       ---     ---   #2153
+      C00350H     LINE      ---       ---     ---   #2154
+      C00354H     LINE      ---       ---     ---   #2155
+      C0034CH     SYMBOL    LABEL     ---     ---   NSETLoop
+      C00340H     SYMBOL    LABEL     ---     ---   NCLRLoop
+      C00336H     SYMBOL    LABEL     ---     ---   AppNDiv
+      C00322H     SYMBOL    LABEL     ---     ---   ApplyNewNDiv
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 16
+
+
+      C00318H     SYMBOL    LABEL     ---     ---   PSETLoop
+      C0030CH     SYMBOL    LABEL     ---     ---   PCLRLoop
+      C00302H     SYMBOL    LABEL     ---     ---   AppPDiv
+      C002EEH     SYMBOL    LABEL     ---     ---   ApplyNewPDiv
+      C002ECH     SYMBOL    LABEL     ---     ---   K2DivDone
+      C002E4H     SYMBOL    LABEL     ---     ---   K2SETLoop
+      C002D8H     SYMBOL    LABEL     ---     ---   K2CLRLoop
+      C002C8H     SYMBOL    LABEL     ---     ---   ApplyNewK2Div
+      C002C6H     SYMBOL    LABEL     ---     ---   K1DivDone
+      C002BEH     SYMBOL    LABEL     ---     ---   K1SETLoop
+      C002B2H     SYMBOL    LABEL     ---     ---   K1CLRLoop
+      C002A2H     SYMBOL    LABEL     ---     ---   ApplyNewK1Div
+      C0029CH     SYMBOL    LABEL     ---     ---   Del2
+      C00298H     SYMBOL    LABEL     ---     ---   Delay200us
+      C00292H     SYMBOL    LABEL     ---     ---   Del1
+      C0028EH     SYMBOL    LABEL     ---     ---   Delay1ms
+      ---         BLOCKEND  LVL=0     ---     ---   
+      C00004H     PUBLIC    VAR       ---     ---   ?C_ENDINIT
+
+
+
+FUNCTION REGISTER MASKS
+
+
+FUNCTION . . . . . . . . . . . REG MASK
+=======================================
+
+
+
+
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  taskInit
+    MODULE:  ..\bin\main.obj (MAIN)
+   DEFINED:  ..\bin\task.obj (TASK)
+
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  task800kHz
+    MODULE:  ..\bin\ccu60.obj (CCU60)
+   DEFINED:  ..\bin\task.obj (TASK)
+
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_StartXtalOsc
+    MODULE:  ..\bin\clk.obj (CLK)
+   DEFINED:  ..\bin\SCS.obj (SCS)
+
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchSystemClock
+    MODULE:  ..\bin\clk.obj (CLK)
+   DEFINED:  ..\bin\SCS.obj (SCS)
+
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchToHighPrecBandgap
+    MODULE:  ..\bin\clk.obj (CLK)
+   DEFINED:  ..\bin\SCS.obj (SCS)
+
+******************************************************************************
+* RESTRICTED VERSION WITH 1000H BYTE CODE SIZE LIMIT; USED: 0970H BYTE (58%) *
+L166 LINKER/LOCATER V5.25                                                             07/04/2019  22:27:16  PAGE 17
+
+
+******************************************************************************
+
+Program Size: data=1187(near=1187) const=8(near=0) code=2416
+L166 RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)

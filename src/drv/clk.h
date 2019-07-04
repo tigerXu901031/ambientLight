@@ -2,6 +2,7 @@
 #define __CLK_H__
 
 #include "XC22xxREGS.H"
+#include "inc/INTRINS.H"
 
 extern void MAIN_vChangeFreq(void);
 extern void MAIN_vUnlockProtecReg(void);

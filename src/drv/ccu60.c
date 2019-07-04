@@ -26,7 +26,7 @@
 // @Project Includes
 //****************************************************************************
 
-#include "main.h"
+#include "ccu60.h"
 
 // USER CODE BEGIN (CCU60_General,2)
 

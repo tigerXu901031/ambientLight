@@ -47,7 +47,7 @@ void MAIN_vChangeFreq(void)
             {
                //usually after an application reset where clock need not be configured again.
                //check K2/P/N values and decide whether these values have to be adapted based on application needs.
-               NOP();
+               _nop_();
                //usually the PLL losss of Lock TRAP schould be enabled here.
             }
             else                                     //fR derived from external crystal clock + VCO is not locked
@@ -56,7 +56,7 @@ void MAIN_vChangeFreq(void)
                //estimate the K1 value and the current frequency
                //reduce K2/P/N values in steps so that the frequency
                //jumps is limited to 20MHz or factor of 5 whichever is minimum
-               NOP();
+               _nop_();
             }
 
 

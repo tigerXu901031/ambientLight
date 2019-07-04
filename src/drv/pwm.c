@@ -6,7 +6,7 @@ void setPwmDutyCyc(uint8 pwmPort, uint8 dutyCyc)
 
     /* get the duty cycle value in percent and convert
        into counter value and assigned to the CCU counter */
-    CCU60_vLoadChannelShadowRegister(getCCUCh, dutyVal);
+    // CCU60_vLoadChannelShadowRegister(getCCUCh, dutyVal);
     // CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, dutyVal);
 
     switch(pwmPort)

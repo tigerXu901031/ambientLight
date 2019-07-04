@@ -1,0 +1,378 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\Mac\Home\Documents\work\personal\Github\ambientLight\prj\ambientLight.uvproj
+Project File Date:  07/04/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ledCtrl.c...
+..\SRC\APP\LEDCTRL.C(1): warning C38: empty translation unit
+compiling main.c...
+..\SRC\APP\MAIN.C(5): warning C140: 'taskInit' undefined; assuming 'extern int taskInit()'
+compiling task.c...
+compiling can.c...
+..\SRC\SRV\CAN.C(1): warning C38: empty translation unit
+compiling led.c...
+compiling ccu60.c...
+..\src\drv\ccu60.c(29): error C318: can't open file 'main.h'
+..\SRC\DRV\CCU60.C(137): error C67: 'CCU60_KSCFG': undefined identifier
+..\SRC\DRV\CCU60.C(139): warning C140: '_nop_' undefined; assuming 'extern int _nop_()'
+..\SRC\DRV\CCU60.C(158): error C67: 'CCU60_T12PR': undefined identifier
+..\SRC\DRV\CCU60.C(178): error C67: 'CCU60_T13PR': undefined identifier
+..\SRC\DRV\CCU60.C(180): error C67: 'CCU60_TCTR0': undefined identifier
+..\SRC\DRV\CCU60.C(181): error C67: 'CCU60_TCTR2': undefined identifier
+..\SRC\DRV\CCU60.C(200): error C67: 'CCU60_CC60SR': undefined identifier
+..\SRC\DRV\CCU60.C(219): error C67: 'CCU60_CC61SR': undefined identifier
+..\SRC\DRV\CCU60.C(238): error C67: 'CCU60_CC62SR': undefined identifier
+..\SRC\DRV\CCU60.C(251): error C67: 'CCU60_CC63SR': undefined identifier
+..\SRC\DRV\CCU60.C(255): error C67: 'CCU60_T12DTC': undefined identifier
+..\SRC\DRV\CCU60.C(258): error C67: 'CCU60_T12MSEL': undefined identifier
+..\SRC\DRV\CCU60.C(261): error C67: 'CCU60_MODCTR': undefined identifier
+..\SRC\DRV\CCU60.C(286): error C67: 'CCU60_INP': undefined identifier
+..\SRC\DRV\CCU60.C(289): error C67: 'CCU60_IEN': undefined identifier
+..\SRC\DRV\CCU60.C(300): error C67: 'P10_IOCR04': undefined identifier
+..\SRC\DRV\CCU60.C(301): error C67: 'P10_IOCR05': undefined identifier
+..\SRC\DRV\CCU60.C(302): error C67: 'P10_IOCR07': undefined identifier
+..\SRC\DRV\CCU60.C(304): error C67: 'CCU60_PISELL': undefined identifier
+..\SRC\DRV\CCU60.C(314): error C67: 'CCU60_0IC': undefined identifier
+..\SRC\DRV\CCU60.C(323): error C67: 'CCU60_TCTR4': undefined identifier
+..\SRC\DRV\CCU60.C(367): error C67: 'CCU60_IS': undefined identifier
+..\SRC\DRV\CCU60.C(375): error C67: 'CCU60_ISR': undefined identifier
+..\SRC\DRV\CCU60.C(378): error C67: 'CCU60_IS': undefined identifier
+..\SRC\DRV\CCU60.C(385): warning C140: 'task800kHz' undefined; assuming 'extern int task800kHz()'
+..\SRC\DRV\CCU60.C(389): error C67: 'CCU60_ISR': undefined identifier
+..\SRC\DRV\CCU60.C(392): error C67: 'CCU60_IS': undefined identifier
+..\SRC\DRV\CCU60.C(400): error C67: 'CCU60_ISR': undefined identifier
+..\SRC\DRV\CCU60.C(403): error C67: 'CCU60_IS': undefined identifier
+..\SRC\DRV\CCU60.C(411): error C67: 'CCU60_ISR': undefined identifier
+..\SRC\DRV\CCU60.C(414): error C67: 'CCU60_IS': undefined identifier
+..\SRC\DRV\CCU60.C(422): error C67: 'CCU60_ISR': undefined identifier
+compiling clk.c...
+..\SRC\DRV\CLK.C(27): warning C140: 'SCS_SwitchToHighPrecBandgap' undefined; assuming 'extern int SCS_SwitchToHighPrecBandgap()'
+..\SRC\DRV\CLK.C(39): warning C140: 'SCS_StartXtalOsc' undefined; assuming 'extern int SCS_StartXtalOsc()'
+..\SRC\DRV\CLK.C(40): warning C140: 'SCS_SwitchSystemClock' undefined; assuming 'extern int SCS_SwitchSystemClock()'
+..\SRC\DRV\CLK.C(50): warning C140: 'NOP' undefined; assuming 'extern int NOP()'
+compiling pwm.c...
+..\SRC\DRV\PWM.C(9): warning C140: 'CCU60_vLoadChannelShadowRegister_getCCUCh' undefined; assuming 'extern int CCU60_vLoadChannelShadowRegister_getCCUCh()'
+..\SRC\DRV\PWM.C(3): warning C47: 'dutyCyc': unreferenced parameter
+compiling SCS.C...
+..\src\drv\SCS.C(33): error C318: can't open file 'main.h'
+..\src\drv\SCS.C(56): warning C322: 'SCS_F_P': unknown identifier
+..\src\drv\SCS.C(56): warning C322: 'SCS_F_P': unknown identifier
+..\src\drv\SCS.C(57): error C320: "SCS_F_P out of range"
+..\src\drv\SCS.C(60): warning C322: 'SCS_VCOSEL': unknown identifier
+..\src\drv\SCS.C(61): warning C322: 'SCS_F_VCO': unknown identifier
+..\src\drv\SCS.C(61): warning C322: 'SCS_F_VCO': unknown identifier
+..\src\drv\SCS.C(62): error C320: "SCS_F_VCO out of range for VCOSEL = 0"
+..\src\drv\SCS.C(70): warning C322: 'SCS_P': unknown identifier
+..\src\drv\SCS.C(70): warning C322: 'SCS_P': unknown identifier
+..\src\drv\SCS.C(71): error C320: "SCS_P out of range"
+..\src\drv\SCS.C(74): warning C322: 'SCS_VCOSEL': unknown identifier
+..\src\drv\SCS.C(75): warning C322: 'SCS_N': unknown identifier
+..\src\drv\SCS.C(75): warning C322: 'SCS_N': unknown identifier
+..\src\drv\SCS.C(76): error C320: "SCS_N out of range for VCOSEL = 0"
+..\src\drv\SCS.C(84): warning C322: 'SCS_K2': unknown identifier
+..\src\drv\SCS.C(84): warning C322: 'SCS_K2': unknown identifier
+..\src\drv\SCS.C(85): error C320: "SCS_K2 out of range"
+..\src\drv\SCS.C(108): warning C322: 'SCS_K2_WU_1': unknown identifier
+..\src\drv\SCS.C(108): warning C322: 'SCS_K2_WU_1': unknown identifier
+..\src\drv\SCS.C(109): error C320: "SCS_K2_WU_1 out of range"
+..\src\drv\SCS.C(127): warning C322: 'SCS_CLOCKS_XTAL_START': unknown identifier
+..\src\drv\SCS.C(127): warning C322: 'SCS_CLOCKS_XTAL_START': unknown identifier
+..\src\drv\SCS.C(128): error C320: "SCS_CLOCKS_XTAL_START out of range"
+..\src\drv\SCS.C(131): warning C322: 'SCS_FREQSEL': unknown identifier
+..\src\drv\SCS.C(131): warning C322: 'SCS_FREQSEL': unknown identifier
+..\src\drv\SCS.C(135): warning C322: 'SCS_PWSEL': unknown identifier
+..\src\drv\SCS.C(135): warning C322: 'SCS_PWSEL': unknown identifier
+..\SRC\DRV\SCS.C(211): error C67: 'SCU_PLLCON3': undefined identifier
+..\SRC\DRV\SCS.C(217): error C67: 'SCU_PLLCON1_RESLD': undefined identifier
+..\SRC\DRV\SCS.C(221): error C67: 'SCU_PLLSTAT': undefined identifier
+..\SRC\DRV\SCS.C(265): error C67: 'SCU_PLLCON0_VCOBY': undefined identifier
+..\SRC\DRV\SCS.C(268): error C67: 'SCU_PLLSTAT': undefined identifier
+..\SRC\DRV\SCS.C(312): error C67: 'SCU_PLLCON0_VCOBY': undefined identifier
+..\SRC\DRV\SCS.C(315): error C67: 'SCU_PLLSTAT': undefined identifier
+..\SRC\DRV\SCS.C(361): error C67: 'CCU60_TCTR0': undefined identifier
+..\SRC\DRV\SCS.C(409): error C67: 'SCU_HPOSCCON': undefined identifier
+..\SRC\DRV\SCS.C(445): error C67: 'SCS_EXTCLK_F_OSC': undefined identifier
+..\SRC\DRV\SCS.C(445): error C67: 'SCS_CLOCKS_XTAL_START': undefined identifier
+..\SRC\DRV\SCS.C(445): warning C140: 'SCS_CountClocksWithTimer' undefined; assuming 'extern int SCS_CountClocksWithTimer()'
+..\SRC\DRV\SCS.C(506): error C67: 'SCU_PLLCON2': undefined identifier
+..\SRC\DRV\SCS.C(513): error C67: 'SCU_PLLCON1': undefined identifier
+..\SRC\DRV\SCS.C(531): error C67: 'SCS_P': undefined identifier
+..\SRC\DRV\SCS.C(538): error C67: 'SCU_PLLCON0': undefined identifier
+..\SRC\DRV\SCS.C(545): error C67: 'SCS_VCOSEL': undefined identifier
+..\SRC\DRV\SCS.C(555): error C67: 'SCS_N': undefined identifier
+..\SRC\DRV\SCS.C(581): error C67: 'SCS_K2': undefined identifier
+..\SRC\DRV\SCS.C(581): warning C96: 'SetK2': too few actual parameters
+..\SRC\DRV\SCS.C(587): error C67: 'CCU60_PISELH': undefined identifier
+..\SRC\DRV\SCS.C(589): error C67: 'CCU60_TCTR4': undefined identifier
+..\SRC\DRV\SCS.C(591): error C67: 'CCU60_TCTR2': undefined identifier
+..\SRC\DRV\SCS.C(593): error C67: 'CCU60_T13PR': undefined identifier
+..\SRC\DRV\SCS.C(595): error C67: 'CCU60_KSCFG': undefined identifier
+..\SRC\DRV\SCS.C(630): error C67: 'SCU_STEP0': undefined identifier
+..\SRC\DRV\SCS.C(717): error C25: syntax error near 'Source'
+..\SRC\DRV\SCS.C(718): error C53: redefinition of 'SCS_CountClocksWithTimer': different return types
+..\SRC\DRV\SCS.C(722): error C67: 'CCU60_KSCFG': undefined identifier
+..\SRC\DRV\SCS.C(735): error C67: 'CCU60_KSCFG': undefined identifier
+..\SRC\DRV\SCS.C(737): error C67: 'CCU60_MCFG': undefined identifier
+..\SRC\DRV\SCS.C(743): error C67: 'CCU60_TCTR4': undefined identifier
+..\SRC\DRV\SCS.C(759): error C67: 'CCU60_T13PR': undefined identifier
+..\SRC\DRV\SCS.C(759): error C67: 'Clocks': undefined identifier
+..\SRC\DRV\SCS.C(762): error C67: 'CCU60_TCTR4': undefined identifier
+..\SRC\DRV\SCS.C(778): error C67: 'CCU60_TCTR2': undefined identifier
+..\SRC\DRV\SCS.C(805): error C67: 'CCU60_TCTR2': undefined identifier
+..\SRC\DRV\SCS.C(808): error C67: 'CCU60_PISELH': undefined identifier
+..\SRC\DRV\SCS.C(817): error C67: 'CCU60_PISELH': undefined identifier
+..\SRC\DRV\SCS.C(820): error C67: 'SCU_EXTCON': undefined identifier
+..\SRC\DRV\SCS.C(824): error C67: 'Source': undefined identifier
+..\SRC\DRV\SCS.C(844): error C67: 'CCU60_TCTR4': undefined identifier
+..\SRC\DRV\SCS.C(717): warning C47: 'SCS_EXTCLK_Type': unreferenced parameter
+assembling START_V3.A66...
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+..\SRC\APP\LEDCTRL.C(1): warning C38: empty translation unit
+compiling main.c...
+..\SRC\APP\MAIN.C(5): warning C140: 'taskInit' undefined; assuming 'extern int taskInit()'
+compiling task.c...
+compiling can.c...
+..\SRC\SRV\CAN.C(1): warning C38: empty translation unit
+compiling led.c...
+compiling ccu60.c...
+..\SRC\DRV\CCU60.C(139): warning C140: '_nop_' undefined; assuming 'extern int _nop_()'
+..\SRC\DRV\CCU60.C(385): warning C140: 'task800kHz' undefined; assuming 'extern int task800kHz()'
+compiling clk.c...
+..\SRC\DRV\CLK.C(27): warning C140: 'SCS_SwitchToHighPrecBandgap' undefined; assuming 'extern int SCS_SwitchToHighPrecBandgap()'
+..\SRC\DRV\CLK.C(39): warning C140: 'SCS_StartXtalOsc' undefined; assuming 'extern int SCS_StartXtalOsc()'
+..\SRC\DRV\CLK.C(40): warning C140: 'SCS_SwitchSystemClock' undefined; assuming 'extern int SCS_SwitchSystemClock()'
+..\SRC\DRV\CLK.C(50): warning C140: 'NOP' undefined; assuming 'extern int NOP()'
+compiling pwm.c...
+..\SRC\DRV\PWM.C(9): warning C140: 'CCU60_vLoadChannelShadowRegister_getCCUCh' undefined; assuming 'extern int CCU60_vLoadChannelShadowRegister_getCCUCh()'
+..\SRC\DRV\PWM.C(3): warning C47: 'dutyCyc': unreferenced parameter
+compiling SCS.C...
+assembling START_V3.A66...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  taskInit
+    MODULE:  ..\main.obj (MAIN)
+   DEFINED:  ..\task.obj (TASK)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _nop_
+    MODULE:  ..\ccu60.obj (CCU60)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  task800kHz
+    MODULE:  ..\ccu60.obj (CCU60)
+   DEFINED:  ..\task.obj (TASK)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _nop_
+    MODULE:  ..\ccu60.obj (CCU60)
+    ADDRESS: 0716H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _nop_
+    MODULE:  ..\ccu60.obj (CCU60)
+    ADDRESS: 071AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _nop_
+    MODULE:  ..\ccu60.obj (CCU60)
+    ADDRESS: 071EH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _nop_
+    MODULE:  ..\ccu60.obj (CCU60)
+    ADDRESS: 0722H
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_StartXtalOsc
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchSystemClock
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchToHighPrecBandgap
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 0038H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 003EH
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  CCU60_vLoadChannelShadowRegister_getCCUCh
+    MODULE:  ..\pwm.obj (PWM)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  CCU60_vLoadChannelShadowRegister_getCCUCh
+    MODULE:  ..\pwm.obj (PWM)
+    ADDRESS: 096CH
+Program Size: data=1187(near=1187) const=8(near=0) code=2440
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+..\SRC\APP\LEDCTRL.C(1): warning C38: empty translation unit
+compiling main.c...
+..\SRC\APP\MAIN.C(5): warning C140: 'taskInit' undefined; assuming 'extern int taskInit()'
+compiling task.c...
+compiling can.c...
+..\SRC\SRV\CAN.C(1): warning C38: empty translation unit
+compiling led.c...
+compiling ccu60.c...
+..\SRC\DRV\CCU60.C(385): warning C140: 'task800kHz' undefined; assuming 'extern int task800kHz()'
+compiling clk.c...
+..\SRC\DRV\CLK.C(27): warning C140: 'SCS_SwitchToHighPrecBandgap' undefined; assuming 'extern int SCS_SwitchToHighPrecBandgap()'
+..\SRC\DRV\CLK.C(39): warning C140: 'SCS_StartXtalOsc' undefined; assuming 'extern int SCS_StartXtalOsc()'
+..\SRC\DRV\CLK.C(40): warning C140: 'SCS_SwitchSystemClock' undefined; assuming 'extern int SCS_SwitchSystemClock()'
+..\SRC\DRV\CLK.C(50): warning C140: 'NOP' undefined; assuming 'extern int NOP()'
+compiling pwm.c...
+..\SRC\DRV\PWM.C(9): warning C140: 'CCU60_vLoadChannelShadowRegister_getCCUCh' undefined; assuming 'extern int CCU60_vLoadChannelShadowRegister_getCCUCh()'
+..\SRC\DRV\PWM.C(3): warning C47: 'dutyCyc': unreferenced parameter
+compiling SCS.C...
+assembling START_V3.A66...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  taskInit
+    MODULE:  ..\main.obj (MAIN)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  task800kHz
+    MODULE:  ..\ccu60.obj (CCU60)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_StartXtalOsc
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchSystemClock
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchToHighPrecBandgap
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 0038H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 003EH
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  CCU60_vLoadChannelShadowRegister_getCCUCh
+    MODULE:  ..\pwm.obj (PWM)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  CCU60_vLoadChannelShadowRegister_getCCUCh
+    MODULE:  ..\pwm.obj (PWM)
+    ADDRESS: 0964H
+Program Size: data=1187(near=1187) const=8(near=0) code=2432
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+..\SRC\APP\LEDCTRL.C(1): warning C38: empty translation unit
+compiling main.c...
+..\SRC\APP\MAIN.C(5): warning C140: 'taskInit' undefined; assuming 'extern int taskInit()'
+compiling task.c...
+compiling can.c...
+..\SRC\SRV\CAN.C(1): warning C38: empty translation unit
+compiling led.c...
+compiling ccu60.c...
+..\SRC\DRV\CCU60.C(385): warning C140: 'task800kHz' undefined; assuming 'extern int task800kHz()'
+compiling clk.c...
+..\SRC\DRV\CLK.C(27): warning C140: 'SCS_SwitchToHighPrecBandgap' undefined; assuming 'extern int SCS_SwitchToHighPrecBandgap()'
+..\SRC\DRV\CLK.C(39): warning C140: 'SCS_StartXtalOsc' undefined; assuming 'extern int SCS_StartXtalOsc()'
+..\SRC\DRV\CLK.C(40): warning C140: 'SCS_SwitchSystemClock' undefined; assuming 'extern int SCS_SwitchSystemClock()'
+..\SRC\DRV\CLK.C(50): warning C140: 'NOP' undefined; assuming 'extern int NOP()'
+compiling pwm.c...
+..\SRC\DRV\PWM.C(3): warning C47: 'dutyCyc': unreferenced parameter
+compiling SCS.C...
+assembling START_V3.A66...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  taskInit
+    MODULE:  ..\main.obj (MAIN)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  task800kHz
+    MODULE:  ..\ccu60.obj (CCU60)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_StartXtalOsc
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchSystemClock
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchToHighPrecBandgap
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 0038H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  NOP
+    MODULE:  ..\clk.obj (CLK)
+    ADDRESS: 003EH
+Program Size: data=1187(near=1187) const=8(near=0) code=2420
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+..\SRC\APP\LEDCTRL.C(1): warning C38: empty translation unit
+compiling main.c...
+..\SRC\APP\MAIN.C(5): warning C140: 'taskInit' undefined; assuming 'extern int taskInit()'
+compiling task.c...
+compiling can.c...
+..\SRC\SRV\CAN.C(1): warning C38: empty translation unit
+compiling led.c...
+compiling ccu60.c...
+..\SRC\DRV\CCU60.C(385): warning C140: 'task800kHz' undefined; assuming 'extern int task800kHz()'
+compiling clk.c...
+..\SRC\DRV\CLK.C(27): warning C140: 'SCS_SwitchToHighPrecBandgap' undefined; assuming 'extern int SCS_SwitchToHighPrecBandgap()'
+..\SRC\DRV\CLK.C(39): warning C140: 'SCS_StartXtalOsc' undefined; assuming 'extern int SCS_StartXtalOsc()'
+..\SRC\DRV\CLK.C(40): warning C140: 'SCS_SwitchSystemClock' undefined; assuming 'extern int SCS_SwitchSystemClock()'
+compiling pwm.c...
+..\SRC\DRV\PWM.C(3): warning C47: 'dutyCyc': unreferenced parameter
+compiling SCS.C...
+assembling START_V3.A66...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  taskInit
+    MODULE:  ..\main.obj (MAIN)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  task800kHz
+    MODULE:  ..\ccu60.obj (CCU60)
+   DEFINED:  ..\task.obj (TASK)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_StartXtalOsc
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchSystemClock
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  SCS_SwitchToHighPrecBandgap
+    MODULE:  ..\clk.obj (CLK)
+   DEFINED:  ..\SCS.obj (SCS)
+Program Size: data=1187(near=1187) const=8(near=0) code=2416
+creating hex file from "..\ambientLight"...
+"..\ambientLight" - 0 Error(s), 13 Warning(s).
+Load "..\\ambientLight" 
+Load "..\\ambientLight" 
+Load "..\\ambientLight" 

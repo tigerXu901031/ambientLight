@@ -33,6 +33,7 @@
 // @Project Includes
 //****************************************************************************
 
+#include "XC22XXREGS.H"
 // USER CODE BEGIN (SCS_Header,2)
 
 // USER CODE END

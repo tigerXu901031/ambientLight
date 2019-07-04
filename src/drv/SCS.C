@@ -30,7 +30,7 @@
 // @Project Includes
 //****************************************************************************
 
-#include "main.h"
+#include "SCS.H"
 
 // USER CODE BEGIN (SCS_General,2)
 

@@ -32,6 +32,7 @@
 
 // USER CODE BEGIN (CCU60_Header,2)
 #include "XC22xxREGS.H"
+#include "inc/INTRINS.H"
 // USER CODE END
 
 
