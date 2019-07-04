@@ -5,6 +5,7 @@
 #include "ccu60.h"
 
 #define Pwm2CCUCh(portNum) CCU60_CHANNEL_##portNum
+#define getCCUCh    Pwm2CCUCh(portNum)
 
 extern void setPwmDutyCyc(uint8 pwmPort, uint8 dutyCyc);
 

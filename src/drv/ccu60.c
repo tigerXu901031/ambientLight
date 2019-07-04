@@ -381,6 +381,9 @@ void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 
     // USER CODE BEGIN (NodeI0,12)
 
+    /* temporarily use this invoke approach */
+    task800kHz();
+    
     // USER CODE END
 
     CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R

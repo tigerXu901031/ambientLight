@@ -44,7 +44,10 @@ void ledSignalBitTx(ledStripIdx_type ledStripIdx)
         curBit = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (ledStrip_Obj[ledStripIdx].curBitIdx) - 16) & 0x01;
     }
     else{
-        /* 24, 25 ,26, ... idel bit */
+        /* 24, 25 ,26, ... idle bit
+           TODO: confirm the idle time in the existing controller
+           then interpert to how many bits to realize the same
+           time duration */
     }
 
     /* interpret to the duty cycle */
@@ -78,3 +81,52 @@ void ledSignalBitTx(ledStripIdx_type ledStripIdx)
         }
     }
 }
+
+// int main()
+// {
+//     /* test purpose only */
+//     rgb_type rgbVal;
+
+//     rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
+//     setSingleLed(ledStripIdx_left, 0, rgbVal);
+
+//     rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
+//     setSingleLed(ledStripIdx_left, 1, rgbVal);
+
+//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 50;
+//     setSingleLed(ledStripIdx_left, 2, rgbVal);
+
+//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
+//     setSingleLed(ledStripIdx_left, 3, rgbVal);
+
+//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
+//     setSingleLed(ledStripIdx_left, 4, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 5, rgbVal);
+    
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 6, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 7, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 8, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 9, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 10, rgbVal);
+
+//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+//     setSingleLed(ledStripIdx_left, 11, rgbVal);
+
+//     while(1)
+//     {
+//         ledSignalBitTx(ledStripIdx_left);
+//     }
+
+//     return 1;
+// }

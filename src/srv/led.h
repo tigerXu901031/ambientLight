@@ -2,7 +2,7 @@
 #define __LED_H__
 
 #include "type.h"
-#include "pwm.h"
+#include "../drv/pwm.h"
 
 #define LED_NUM 10
 
@@ -28,5 +28,9 @@ typedef struct{
     uint8       curBitIdx;
     uint8       isFinished;
 }ledStrip_type;
+
+extern void ledInit();
+extern void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal);
+extern void ledSignalBitTx(ledStripIdx_type ledStripIdx);
 
 #endif
