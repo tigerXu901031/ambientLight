@@ -144,7 +144,7 @@ void CCU60_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of CCU60 Timer 12:
   ///  -----------------------------------------------------------------------
-  ///  - Timer 12 Input clock factor (T12CLK) is 2
+  ///  - Timer 12 Input clock factor (T12CLK) is 0
   ///  - prescaler factor is 0
   ///  - Timer 12 run bit is set
   ///  - Single shot mode is disabled
@@ -155,7 +155,7 @@ void CCU60_vInit(void)
   ///  - Timer mode is selected.
   ///  - 
 
-  CCU60_T12PR    =  0x0018;      // load CCU60 T12 period register
+  CCU60_T12PR    =  0x0063;      // load CCU60 T12 period register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of T13HR Signal:
@@ -165,7 +165,7 @@ void CCU60_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of CCU60 Timer 13:
   ///  -----------------------------------------------------------------------
-  ///  - Timer 13 Input Clock factor (T13CLK) is 2
+  ///  - Timer 13 Input Clock factor (T13CLK) is 0
   ///  - prescaler factor is 0
   ///  - Timer 13 run bit is set
   ///  - No External run selection is selected.
@@ -175,10 +175,9 @@ void CCU60_vInit(void)
   ///  - Interrupt on period match is enabled
   ///  - Interrupt on compare match is disabled
 
-  CCU60_T13PR    =  0x0018;      // load CCU60 T13 period register
+  CCU60_T13PR    =  0x0063;      // load CCU60 T13 period register
 
-  CCU60_TCTR0    =  0x0202;      // load CCU60 timer control register 0
-  CCU60_TCTR2    =  0x0020;      // load CCU60 timer control register 2
+ CCU60_TCTR2    =  0x0020;      // load CCU60 timer control register 2
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Multi Channel Mode:

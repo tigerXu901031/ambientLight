@@ -11,6 +11,7 @@ ledStrip_type ledStrip_Obj[ledStripIdx_max];
 void ledInit()
 {
     /* clear the led strip object */
+
 }
 
 /* invoked by APP in a slow task while the light mode has switched
@@ -28,41 +29,42 @@ void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal)
  */
 void ledSignalBitTx(ledStripIdx_type ledStripIdx)
 {
-    uint8 curBit = 0;
+    uint8 curBitEncode = 0;
 
     /* locate to the current bit */
     if(ledStrip_Obj[ledStripIdx].curBitIdx < 8)
     {
-        curBit = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].green >> ledStrip_Obj[ledStripIdx].curBitIdx) & 0x01;
+        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].green >> ledStrip_Obj[ledStripIdx].curBitIdx) & 0x01;
     }
     else if((ledStrip_Obj[ledStripIdx].curBitIdx >= 8 )&& (ledStrip_Obj[ledStripIdx].curBitIdx < 16))
     {
-        curBit = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].red >> (ledStrip_Obj[ledStripIdx].curBitIdx - 8)) & 0x01;
+        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].red >> (ledStrip_Obj[ledStripIdx].curBitIdx - 8)) & 0x01;
     }
     else if((ledStrip_Obj[ledStripIdx].curBitIdx >= 16) && (ledStrip_Obj[ledStripIdx].curBitIdx < 24))
     {
-        curBit = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (ledStrip_Obj[ledStripIdx].curBitIdx) - 16) & 0x01;
+        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (ledStrip_Obj[ledStripIdx].curBitIdx) - 16) & 0x01;
     }
     else{
         /* 24, 25 ,26, ... idle bit
            TODO: confirm the idle time in the existing controller
            then interpert to how many bits to realize the same
            time duration */
+        curBitEncode = 2;
     }
 
     /* interpret to the duty cycle */
-    if(curBit == 1)
+    if(curBitEncode == 1)
     {
         /* LED_BIT_HIGH_DUTY */
         setPwmDutyCyc((uint8)ledStripIdx, LED_BIT_HIGH_DUTY);
     }
-    else if(curBit == 0)
+    else if(curBitEncode == 0)
     {
         /* LED_BIT_LOW_DUTY */
         setPwmDutyCyc((uint8)ledStripIdx, LED_BIT_LOW_DUTY);
     }
-    else{
-        /* Something wrong */
+    else if(curBitEncode == 2){
+        setPwmDutyCyc((uint8)ledStripIdx, 0);
     }
 
     /* move both the led pointer and bit pointer */

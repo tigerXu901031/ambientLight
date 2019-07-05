@@ -1,5 +1,7 @@
 #include "pwm.h"
 
+uint16 ccuCntArr[10];
+
 void setPwmDutyCyc(uint8 pwmPort, uint8 dutyCyc)
 {
     uint16 dutyVal = 0;
@@ -9,6 +11,9 @@ void setPwmDutyCyc(uint8 pwmPort, uint8 dutyCyc)
     // CCU60_vLoadChannelShadowRegister(getCCUCh, dutyVal);
     // CCU60_vLoadChannelShadowRegister(CCU60_CHANNEL_0, dutyVal);
 
+    dutyVal = PWM_ONE_PERIOD_CNT * dutyCyc / 100;
+    CCU60_vEnableShadowTransfer_CCU60_TIMER_12();
+    CCU60_vEnableShadowTransfer_CCU60_TIMER_13();
     switch(pwmPort)
     {
         case 0:
