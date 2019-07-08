@@ -2,12 +2,27 @@
 #define __LED_H__
 
 #include "type.h"
+#include "../drv/clk.h"
 #include "../drv/pwm.h"
+#include "../drv/io.h"
 
-#define LED_NUM 10
+#define LED_NUM                 12
+#define BITS_FOR_EACH_LED       24
 
-#define LED_BIT_HIGH_DUTY   80
-#define LED_BIT_LOW_DUTY    20
+#define LED_BIT_HIGH_DUTY       80
+#define LED_BIT_LOW_DUTY        20
+
+#define PWN_CTRL                1
+#define GPIO_CTRL               2
+
+#define LED_OUTPUT_TYPE         GPIO_CTRL
+
+#define TIME_FOR_BIT1_HIGH_NS   1200
+#define TIME_FOR_BIT1_LOW_NS    300
+#define TIME_FOR_BIT0_HIGH_NS   300
+#define TIME_FOR_BIT0_LOW_NS    1200
+#define TIME_FOR_24BIT_IDEL_NS  6200
+#define TIME_FOR_LED_RESET_NS   300000
 
 typedef enum{
     ledStripIdx_left    = 0,
@@ -29,8 +44,10 @@ typedef struct{
     uint8       isFinished;
 }ledStrip_type;
 
+extern uint8 ledDutyCycleArrary[ledStripIdx_max][LED_NUM * BITS_FOR_EACH_LED];
+
 extern void ledInit();
 extern void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal);
-extern void ledSignalBitTx(ledStripIdx_type ledStripIdx);
+extern void ledRgbEncode(ledStripIdx_type ledStripIdx);
 
 #endif

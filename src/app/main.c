@@ -2,8 +2,8 @@
 
 void main()
 {
-    taskInit();
-    
+     taskInit();
+
     while(1)
     {
 

@@ -7,6 +7,23 @@
 #include "led.h"
 
 ledStrip_type ledStrip_Obj[ledStripIdx_max];
+uint8 ledDutyCycleArrary[ledStripIdx_max][LED_NUM * BITS_FOR_EACH_LED];
+
+static void setLedBit0()
+{
+    IO_P10_4 = 1;
+    delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+    IO_P10_4 = 0;
+    delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+}
+
+static void setLedBit1()
+{
+    IO_P10_4 = 1;
+    delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+    IO_P10_4 = 0;
+    delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+}
 
 void ledInit()
 {
@@ -27,108 +44,69 @@ void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal)
 /* invoked by the PWM interrupt in (800kHz)1.25us cycle and set the next
    bit equivalent duty cycle, then move the current pointer 
  */
-void ledSignalBitTx(ledStripIdx_type ledStripIdx)
+void ledRgbEncode(ledStripIdx_type ledStripIdx)
 {
     uint8 curBitEncode = 0;
-
-    /* locate to the current bit */
-    if(ledStrip_Obj[ledStripIdx].curBitIdx < 8)
+    uint8 encodeVal = 0;
+    uint8 i = 0, j = 0;
+    uint16 k = 0;
+    for(i = 0; i < LED_NUM; i ++)
     {
-        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].green >> ledStrip_Obj[ledStripIdx].curBitIdx) & 0x01;
-    }
-    else if((ledStrip_Obj[ledStripIdx].curBitIdx >= 8 )&& (ledStrip_Obj[ledStripIdx].curBitIdx < 16))
-    {
-        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].red >> (ledStrip_Obj[ledStripIdx].curBitIdx - 8)) & 0x01;
-    }
-    else if((ledStrip_Obj[ledStripIdx].curBitIdx >= 16) && (ledStrip_Obj[ledStripIdx].curBitIdx < 24))
-    {
-        curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (ledStrip_Obj[ledStripIdx].curBitIdx) - 16) & 0x01;
-    }
-    else{
-        /* 24, 25 ,26, ... idle bit
-           TODO: confirm the idle time in the existing controller
-           then interpert to how many bits to realize the same
-           time duration */
-        curBitEncode = 2;
-    }
-
-    /* interpret to the duty cycle */
-    if(curBitEncode == 1)
-    {
-        /* LED_BIT_HIGH_DUTY */
-        setPwmDutyCyc((uint8)ledStripIdx, LED_BIT_HIGH_DUTY);
-    }
-    else if(curBitEncode == 0)
-    {
-        /* LED_BIT_LOW_DUTY */
-        setPwmDutyCyc((uint8)ledStripIdx, LED_BIT_LOW_DUTY);
-    }
-    else if(curBitEncode == 2){
-        setPwmDutyCyc((uint8)ledStripIdx, 0);
-    }
-
-    /* move both the led pointer and bit pointer */
-    if(ledStrip_Obj[ledStripIdx].curBitIdx < 28)
-    {
-        ledStrip_Obj[ledStripIdx].curBitIdx ++;
-    }
-    else{
-        ledStrip_Obj[ledStripIdx].curBitIdx = 0;
-        if(ledStrip_Obj[ledStripIdx].curLedIdx < LED_NUM)
+        /* 24 bit for rgb value and 6 bit for idle time */
+        for(j = 0; j < BITS_FOR_EACH_LED; j ++)
         {
-            ledStrip_Obj[ledStripIdx].curLedIdx ++;
-        }
-        else{
-            ledStrip_Obj[ledStripIdx].curLedIdx = 0;
+            /* resolve into single bit */
+            if(j < 8)
+            {
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].green >> (7 - j)) & 0x01;
+            }
+            else if((j >= 8 )&& (j < 16))
+            {
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].red >> (7 - (j - 8))) & 0x01;
+            }
+            else if((j >= 16) && (j < 24))
+            {
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (7 - (j - 16)) & 0x01);
+            }
+            else
+            {
+
+            }
+
+            #if LED_OUTPUT_TYPE == PWN_CTRL
+            /* convert the bit into duty cycle */
+            /* interpret to the duty cycle */
+            if(curBitEncode == 1)
+            {
+                /* duty cycle code for bit 1 */
+	            encodeVal = (uint16)PWM_PERIOD_CNT * (uint16)LED_BIT_HIGH_DUTY / 100;
+
+            }
+            else if(curBitEncode == 0)
+            {
+                /* duty cycle code for bit 0 */
+                encodeVal = PWM_PERIOD_CNT * LED_BIT_LOW_DUTY / 100;
+
+            }
+            else
+            {
+
+            }
+            #elif LED_OUTPUT_TYPE == GPIO_CTRL
+            encodeVal = curBitEncode;
+            #endif
+
+            ledDutyCycleArrary[ledStripIdx][k] = encodeVal;
+            k ++;
         }
     }
 }
 
-// int main()
-// {
-//     /* test purpose only */
-//     rgb_type rgbVal;
-
-//     rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
-//     setSingleLed(ledStripIdx_left, 0, rgbVal);
-
-//     rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
-//     setSingleLed(ledStripIdx_left, 1, rgbVal);
-
-//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 50;
-//     setSingleLed(ledStripIdx_left, 2, rgbVal);
-
-//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
-//     setSingleLed(ledStripIdx_left, 3, rgbVal);
-
-//     rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
-//     setSingleLed(ledStripIdx_left, 4, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 5, rgbVal);
-    
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 6, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 7, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 8, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 9, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 10, rgbVal);
-
-//     rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
-//     setSingleLed(ledStripIdx_left, 11, rgbVal);
-
-//     while(1)
-//     {
-//         ledSignalBitTx(ledStripIdx_left);
-//     }
-
-//     return 1;
-// }
+void refreshLedStrip(ledStripIdx_type ledStripIdx)
+{
+    uint16 i = 0;
+    for(i = 0; i < LED_NUM * BITS_FOR_EACH_LED; i ++)
+    {
+        
+    }
+}

@@ -143,3 +143,14 @@ void MAIN_vLockProtecReg(void)
     SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
 
 } //  End of function MAIN_vLockProtecReg
+
+/* in XC2267-96F80L 1 instruction cycle is 50ns */
+void delay(uint16 inOpCyc)
+{
+  uint16 i = 0;
+
+  for(i = 0; i < inOpCyc; i --)
+  {
+    _nop_();
+  }
+}

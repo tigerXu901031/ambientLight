@@ -28,8 +28,11 @@ void taskInit()
  */
 
     /* initializes the Capture / Compare Unit 60 (CCU60) */
+    #if LED_OUTPUT_TYPE == PWN_CTRL
     CCU60_vInit();
-
+    #elif LED_OUTPUT_TYPE == GPIO_CTRL
+    IO_vInit();
+    #endif
 /*  -----------------------------------------------------------------------
      Initialization of the Bank Select registers:
     -----------------------------------------------------------------------
@@ -43,7 +46,7 @@ void taskInit()
     -----------------------------------------------------------------------
  */
 
-    ledInit();       
+    task10Hz();
 
     /* globally enable interrupts */
     PSW_IEN        =  1;          
@@ -58,41 +61,46 @@ void task10Hz()
     /* test purpose only */
     rgb_type rgbVal;
 
-    rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 0, rgbVal);
 
-    rgbVal.blue = 10, rgbVal.red = 100, rgbVal.green = 50;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 1, rgbVal);
 
-    rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 50;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 2, rgbVal);
 
-    rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 3, rgbVal);
 
-    rgbVal.blue = 10, rgbVal.red = 200, rgbVal.green = 20;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 4, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 5, rgbVal);
     
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 6, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 7, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 8, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 9, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 10, rgbVal);
 
-    rgbVal.blue = 160, rgbVal.red = 20, rgbVal.green = 80;
+    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 11, rgbVal);
+
+        /* test purpose only */
+    ledRgbEncode(ledStripIdx_left);
+    // ledRgbEncode(ledStripIdx_center);
+    // ledRgbEncode(ledStripIdx_right);
 }
 
 /* task will be running in this 1.25us task cycle
@@ -101,8 +109,5 @@ void task10Hz()
  */
 void task800kHz()
 {
-    /* test purpose only */
-    ledSignalBitTx(ledStripIdx_left);
-    // ledSignalBitTx(ledStripIdx_center);
-    // ledSignalBitTx(ledStripIdx_right);
+
 }

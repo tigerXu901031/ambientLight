@@ -257,6 +257,8 @@ void CCU60_vInit(void)
   CCU60_T12MSEL  =  0x0110;      // load CCU60 T12 campture/compare mode 
                                  // select register
 
+  CCU60_CMPSTAT  =  0x0800;      // load CCU60 compare status register
+
   CCU60_MODCTR   =  0x8028;      // load CCU60 modulation control register
 
   ///  -----------------------------------------------------------------------
@@ -357,69 +359,85 @@ void CCU60_vInit(void)
 
 // USER CODE END
 
+uint16 ccuCntArr2[10];
+uint16 leftCnt = 0, centerCnt = 0, rightCnt = 0;
+
 void CCU60_viNodeI0(void) interrupt CCU60_NodeI0_INT
 {
   // USER CODE BEGIN (NodeI0,2)
 
   // USER CODE END
 
-  if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
-  {
-    // Capture, Compare match rising edge detection an channel 0
+  // if(CCU60_IS & 0x0001)   // if CCU60_IS_ICC60R
+  // {
+  //   // Capture, Compare match rising edge detection an channel 0
 
-    // USER CODE BEGIN (NodeI0,10)
+  //   // USER CODE BEGIN (NodeI0,10)
 
-    // USER CODE END
+  //   // USER CODE END
 
-    CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
-  }
-
+  //   CCU60_ISR |= 0x0001;  // clear flag CCU60_IS_ICC60R
+  // }
+  ccuCntArr2[0] = CCU60_T12;
   if(CCU60_IS & 0x0004)  // if CCU60_IS_ICC61R
   {
     // Capture, Compare match rising edge detection an channel 1
 
     // USER CODE BEGIN (NodeI0,12)
 
-    /* temporarily use this invoke approach */
-    task800kHz();
-    
+    /* temporarily use this approach */
+
+    // CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_1(100);
+    // CCU60_vEnableShadowTransfer_CCU60_TIMER_12();
+    if(leftCnt < 360)
+    {
+      CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_1(ledDutyCycleArrary[ledStripIdx_left][leftCnt]);
+      CCU60_vEnableShadowTransfer_CCU60_TIMER_12();
+      leftCnt ++;
+    }
+    else{
+      // CCU60_vLoadChannelShadowRegister_CCU60_CHANNEL_1(0);
+      leftCnt = 0;
+    }
+
     // USER CODE END
 
     CCU60_ISR |= 0x0004;  // clear flag CCU60_IS_ICC61R
   }
+  ccuCntArr2[1] = CCU60_T12;
 
-  if(CCU60_IS & 0x0010)  // if CCU60_IS_ICC62R
-  {
-    // Capture, Compare match rising edge detection an channel 2
+  // if(CCU60_IS & 0x0010)  // if CCU60_IS_ICC62R
+  // {
+  //   // Capture, Compare match rising edge detection an channel 2
 
-    // USER CODE BEGIN (NodeI0,14)
+  //   // USER CODE BEGIN (NodeI0,14)
 
-    // USER CODE END
+  //   // USER CODE END
 
-    CCU60_ISR |= 0x0010;  // clear flag CCU60_IS_ICC62R
-  }
+  //   CCU60_ISR |= 0x0010;  // clear flag CCU60_IS_ICC62R
+  // }
 
-  if(CCU60_IS & 0x0080)  // if CCU60_IS_T12PM
-  {
-    // Timer T12 period match detection
+  // if(CCU60_IS & 0x0080)  // if CCU60_IS_T12PM
+  // {
+  //   // Timer T12 period match detection
 
-    // USER CODE BEGIN (NodeI0,19)
+  //   // USER CODE BEGIN (NodeI0,19)
 
-    // USER CODE END
+  //   // USER CODE END
 
-    CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM
-  }
+  //   CCU60_ISR |= 0x0080;  // clear flag CCU60_IS_T12PM
+  // }
 
-  if(CCU60_IS & 0x0200)  // if CCU60_IS_T13PM
-  {
-    // Timer T13 period match detection
+  // if(CCU60_IS & 0x0200)  // if CCU60_IS_T13PM
+  // {
+  //   // Timer T13 period match detection
 
-    // USER CODE BEGIN (NodeI0,21)
+  //   // USER CODE BEGIN (NodeI0,21)
 
-    // USER CODE END
+  //   // USER CODE END
 
-    CCU60_ISR |= 0x0200;  // clear flag CCU60_IS_T13PM
-  }
+  //   CCU60_ISR |= 0x0200;  // clear flag CCU60_IS_T13PM
+  // }
 
 
 } //  End of function CCU60_viNodeI0

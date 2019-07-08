@@ -3,6 +3,7 @@
 
 #include "../drv/XC22xxREGS.H"
 #include "../drv/clk.h"
+#include "../drv/io.h"
 #include "../srv/led.h"
 
 extern void task10Hz();

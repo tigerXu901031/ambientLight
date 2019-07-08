@@ -7,7 +7,7 @@
 #define Pwm2CCUCh(portNum) CCU60_CHANNEL_##portNum
 #define getCCUCh    Pwm2CCUCh(portNum)
 
-#define PWM_ONE_PERIOD_CNT  100
+#define PWM_PERIOD_CNT  100
 
 extern void setPwmDutyCyc(uint8 pwmPort, uint8 dutyCyc);
 
