@@ -24,6 +24,8 @@
 #define TIME_FOR_24BIT_IDEL_NS  6200
 #define TIME_FOR_LED_RESET_NS   300000
 
+#define setGpio(ioPort, value)  IO_##ioPort = ##value
+
 typedef enum{
     ledStripIdx_left    = 0,
     ledStripIdx_center  = 1,
@@ -48,6 +50,6 @@ extern uint8 ledDutyCycleArrary[ledStripIdx_max][LED_NUM * BITS_FOR_EACH_LED];
 
 extern void ledInit();
 extern void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal);
-extern void ledRgbEncode(ledStripIdx_type ledStripIdx);
+extern void ledRgbEncodeUpdate(ledStripIdx_type ledStripIdx);
 
 #endif

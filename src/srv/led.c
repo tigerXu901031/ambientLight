@@ -9,20 +9,58 @@
 ledStrip_type ledStrip_Obj[ledStripIdx_max];
 uint8 ledDutyCycleArrary[ledStripIdx_max][LED_NUM * BITS_FOR_EACH_LED];
 
-static void setLedBit0()
+static void setLedBit0(ledStripIdx_type ledStripIdx)
 {
-    IO_P10_4 = 1;
-    delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-    IO_P10_4 = 0;
-    delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+    switch(ledStripIdx)
+    {
+        case ledStripIdx_left:
+            setGpio(P10_4, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_4, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        case ledStripIdx_right:
+            setGpio(P10_7, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_7, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        case ledStripIdx_center:
+            setGpio(P10_5, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_5, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        default:
+            break;
+    }
 }
 
-static void setLedBit1()
+static void setLedBit1(ledStripIdx_type ledStripIdx)
 {
-    IO_P10_4 = 1;
-    delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-    IO_P10_4 = 0;
-    delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+    switch(ledStripIdx)
+    {
+        case ledStripIdx_left:
+            setGpio(P10_4, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_4, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        case ledStripIdx_right:
+            setGpio(P10_7, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_7, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        case ledStripIdx_center:
+            setGpio(P10_5, 1);
+            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            setGpio(P10_5, 1);
+            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+            break;
+        default:
+            break;
+    }
 }
 
 void ledInit()
@@ -44,7 +82,7 @@ void setSingleLed(ledStripIdx_type ledStripIdx, uint8 ledIdx, rgb_type rgbVal)
 /* invoked by the PWM interrupt in (800kHz)1.25us cycle and set the next
    bit equivalent duty cycle, then move the current pointer 
  */
-void ledRgbEncode(ledStripIdx_type ledStripIdx)
+void ledRgbEncodeUpdate(ledStripIdx_type ledStripIdx)
 {
     uint8 curBitEncode = 0;
     uint8 encodeVal = 0;
@@ -102,11 +140,34 @@ void ledRgbEncode(ledStripIdx_type ledStripIdx)
     }
 }
 
-void refreshLedStrip(ledStripIdx_type ledStripIdx)
+void ledUpdate(ledStripIdx_type ledStripIdx)
 {
     uint16 i = 0;
+
+    /* wait for 300us reset time for each lead strip */
+    delay(TIME_FOR_LED_RESET_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+
+    /* loop for all the 24 * 12 bit */
     for(i = 0; i < LED_NUM * BITS_FOR_EACH_LED; i ++)
     {
-        
+        if(ledDutyCycleArrary[ledStripIdx][i] == 1)
+        {
+            setLedBit1(ledStripIdx);
+        }
+        else if(ledDutyCycleArrary[ledStripIdx][i] == 0)
+        {
+            setLedBit0(ledStripIdx);
+        }
+        else{
+
+        }
+        /* when finish each 24 bit have an 6us delay */
+        if((i + 1) % 24 == 0)
+        {
+            delay(TIME_FOR_24BIT_IDEL_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+        }
+        else{
+
+        }
     }
 }
