@@ -10,7 +10,8 @@
 extern void MAIN_vChangeFreq(void);
 extern void MAIN_vUnlockProtecReg(void);
 extern void MAIN_vLockProtecReg(void);
-extern void delay(uint16 inOpCyc);
+extern void delay(uint16 cycle);
+extern void longDelay(uint16 cycle);
 extern void delay300ns();
 
 #endif

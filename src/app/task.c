@@ -79,7 +79,7 @@ void taskSlow()
     setSingleLed(ledStripIdx_left, 4, rgbVal);
     rgbVal.blue = 255, rgbVal.red = 255, rgbVal.green = 0;
     setSingleLed(ledStripIdx_left, 5, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0x20, rgbVal.red = 0x20, rgbVal.green = 0x20;
     setSingleLed(ledStripIdx_left, 6, rgbVal);
     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 7, rgbVal);

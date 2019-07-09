@@ -150,12 +150,21 @@ void delay300ns()
   _nop_();
 }
 
-void delay(uint16 inOpCyc)
+void delay(uint16 cycle)
 {
   uint16 i = 0;
 
-  for(i = 0; i < inOpCyc; i ++)
+  for(i = 0; i < cycle; i ++)
   {
     _nop_();
+  }
+}
+
+void longDelay(uint16 cycle)
+{
+  uint8 i = 0;
+  for(i = 0; i < cycle; i ++)
+  {
+    delay(65535);
   }
 }

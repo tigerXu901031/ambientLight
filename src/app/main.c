@@ -17,9 +17,7 @@ void main()
             case 0xff:
                 taskSlow();
                 ledZoneSwitch = ledStripIdx_left;
-                delay(65535);
-                delay(65535);
-                delay(65535);
+                longDelay(20);
                 break;
             case ledStripIdx_left:
                 if(ledDutyCycleArrary[ledStripIdx_left][i])
