@@ -9,59 +9,61 @@
 ledStrip_type ledStrip_Obj[ledStripIdx_max];
 uint8 ledDutyCycleArrary[ledStripIdx_max][LED_NUM * BITS_FOR_EACH_LED];
 
-static void setLedBit0(ledStripIdx_type ledStripIdx)
-{
-    switch(ledStripIdx)
-    {
-        case ledStripIdx_left:
-            setGpio(P10_4, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_4, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        case ledStripIdx_right:
-            setGpio(P10_7, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_7, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        case ledStripIdx_center:
-            setGpio(P10_5, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_5, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        default:
-            break;
-    }
-}
+// void setLedBit0(ledStripIdx_type ledStripIdx)
+// {
+//     switch(ledStripIdx)
+//     {
+//         case ledStripIdx_left:
+//             setGpio(P10_4, 1);
+//             delay300ns();
+//             setGpio(P10_4, 0);
+//             delay300ns();
+//             delay300ns();
+//             break;
+//         case ledStripIdx_right:
+//             setGpio(P10_7, 1);
+//             delay(TIME_FOR_BIT0_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             setGpio(P10_7, 0);
+//             delay(TIME_FOR_BIT0_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             break;
+//         case ledStripIdx_center:
+//             setGpio(P10_5, 1);
+//             delay(TIME_FOR_BIT0_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             setGpio(P10_5, 0);
+//             delay(TIME_FOR_BIT0_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
-static void setLedBit1(ledStripIdx_type ledStripIdx)
-{
-    switch(ledStripIdx)
-    {
-        case ledStripIdx_left:
-            setGpio(P10_4, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_4, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        case ledStripIdx_right:
-            setGpio(P10_7, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_7, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        case ledStripIdx_center:
-            setGpio(P10_5, 1);
-            delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            setGpio(P10_5, 1);
-            delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-            break;
-        default:
-            break;
-    }
-}
+// void setLedBit1(ledStripIdx_type ledStripIdx)
+// {
+//     switch(ledStripIdx)
+//     {
+//         case ledStripIdx_left:
+//             setGpio(P10_4, 1);
+//             delay300ns();
+//             delay300ns();
+//             delay300ns();
+//             setGpio(P10_4, 0);
+//             break;
+//         case ledStripIdx_right:
+//             setGpio(P10_7, 1);
+//             delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             setGpio(P10_7, 0);
+//             delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             break;
+//         case ledStripIdx_center:
+//             setGpio(P10_5, 1);
+//             delay(TIME_FOR_BIT1_HIGH_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             setGpio(P10_5, 0);
+//             delay(TIME_FOR_BIT1_LOW_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
 void ledInit()
 {
@@ -96,15 +98,15 @@ void ledRgbEncodeUpdate(ledStripIdx_type ledStripIdx)
             /* resolve into single bit */
             if(j < 8)
             {
-                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].green >> (7 - j)) & 0x01;
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[i].green >> (7 - j)) & 0x01;
             }
             else if((j >= 8 )&& (j < 16))
             {
-                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].red >> (7 - (j - 8))) & 0x01;
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[i].red >> (7 - (j - 8))) & 0x01;
             }
             else if((j >= 16) && (j < 24))
             {
-                curBitEncode = (ledStrip_Obj[ledStripIdx].led[ledStrip_Obj[ledStripIdx].curLedIdx].blue >> (7 - (j - 16)) & 0x01);
+                curBitEncode = (ledStrip_Obj[ledStripIdx].led[i].blue >> (7 - (j - 16)) & 0x01);
             }
             else
             {
@@ -140,34 +142,34 @@ void ledRgbEncodeUpdate(ledStripIdx_type ledStripIdx)
     }
 }
 
-void ledUpdate(ledStripIdx_type ledStripIdx)
-{
-    uint16 i = 0;
+// void ledUpdate(ledStripIdx_type ledStripIdx)
+// {
+//     uint16 i = 0;
 
-    /* wait for 300us reset time for each lead strip */
-    delay(TIME_FOR_LED_RESET_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//     /* wait for 300us reset time for each lead strip */
+//     delay(TIME_FOR_LED_RESET_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
 
-    /* loop for all the 24 * 12 bit */
-    for(i = 0; i < LED_NUM * BITS_FOR_EACH_LED; i ++)
-    {
-        if(ledDutyCycleArrary[ledStripIdx][i] == 1)
-        {
-            setLedBit1(ledStripIdx);
-        }
-        else if(ledDutyCycleArrary[ledStripIdx][i] == 0)
-        {
-            setLedBit0(ledStripIdx);
-        }
-        else{
+//     /* loop for all the 24 * 12 bit */
+//     for(i = 0; i < LED_NUM * BITS_FOR_EACH_LED; i ++)
+//     {
+//         if(ledDutyCycleArrary[ledStripIdx][i] == 1)
+//         {
+//             setLedBit1(ledStripIdx);
+//         }
+//         else if(ledDutyCycleArrary[ledStripIdx][i] == 0)
+//         {
+//             setLedBit0(ledStripIdx);
+//         }
+//         else{
 
-        }
-        /* when finish each 24 bit have an 6us delay */
-        if((i + 1) % 24 == 0)
-        {
-            delay(TIME_FOR_24BIT_IDEL_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
-        }
-        else{
+//         }
+//         /* when finish each 24 bit have an 6us delay */
+//         if((i + 1) % 24 == 0)
+//         {
+//             delay(TIME_FOR_24BIT_IDEL_NS / TIME_NS_PER_INSTRUCTION_CYCLE);
+//         }
+//         else{
 
-        }
-    }
-}
+//         }
+//     }
+// }

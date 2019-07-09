@@ -59,42 +59,44 @@ void taskInit()
     1. change led strip mode
     2. CAN message Rx / Tx 
  */
+uint8 manualMode = 0xff;
+
 void taskSlow()
 {
     /* TODO: add entry time stamp record and some delay logic
        to ensure the time interval between two taskSlow is 100ms */
     /* test purpose only */
     rgb_type rgbVal;
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0x00, rgbVal.red = 0xff, rgbVal.green = 0x00;
     setSingleLed(ledStripIdx_left, 0, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0x00, rgbVal.red = 0x00, rgbVal.green = 0xff;
     setSingleLed(ledStripIdx_left, 1, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xff, rgbVal.red = 0x00, rgbVal.green = 0x00;
     setSingleLed(ledStripIdx_left, 2, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0, rgbVal.red = 200, rgbVal.green = 100;
     setSingleLed(ledStripIdx_left, 3, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0, rgbVal.red = 255, rgbVal.green = 255;
     setSingleLed(ledStripIdx_left, 4, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 255, rgbVal.red = 255, rgbVal.green = 0;
     setSingleLed(ledStripIdx_left, 5, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 6, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 7, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 8, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 9, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 10, rgbVal);
-    rgbVal.blue = 0xf0, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
     setSingleLed(ledStripIdx_left, 11, rgbVal);
 
     /* get the user input from can */
     
 
     /* according to the user input then do the led mode transition */
-    ledModeTransitionUpdate(0xff);
+    ledModeTransitionUpdate(manualMode);
 
     /* encode all the led strip */
     ledRgbEncodeUpdate(ledStripIdx_left);
@@ -108,7 +110,7 @@ void taskSlow()
  */
 void taskFast()
 {
-    ledUpdate(ledStripIdx_left);
+    // ledUpdate(ledStripIdx_left);
     // ledUpdate(ledStripIdx_right);
     // ledUpdate(ledStripIdx_center);
 }

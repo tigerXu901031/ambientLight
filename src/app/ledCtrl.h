@@ -17,7 +17,7 @@ typedef enum{
 typedef enum{
     /* 根据外部亮度调节全局亮度，无特殊说明均使用全局亮度值
        将亮度分为三档，高（100%功率），中（75%功率），低（50%功率）  */
-    ledMode_1,
+    ledMode_1 = 1,
     /* T-zone全部灯常绿 */
     ledMode_2,
     /* T-zone全部灯闪烁绿光，0.5s灭，0.5s亮  */

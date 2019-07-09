@@ -11,5 +11,6 @@ extern void MAIN_vChangeFreq(void);
 extern void MAIN_vUnlockProtecReg(void);
 extern void MAIN_vLockProtecReg(void);
 extern void delay(uint16 inOpCyc);
+extern void delay300ns();
 
 #endif

@@ -30,6 +30,8 @@
 // @Project Includes
 //****************************************************************************
 
+#include "XC22xxREGS.H"
+
 // USER CODE BEGIN (IO_Header,2)
 
 // USER CODE END

@@ -17,13 +17,6 @@
 
 #define LED_OUTPUT_TYPE         GPIO_CTRL
 
-#define TIME_FOR_BIT1_HIGH_NS   1200
-#define TIME_FOR_BIT1_LOW_NS    300
-#define TIME_FOR_BIT0_HIGH_NS   300
-#define TIME_FOR_BIT0_LOW_NS    1200
-#define TIME_FOR_24BIT_IDEL_NS  6200
-#define TIME_FOR_LED_RESET_NS   300000
-
 #define setGpio(ioPort, value)  IO_##ioPort = ##value
 
 typedef enum{

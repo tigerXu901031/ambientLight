@@ -37,7 +37,8 @@ static void ledMode2Ctrl()
 
 static void ledMode3Ctrl()
 {
-    uint8 i = 0, j = 0;
+    static uint8 i = 0;
+    uint8 j = 0;
     
     switch(i)
     {
@@ -66,8 +67,9 @@ static void ledMode3Ctrl()
 
 static void ledMode4Ctrl()
 {
-    uint8 i = 0, j = 0;
-    
+    static uint8 i = 0;
+    uint8 j = 0;
+
     switch(i)
     {
         /* all green ON first 500ms */
