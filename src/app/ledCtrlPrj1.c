@@ -237,83 +237,155 @@ static void ledMode7Ctrl()
 
 static void ledMode8Ctrl(ledMode_enum oldInpMode)
 {
+    static uint8 i = 0, secCnt = 0;
+    uint8 j = 0;
 
+    if(oldInpMode != ledMode_8)
+    {
+        i = 0;
+        secCnt = 0;
+    }
+
+    for(j = 0; j < LED_NUM; j ++)
+    {
+        if(j <= secCnt)
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
+        }
+        else
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+        }
+    }
+    i ++;
+    if(i == 10)
+    {
+        i = 0;
+        if(secCnt <= 4)
+        {
+            secCnt ++;
+        }
+        else
+        {
+        
+        }
+    }
+    else
+    {
+        
+    }
 }
 
-static void ledMode9Ctrl()
+static void ledMode9Ctrl(ledMode_enum oldInpMode)
 {
+    static uint8 i = 0, secCnt = 0;
+    uint8 j = 0;
 
+    if(oldInpMode != ledMode_8)
+    {
+        i = 0;
+        secCnt = 0;
+    }
+
+    for(j = 0; j < LED_NUM; j ++)
+    {
+        if(j >= (11 - secCnt))
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
+        }
+        else
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+        }
+    }
+    i ++;
+    if(i == 10)
+    {
+        i = 0;
+        if(secCnt <= 4)
+        {
+            secCnt ++;
+        }
+        else
+        {
+        
+        }
+    }
+    else
+    {
+        
+    }
 }
 
 static void ledMode10Ctrl()
 {
+    static uint8 i = 0;
+    uint8 j = 0;
+
+    switch (i)
+    {
+        /* all green ON first 500ms */
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            for (j = 0; j < LED_NUM; j++)
+            {
+                setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
+            }
+            i++;
+            break;
+        /* all OFF next 500ms */
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            for (j = 0; j < LED_NUM; j++)
+            {
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+            }
+            i++;
+            if (i == 10)
+                i = 0;
+            break;
+        default:
+            break;
+    }
 }
 
 static void ledMode11Ctrl()
 {
-}
-
-static void ledMode12Ctrl()
-{
     static uint8 i = 0;
     uint8 j = 0;
 
     switch (i)
     {
-        /* all green ON first 300ms */
+        /* all green ON first 500ms */
         case 0:
         case 1:
         case 2:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_red]);
-            }
-            i++;
-            break;
-        /* all OFF next 300ms */
         case 3:
         case 4:
-        case 5:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-            }
-            i++;
-            if (i == 6)
-                i = 0;
-            break;
-        default:
-            break;
-    }
-}
-
-static void ledMode13Ctrl()
-{
-    static uint8 i = 0;
-    uint8 j = 0;
-
-    switch (i)
-    {
-        /* all green ON first 300ms */
-        case 0:
-        case 1:
-        case 2:
             for (j = 0; j < LED_NUM; j++)
             {
                 setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
             }
             i++;
             break;
-        /* all OFF next 300ms */
-        case 3:
-        case 4:
+        /* all OFF next 500ms */
         case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
             for (j = 0; j < LED_NUM; j++)
             {
                 setSingleLed(ledStripIdx_left, j, colorArr[color_red]);
             }
             i++;
-            if (i == 6)
+            if (i == 10)
                 i = 0;
             break;
         default:
@@ -321,148 +393,85 @@ static void ledMode13Ctrl()
     }
 }
 
-static void ledMode14Ctrl()
+static void ledMode12Ctrl(ledMode_enum oldInpMode)
 {
-    
-}
-
-static void ledMode15Ctrl()
-{
-}
-
-static void ledMode16Ctrl()
-{
-}
-
-static void ledMode17Ctrl(ledMode_enum oldInpMode)
-{
-    static uint8 i = 0;
+    static uint8 i = 0, secCnt = 2;
     uint8 j = 0;
-    static uint8 ledIdxOn = 0;
 
-    if (oldInpMode != ledMode_17)
+    if(oldInpMode != ledMode_8)
     {
-        ledIdxOn = 0;
         i = 0;
-    }
-    else
-    {
+        secCnt = 0;
     }
 
-    switch (i)
+    for(j = 0; j < LED_NUM; j ++)
     {
-        /* one of the 12 led light in yellow */
-        case 0:
-        case 1:
-        case 2:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                if (j == ledIdxOn)
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
-                }
-                else
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-                }
-            }
-            i++;
-            break;
-
-        /* all OFF next 300ms */
-        case 3:
-        case 4:
-        case 5:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-            }
-            i++;
-            if (i == 6)
-            {
-                ledIdxOn++;
-                if (ledIdxOn == 12)
-                {
-                    ledIdxOn = 0;
-                }
-                else
-                {
-                }
-                i = 0;
-            }
-            else
-            {
-            }
-            break;
-
-        default:
-            break;
-    }
-}
-
-static void ledMode18Ctrl(ledMode_enum oldInpMode)
-{
-    static uint8 i = 0;
-    uint8 j = 0;
-    static uint8 ledIdxOn = 0;
-
-    if (oldInpMode != ledMode_17)
-    {
-        ledIdxOn = 0;
-        i = 0;
-    }
-    else
-    {
-    }
-
-    switch (i)
-    {
-    /* one of the 12 led light in yellow */
-    case 0:
-    case 1:
-    case 2:
-        for (j = 0; j < LED_NUM; j++)
+        if(j <= secCnt)
         {
-            if (j == (12 - ledIdxOn))
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
-            }
-            else
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-            }
-        }
-        i++;
-        break;
-
-    /* all OFF next 300ms */
-    case 3:
-    case 4:
-    case 5:
-        for (j = 0; j < LED_NUM; j++)
-        {
-            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-        }
-        i++;
-        if (i == 6)
-        {
-            ledIdxOn++;
-            if (ledIdxOn == 12)
-            {
-                ledIdxOn = 0;
-            }
-            else
-            {
-            }
-            i = 0;
+            setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
         }
         else
         {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
         }
-        break;
+    }
+    i ++;
+    if(i == 5)
+    {
+        i = 0;
+        if(secCnt < 6)
+        {
+            secCnt ++;
+        }
+        else
+        {
+            secCnt = 0;
+        }
+    }
+    else
+    {
+        
+    }
+}
 
-    default:
-        break;
+static void ledMode13Ctrl(ledMode_enum oldInpMode)
+{
+    static uint8 i = 0, secCnt = 2;
+    uint8 j = 0;
+
+    if(oldInpMode != ledMode_8)
+    {
+        i = 0;
+        secCnt = 0;
+    }
+
+    for(j = 0; j < LED_NUM; j ++)
+    {
+        if(j >= (11 - secCnt))
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+        }
+        else
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+        }
+    }
+    i ++;
+    if(i == 5)
+    {
+        i = 0;
+        if(secCnt < 6)
+        {
+            secCnt ++;
+        }
+        else
+        {
+            secCnt = 0;
+        }
+    }
+    else
+    {
+        
     }
 }
 
@@ -496,7 +505,7 @@ void ledModeTransitionUpdate(ledMode_enum userInpMode)
         ledMode8Ctrl(oldUserInpMode);
         break;
     case ledMode_9:
-        ledMode9Ctrl();
+        ledMode9Ctrl(oldUserInpMode);
         break;
     case ledMode_10:
         ledMode10Ctrl();
@@ -505,25 +514,10 @@ void ledModeTransitionUpdate(ledMode_enum userInpMode)
         ledMode11Ctrl();
         break;
     case ledMode_12:
-        ledMode12Ctrl();
+        ledMode12Ctrl(oldUserInpMode);
         break;
     case ledMode_13:
-        ledMode13Ctrl();
-        break;
-    case ledMode_14:
-        ledMode14Ctrl();
-        break;
-    case ledMode_15:
-        ledMode15Ctrl();
-        break;
-    case ledMode_16:
-        ledMode16Ctrl();
-        break;
-    case ledMode_17:
-        ledMode17Ctrl(oldUserInpMode);
-        break;
-    case ledMode_18:
-        ledMode18Ctrl(oldUserInpMode);
+        ledMode13Ctrl(oldUserInpMode);
         break;
     default:
         /* when system onStart without any mode transition command */

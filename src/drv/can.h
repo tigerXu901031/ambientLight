@@ -30,6 +30,10 @@
 // @Project Includes
 //****************************************************************************
 
+#include "XC22xxREGS.H"
+#include "inc/INTRINS.H"
+#include "../srv/canSrv.h"
+
 // USER CODE BEGIN (CAN_Header,2)
 
 // USER CODE END
@@ -148,7 +152,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (CAN_Header,6)
-
+extern stCAN_SWObj msgObj0x505;
 // USER CODE END
 
 

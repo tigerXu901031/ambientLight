@@ -28,7 +28,7 @@
 // @Project Includes
 //****************************************************************************
 
-#include "main.h"
+#include "can.h"
 
 // USER CODE BEGIN (CAN_General,2)
 
@@ -80,7 +80,7 @@ static ubyte ubFIFOReadPtr[1];
 
 
 // USER CODE BEGIN (CAN_General,7)
-
+stCAN_SWObj msgObj0x505;
 // USER CODE END
 
 
@@ -1305,7 +1305,7 @@ void CAN_viSRN0(void) interrupt CAN_SRN0INT using _FAST_ABANK1_
       if(uwSRN0ObjHandler & MOSTAT_RXPND)          // if message object 0 receive interrupt
       {
             // USER CODE BEGIN (SRN0_OBJ0,1)
-
+            CAN_vGetMsgObj(0, &msgObj0x505);
             // USER CODE END
 
         if(uwSRN0ObjHandler & MOSTAT_NEWDAT)       // if NEWDAT is set
