@@ -57,3 +57,9 @@
 .vscode/ipch/f310dd97a95efc0f/mmap_address.bin
 .vscode/ipch/f310e697a95f0b5a/mmap_address.bin
 .vscode/ipch/fb722cc5734d4913/mmap_address.bin
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/settings.json
+src/srv/playground.c
+src/srv/playground.exe

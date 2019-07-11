@@ -20,7 +20,7 @@ typedef enum{
     ledMode_1 = 1,
     /* T-zone全部灯常绿 */
     ledMode_2,
-    /* T-zone全部灯闪烁绿光，0.5s灭，0.5s亮  */
+    /* T-zone全部灯闪烁绿光，0.5s灭，0.5s亮 */
     ledMode_3,
     /* 从6，7两灯开始常亮，其余灯保持状态3中的闪烁频率，每次亮向外的两颗灯
        进入常亮状态，直至恢复至状态2 */
@@ -49,13 +49,13 @@ typedef enum{
     /* 三区黄红交替闪烁0.3s黄0.3s红 */
     ledMode_13,
     /* 从T-zone的1-4开始四灯绿色，0.5s向左运动一灯即L-zone，运动L-zone 1灯
-       开始重复返回T-zone 4灯 */
+       开始重复返回T-zone 4灯 --- mode 12 in project 1 */
     ledMode_14,
     /* 从T-zone的1-4开始四灯绿色，0.5s向左运动一灯即L-zone，运动L-zone 1灯
-       开始重复返回T-zone 4灯 */
+       开始重复返回T-zone 4灯 --- same light mode as 14(maybe delete later) */
     ledMode_15,
     /* 从T-zone的8-12开始四灯绿色，0.5s向右运动一灯即R-zone，运动至R-zone
-       12灯开始重复返回T-zone 8灯 */
+       12灯开始重复返回T-zone 8灯 --- mode 13 in project 1 */
     ledMode_16,
     /* 从L-zone 1开始，闪烁黄色0.3s亮0.3s灭；每次闪烁一个灯；逐步过渡到
        2,3,4,5,6,7,8,9,10,11,12; 然后循环开始，重新从1，逐步再次过度到12； */
@@ -65,6 +65,8 @@ typedef enum{
     ledMode_18,
     ledMode_max,
 }ledMode_enum;
+
+
 
 extern void ledModeTransitionUpdate(ledMode_enum userInpMode);
 

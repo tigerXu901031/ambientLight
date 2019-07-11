@@ -4,6 +4,11 @@
         "XFREE.C": "cpp",
         "GETKEY_V3.C": "cpp",
         "XREALLOC.C": "cpp",
-        "REALLOC.C": "cpp"
+        "REALLOC.C": "cpp",
+        "task.h": "c",
+        "main.h": "c",
+        "clk.h": "c",
+        "xc22xxregs.h": "c",
+        "led.h": "c"
     }
 }
