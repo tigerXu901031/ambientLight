@@ -93,7 +93,7 @@ uint8 manualMode = 0xff;
 
 void taskSlow()
 {
-    canSignals canSigObj;
+    canSignalsType canSigObj;
     /* TODO: add entry time stamp record and some delay logic
        to ensure the time interval between two taskSlow is 100ms */
     /* test purpose only */
@@ -103,7 +103,7 @@ void taskSlow()
     canUpdate(&canSigObj);
 
     /* according to the user input then do the led mode transition */
-    ledModeTransitionUpdate(canSigObj.input.ledCtrlMode);
+    ledModeTransitionUpdate(&canSigObj);
 
     /* encode all the led strip */
     ledRgbEncodeUpdate(ledStripIdx_left);

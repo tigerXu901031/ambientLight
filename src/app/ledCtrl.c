@@ -47,12 +47,6 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
     if (oldInpMode != ledMode_1)
     {
         darknessLevel++;
-        for (j = 0; j < color_max; j++)
-        {
-            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.25 * darknessLevel));
-            colorArr[j].green = colorArrOrign[j].green * (1 - (0.25 * darknessLevel));
-            colorArr[j].red = colorArrOrign[j].red * (1 - (0.25 * darknessLevel));
-        }
         if (darknessLevel == 3)
         {
             darknessLevel = 0;
@@ -60,6 +54,13 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
         else
         {
         }
+        for (j = 0; j < color_max; j++)
+        {
+            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.25 * darknessLevel));
+            colorArr[j].green = colorArrOrign[j].green * (1 - (0.25 * darknessLevel));
+            colorArr[j].red = colorArrOrign[j].red * (1 - (0.25 * darknessLevel));
+        }
+
     }
 }
 
@@ -599,10 +600,10 @@ static void ledMode18Ctrl(ledMode_enum oldInpMode)
     }
 }
 
-void ledModeTransitionUpdate(ledMode_enum userInpMode)
+void ledModeTransitionUpdate(canSignalsType *canSigObj)
 {
     static ledMode_enum oldUserInpMode = 0xff;
-    switch (userInpMode)
+    switch (canSigObj->input.ledCtrlMode)
     {
     case ledMode_1:
         ledMode1Ctrl(oldUserInpMode);
@@ -662,5 +663,5 @@ void ledModeTransitionUpdate(ledMode_enum userInpMode)
         /* when system onStart without any mode transition command */
         break;
     }
-    oldUserInpMode = userInpMode;
+    oldUserInpMode = canSigObj->input.ledCtrlMode;
 }

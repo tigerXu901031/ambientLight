@@ -69,3 +69,10 @@ src/srv/playground.exe
 *.OBJ
 *.LST
 *.OBJ
+bin/ExtDll.iex
+bin/ambientLight.SBR
+bin/ambientLight.plg
+bin/ambientLight.lnp
+bin/ambientLight.H86
+bin/ambientLight
+doc/req/~$方向盘通信矩阵_v0.5.xlsx

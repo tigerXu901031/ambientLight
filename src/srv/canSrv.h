@@ -14,8 +14,8 @@ typedef struct
     {
         uint8 dummySig;
     }output;
-}canSignals;
+}canSignalsType;
 
-extern void canUpdate(canSignals* canSignalObj);
+extern void canUpdate(canSignalsType* canSignalObj);
 
 #endif

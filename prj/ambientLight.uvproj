@@ -287,6 +287,45 @@
               <FileName>ledCtrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\app\ledCtrl.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>1</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                </CommonProperty>
+                <File166>
+                  <C166>
+                    <Optimize>9</Optimize>
+                    <SpeedSize>2</SpeedSize>
+                    <RegisterColoring>2</RegisterColoring>
+                    <UseStaticMemory>2</UseStaticMemory>
+                    <WarningLevel>4</WarningLevel>
+                    <AliasChecking>2</AliasChecking>
+                    <VariablesInOrder>2</VariablesInOrder>
+                    <CharAsUnsignedChar>2</CharAsUnsignedChar>
+                    <NoDppSave>2</NoDppSave>
+                    <Float64>2</Float64>
+                    <SaveTempVar>2</SaveTempVar>
+                    <ReorderInstruction>0</ReorderInstruction>
+                    <VariousControls>
+                      <MiscControls>MODV2</MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </C166>
+                </File166>
+              </FileOption>
             </File>
             <File>
               <FileName>ledCtrl.h</FileName>
@@ -307,6 +346,55 @@
               <FileName>task.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\app\task.h</FilePath>
+            </File>
+            <File>
+              <FileName>ledCtrlPrj1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\ledCtrlPrj1.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>2</IncludeInBuild>
+                  <AlwaysBuild>1</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                </CommonProperty>
+                <File166>
+                  <C166>
+                    <Optimize>9</Optimize>
+                    <SpeedSize>2</SpeedSize>
+                    <RegisterColoring>2</RegisterColoring>
+                    <UseStaticMemory>2</UseStaticMemory>
+                    <WarningLevel>4</WarningLevel>
+                    <AliasChecking>2</AliasChecking>
+                    <VariablesInOrder>2</VariablesInOrder>
+                    <CharAsUnsignedChar>2</CharAsUnsignedChar>
+                    <NoDppSave>2</NoDppSave>
+                    <Float64>2</Float64>
+                    <SaveTempVar>2</SaveTempVar>
+                    <ReorderInstruction>0</ReorderInstruction>
+                    <VariousControls>
+                      <MiscControls>MODV2</MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </C166>
+                </File166>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>ledCtrlPrj1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\app\ledCtrlPrj1.h</FilePath>
             </File>
           </Files>
         </Group>

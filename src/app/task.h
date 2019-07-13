@@ -8,13 +8,24 @@
 #include "../drv/io.h"
 #include "../drv/can.h"
 #include "../srv/led.h"
-#if LED_PROJECT == 1
 #include "ledCtrlPrj1.h"
-#elif LED_PROJECT == 2
-#include "ledCtrl.h"
-#endif
+// #include "ledCtrl.h"
 
-
+// #if LED_PROJECT == 1
+// inline void testFun1()
+// {
+//     uint8 i = 0;
+//     while(1)
+//     {
+//         for(i = 0; i <LED_NUM; i ++)
+//         {
+//             i ++;
+//             i --;
+//         }
+//     }
+// }
+// #elif LED_PROJECT == 2
+// #endif
 
 extern void taskSlow();
 extern void taskFast();

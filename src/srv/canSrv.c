@@ -1,11 +1,11 @@
 #include "canSrv.h"
 
-static void canMsg0x505Upack(canSignals* canSignalObj)
+static void canMsg0x505Upack(canSignalsType* canSignalObj)
 {
     canSignalObj->input.ledCtrlMode = msgObj0x505.ubData[0];
 }
 
-void canUpdate(canSignals* canSignalObj)
+void canUpdate(canSignalsType* canSignalObj)
 {
     canMsg0x505Upack(canSignalObj);
 }

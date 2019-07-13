@@ -287,6 +287,45 @@
               <FileName>ledCtrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\app\ledCtrl.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                </CommonProperty>
+                <File166>
+                  <C166>
+                    <Optimize>9</Optimize>
+                    <SpeedSize>2</SpeedSize>
+                    <RegisterColoring>2</RegisterColoring>
+                    <UseStaticMemory>2</UseStaticMemory>
+                    <WarningLevel>4</WarningLevel>
+                    <AliasChecking>2</AliasChecking>
+                    <VariablesInOrder>2</VariablesInOrder>
+                    <CharAsUnsignedChar>2</CharAsUnsignedChar>
+                    <NoDppSave>2</NoDppSave>
+                    <Float64>2</Float64>
+                    <SaveTempVar>2</SaveTempVar>
+                    <ReorderInstruction>0</ReorderInstruction>
+                    <VariousControls>
+                      <MiscControls>MODV2</MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </C166>
+                </File166>
+              </FileOption>
             </File>
             <File>
               <FileName>ledCtrl.h</FileName>
@@ -308,21 +347,60 @@
               <FileType>5</FileType>
               <FilePath>..\src\app\task.h</FilePath>
             </File>
+            <File>
+              <FileName>ledCtrlPrj1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\ledCtrlPrj1.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>2</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                </CommonProperty>
+                <File166>
+                  <C166>
+                    <Optimize>9</Optimize>
+                    <SpeedSize>2</SpeedSize>
+                    <RegisterColoring>2</RegisterColoring>
+                    <UseStaticMemory>2</UseStaticMemory>
+                    <WarningLevel>4</WarningLevel>
+                    <AliasChecking>2</AliasChecking>
+                    <VariablesInOrder>2</VariablesInOrder>
+                    <CharAsUnsignedChar>2</CharAsUnsignedChar>
+                    <NoDppSave>2</NoDppSave>
+                    <Float64>2</Float64>
+                    <SaveTempVar>2</SaveTempVar>
+                    <ReorderInstruction>0</ReorderInstruction>
+                    <VariousControls>
+                      <MiscControls>MODV2</MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </C166>
+                </File166>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>ledCtrlPrj1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\app\ledCtrlPrj1.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>srv</GroupName>
           <Files>
-            <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\srv\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>can.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\srv\can.h</FilePath>
-            </File>
             <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
@@ -337,6 +415,16 @@
               <FileName>type.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\srv\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>canSrv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\srv\canSrv.c</FilePath>
+            </File>
+            <File>
+              <FileName>canSrv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\canSrv.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -402,6 +490,16 @@
               <FileName>io.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\io.h</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\drv\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\can.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -238,15 +238,60 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>47</LineNumber>
+          <LineNumber>198</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>12583834</Address>
+          <Address>12584794</Address>
           <ByteObject>0</ByteObject>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>ledCtrl.c</Filename>
+          <Filename>ledCtrlPrj1.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>184</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>12584666</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>ledCtrlPrj1.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>182</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>12584662</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>ledCtrlPrj1.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>203</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>12584816</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>ledCtrlPrj1.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -334,8 +379,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>31</TopLine>
-      <CurrentLine>57</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\ledCtrl.c</PathWithFileName>
       <FilenameWithoutPath>ledCtrl.c</FilenameWithoutPath>
@@ -363,7 +408,7 @@
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>7</CurrentLine>
+      <CurrentLine>6</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -376,8 +421,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>96</TopLine>
-      <CurrentLine>109</CurrentLine>
+      <TopLine>37</TopLine>
+      <CurrentLine>61</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\task.c</PathWithFileName>
       <FilenameWithoutPath>task.c</FilenameWithoutPath>
@@ -388,13 +433,41 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>13</ColumnNumber>
+      <ColumnNumber>23</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>13</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\task.h</PathWithFileName>
       <FilenameWithoutPath>task.h</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>6</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>164</TopLine>
+      <CurrentLine>203</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\src\app\ledCtrlPrj1.c</PathWithFileName>
+      <FilenameWithoutPath>ledCtrlPrj1.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>7</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\src\app\ledCtrlPrj1.h</PathWithFileName>
+      <FilenameWithoutPath>ledCtrlPrj1.h</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -405,7 +478,7 @@
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>6</FileNumber>
+      <FileNumber>8</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -419,7 +492,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>7</FileNumber>
+      <FileNumber>9</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -433,7 +506,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>8</FileNumber>
+      <FileNumber>10</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -447,28 +520,28 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>9</FileNumber>
+      <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\srv\canSrv.c</PathWithFileName>
       <FilenameWithoutPath>canSrv.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>10</FileNumber>
+      <FileNumber>12</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>15</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\srv\canSrv.h</PathWithFileName>
       <FilenameWithoutPath>canSrv.h</FilenameWithoutPath>
@@ -482,7 +555,7 @@
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>11</FileNumber>
+      <FileNumber>13</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -496,7 +569,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>12</FileNumber>
+      <FileNumber>14</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -510,7 +583,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>13</FileNumber>
+      <FileNumber>15</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -524,7 +597,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>14</FileNumber>
+      <FileNumber>16</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -538,11 +611,11 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>15</FileNumber>
+      <FileNumber>17</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>32</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -552,7 +625,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>16</FileNumber>
+      <FileNumber>18</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -566,11 +639,11 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>17</FileNumber>
+      <FileNumber>19</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>28</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -580,7 +653,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>18</FileNumber>
+      <FileNumber>20</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -594,11 +667,11 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>19</FileNumber>
+      <FileNumber>21</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>60</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -608,11 +681,11 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>20</FileNumber>
+      <FileNumber>22</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>78</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -622,7 +695,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>21</FileNumber>
+      <FileNumber>23</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -636,7 +709,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>22</FileNumber>
+      <FileNumber>24</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -650,28 +723,28 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>23</FileNumber>
+      <FileNumber>25</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1299</TopLine>
-      <CurrentLine>1308</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\drv\can.c</PathWithFileName>
       <FilenameWithoutPath>can.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>24</FileNumber>
+      <FileNumber>26</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>71</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>184</TopLine>
-      <CurrentLine>208</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\drv\can.h</PathWithFileName>
       <FilenameWithoutPath>can.h</FilenameWithoutPath>
@@ -799,9 +872,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -824,9 +897,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -849,9 +922,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -874,9 +947,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -899,9 +972,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -924,9 +997,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -949,9 +1022,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -974,9 +1047,9 @@
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1344</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -999,9 +1072,9 @@
         <DockLocation>4</DockLocation>
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>410</FloatingRect_top>
         <FloatingRect_left>1430</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
@@ -1023,10 +1096,10 @@
         <DockType>2</DockType>
         <DockLocation>4</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>347</DockedRect_top>
-        <DockedRect_left>956</DockedRect_left>
-        <DockedRect_bottom>609</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>552</FloatingRect_bottom>
@@ -1048,10 +1121,10 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>347</DockedRect_top>
-        <DockedRect_left>956</DockedRect_left>
-        <DockedRect_bottom>609</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>552</FloatingRect_bottom>
@@ -1073,10 +1146,10 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>347</DockedRect_top>
-        <DockedRect_left>956</DockedRect_left>
-        <DockedRect_bottom>609</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>552</FloatingRect_bottom>
@@ -1098,10 +1171,10 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>347</DockedRect_top>
-        <DockedRect_left>956</DockedRect_left>
-        <DockedRect_bottom>609</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>552</FloatingRect_bottom>
@@ -1123,10 +1196,10 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>347</DockedRect_top>
-        <DockedRect_left>956</DockedRect_left>
-        <DockedRect_bottom>609</DockedRect_bottom>
-        <DockedRect_right>1680</DockedRect_right>
+        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>552</FloatingRect_bottom>
@@ -1148,15 +1221,15 @@
         <DockType>2</DockType>
         <DockLocation>1</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1173,15 +1246,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>1</Visible>
         <Dynamic>0</Dynamic>
@@ -1198,15 +1271,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1223,15 +1296,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1248,15 +1321,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1273,15 +1346,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1298,15 +1371,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1323,15 +1396,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>0</Visible>
         <Dynamic>0</Dynamic>
@@ -1348,15 +1421,15 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>613</DockedRect_top>
-        <DockedRect_left>1251</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
-        <DockedRect_right>1473</DockedRect_right>
+        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_left>1255</DockedRect_left>
+        <DockedRect_bottom>998</DockedRect_bottom>
+        <DockedRect_right>1592</DockedRect_right>
         <FloatingRect_top>571</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
         <FloatingRect_bottom>821</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>52</ContainerPercent>
+        <ContainerPercent>51</ContainerPercent>
         <ActiveTab>1</ActiveTab>
         <Visible>1</Visible>
         <Dynamic>0</Dynamic>
@@ -1375,7 +1448,7 @@
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>328</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1400,7 +1473,7 @@
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>328</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1425,7 +1498,7 @@
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>328</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1450,7 +1523,7 @@
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>328</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -1475,7 +1548,7 @@
         <Pinned>0</Pinned>
         <DockedRect_top>76</DockedRect_top>
         <DockedRect_left>0</DockedRect_left>
-        <DockedRect_bottom>968</DockedRect_bottom>
+        <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>328</DockedRect_right>
         <FloatingRect_top>0</FloatingRect_top>
         <FloatingRect_left>0</FloatingRect_left>
@@ -2019,13 +2092,19 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>5</ActiveTab>
+      <ActiveTab>1</ActiveTab>
       <Documents>
         <Doc>
-          <Name>..\src\drv\can.c</Name>
+          <Name>..\src\app\task.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>1299</TopLine>
-          <CurrentLine>1308</CurrentLine>
+          <TopLine>37</TopLine>
+          <CurrentLine>61</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\src\app\ledCtrlPrj1.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>164</TopLine>
+          <CurrentLine>203</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\drv\clk.c</Name>
@@ -2037,43 +2116,7 @@
           <Name>..\src\app\main.c</Name>
           <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>7</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\SRC\APP\../DRV/CAN.H</Name>
-          <ColumnNumber>71</ColumnNumber>
-          <TopLine>184</TopLine>
-          <CurrentLine>208</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\SRC\APP\../SRV/CANSRV.H</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>15</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\src\srv\canSrv.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>10</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\src\app\task.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>96</TopLine>
-          <CurrentLine>109</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\src\app\ledCtrl.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>31</TopLine>
-          <CurrentLine>57</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\SRC\APP\TASK.H</Name>
-          <ColumnNumber>13</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>13</CurrentLine>
+          <CurrentLine>6</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
