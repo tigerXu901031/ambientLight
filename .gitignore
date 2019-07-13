@@ -63,3 +63,9 @@
 .vscode/settings.json
 src/srv/playground.c
 src/srv/playground.exe
+*.lst
+*.LST
+*.LST
+*.OBJ
+*.LST
+*.OBJ

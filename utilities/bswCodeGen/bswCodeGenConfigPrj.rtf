@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 2019/7/5 0:12:11
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 2019/7/11 7:54:32
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -25,8 +25,10 @@
 \par \tab\tab\tab SCS.H
 \par \tab\tab\tab SCS.C
 \par \tab\tab\tab XC22XXREGS.H
-\par \tab\tab\tab CCU60.H
-\par \tab\tab\tab CCU60.C
+\par \tab\tab\tab IO.H
+\par \tab\tab\tab IO.C
+\par \tab\tab\tab CAN.H
+\par \tab\tab\tab CAN.C
 \par \tab\tab\tab BSWCODEGENCONFIGPRJ.ASM
 \par 
 \par 
@@ -322,344 +324,118 @@
 \par \tab \tab Clocks: Number of clocks to count, 1...65535
 
 \par \plain\f4\fs20\cf0
-\par \plain\f4\fs28\cf0\ul Capture / Compare Unit 60 (CCU60)
+\par \plain\f4\fs28\cf0\ul Parallel Ports
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void IO_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the IO function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of Port P0:\par 
+\tab - no pin of port P0 is used\par 
+\par 
+\tab Configuration of Port P1:\par 
+\tab - no pin of port P1 is used\par 
+\par 
+\tab Configuration of Port P2:\par 
+\tab P2.0 is used as alternate input for the CAN0 Receive input(RXDC0C)\par 
+\tab P2.1 is used as alternate output for the CAN0 Transmit output(TXDC0C)\par 
+\tab - push/pull output is selected\par 
+\par 
+\tab P2.0 - P2.3 output driver characteristic: strong driver\par 
+\tab P2.4 - P2.7 output driver characteristic: strong driver\par 
+\tab P2.8 - P2.12 output driver characteristic: strong driver\par 
+\par 
+\tab P2.0 - P2.3 output edge characteristic: sharp edge mode\par 
+\tab P2.4 - P2.7 output edge characteristic: sharp edge mode\par 
+\tab P2.8 - P2.12 output edge characteristic: sharp edge mode\par 
+\par 
+\tab Configuration of Port P4:\par 
+\tab - no pin of port P4 is used\par 
+\par 
+\tab Configuration of Port P5:\par 
+\tab - no pin of port P5 is used\par 
+\tab - Port5 Data register P5(Read only)\par 
+\par 
+\tab Configuration of Port P6:\par 
+\tab - no pin of port P6 is used\par 
+\par 
+\tab Configuration of Port P7:\par 
+\tab - no pin of port P7 is used\par 
+\par 
+\tab Configuration of Port P10:\par 
+\tab P10.4 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\par 
+\tab P10.0 - P10.3 output driver characteristic: strong driver\par 
+\tab P10.4 - P10.7 output driver characteristic: strong driver\par 
+\tab P10.8 - P10.11 output driver characteristic: strong driver\par 
+\tab P10.12 - P10.15 output driver characteristic: strong driver\par 
+\par 
+\tab P10.0 - P10.3 output edge characteristic: sharp edge mode\par 
+\tab P10.4 - P10.7 output edge characteristic: sharp edge mode\par 
+\tab P10.8 - P10.11 output edge characteristic: sharp edge mode\par 
+\tab P10.12 - P10.15 output edge characteristic: sharp edge mode\par 
+\par 
+\tab Configuration of Port P15:\par 
+\tab - no pin of port P15 is used\par 
+\tab - Port15 Data register P15(Read only)\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul MultiCAN Module (CAN)
 \par
 \par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
 \par
 \par
 \par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vStartTmr(TimerNr)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab CAN_vSetMSGVAL(ObjNr)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This macro starts the selected CCU60 timer. The timer
+\tab \tab This function sets the MSGVAL flag of the selected object.
 
-\par \tab \tab continues counting from where it stopped.
+\par \tab \tab This is only necessary if the single data transfer mode
 
-\par \tab \tab The following definitions for TimerNr are available:
+\par \tab \tab (SDT) for the selected object is enabled. If SDT is set to
 
-\par \tab \tab CCU60_TIMER_12
+\par \tab \tab '1', the CAN controller automatically resets bit MSGVAL
 
-\par \tab \tab CCU60_TIMER_13
+\par \tab \tab after receiving or tranmission of a frame.
 
 \par \plain\f4\fs20\cf0 \tab Returnvalue:
 \par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
 \par \plain\f4\fs20\cf0 \tab Parameters:
 \par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
+\tab \tab ObjNr:
 
-\par \tab \tab Name of the CCU60 timer to be started
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vStopTmr(TimerNr)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro stops the selected CCU60 timer. The content of
-
-\par \tab \tab the timer register remains unchanged.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be stopped
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vResetTmr(TimerNr)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro sets the selected CCU60 timer counter register
-
-\par \tab \tab to zero. Timer is not stopped.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be cleared
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vSetTmrPeriod(TimerNr, Value)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro loads the period register of the selected CCU60
-
-\par \tab \tab timer.
-
-\par \tab \tab Note: Call the macro CCU60_vEnableShadowTransfer() to
-
-\par \tab \tab enable the shadow transfer.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be used
-
-\par \tab \tab Value:
-
-\par \tab \tab 16-bit Value with which the CCU60 timer reload register is
-
-\par \tab \tab to be loaded
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_uwGetTmrCounter(TimerNr)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro returns the contens of the selected CCU60 timer
-
-\par \tab \tab counter register.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b 16-bit counter value\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be used
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_uwSetTmrCounter(TimerNr, Value)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro loads the selected CCU60 timer counter register
-
-\par \tab \tab with the parameter Value . It is possible to use this macro
-
-\par \tab \tab only if the selected timer is stopped.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be used
-
-\par \tab \tab Value:
-
-\par \tab \tab 16-bit value with which the CCU60 counter register is to be
-
-\par \tab \tab loaded
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vSetDeadTimePeriod(ubValue)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro loads the counter of the deat time register.
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ubValue:
-
-\par \tab \tab counter value (ubValue = 0x01 .. 0x3F)
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vEnableShadowTransfer(TimerNr)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro enables the transfer from the shadow registers
-
-\par \tab \tab to the actual CCU60 registers.
-
-\par \tab \tab The following definitions for TimerNr are available:
-
-\par \tab \tab CCU60_TIMER_12
-
-\par \tab \tab CCU60_TIMER_13
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab TimerNr:
-
-\par \tab \tab Name of the CCU60 timer to be used
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vLoadChannelShadowRegister(ChName, Value)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro loads the selected CCU60 channel shadow register
-
-\par \tab \tab with the parameter Value.
-
-\par \tab \tab The following definitions are available for RegName:
-
-\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
-
-\par \tab \tab file)
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ChName:
-
-\par \tab \tab Name of the CCU60 channel to be loaded
-
-\par \tab \tab Value:
-
-\par \tab \tab 16-bit Value with which the CCU60 shadow register is to be
-
-\par \tab \tab loaded
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_uwGetChannelShadowRegister(ChName)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro returns the content of the CCU60 capture/compare
-
-\par \tab \tab shadow register of the selected channel.
-
-\par \tab \tab The following definitions are available for RegName:
-
-\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
-
-\par \tab \tab file)
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b Current 16-bit value of the CCU60 shadow register\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ChName:
-
-\par \tab \tab Name of the CCU60 channel to be readed
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_uwGetChannelRegister(ChName)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro returns the content of the CCU60 capture/compare
-
-\par \tab \tab register of the selected channel.
-
-\par \tab \tab The following definitions are available for RegName:
-
-\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
-
-\par \tab \tab file)
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b Current 16-bit value of the CCU60 register\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ChName:
-
-\par \tab \tab Name of the CCU60 channel to be readed
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vSetStatusBit(ChName)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro sets the capture / compare modifikation status
-
-\par \tab \tab bit of the selected CCU60 channel.
-
-\par \tab \tab The following definitions are available for ChName:
-
-\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
-
-\par \tab \tab file)
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ChName:
-
-\par \tab \tab Name of the CCU60 channel to be used
-
-\par
-\par
-\par \plain\f4\fs20\cf0 \tab Macro:
-\par \plain\f4\fs20\cf0\b \tab \tab CCU60_vResetStatusBit(ChName)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This macro resets the capture / compare modifikation status
-
-\par \tab \tab bit of the selected CCU60 channel.
-
-\par \tab \tab The following definitions are available for ChName:
-
-\par \tab \tab CCU60_CHANNEL_0 .. CCU60_CHANNEL_3 (see @Defines in header
-
-\par \tab \tab file)
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab ChName:
-
-\par \tab \tab Name of the CCU60 channel to be used
+\par \tab \tab Number of the message object (0-127)
 
 \par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
 \par
 \par \plain\f4\fs20\cf0 \tab Function:
-\par \plain\f4\fs20\cf0\b \tab \tab void CCU60_vInit(void)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab void CAN_vInit(void)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This is the initialization function of the CCU60 function
+\tab \tab This is the initialization function of the CAN function
 
 \par \tab \tab library. It is assumed that the SFRs used by this library
 
@@ -673,27 +449,179 @@
 
 \par
 \par \plain\f4\fs20\cf0 \tab Function:
-\par \plain\f4\fs20\cf0\b \tab \tab void CCU60_viNodeI0(void)\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0\b \tab \tab void CAN_vGetMsgObj(ubyte ubObjNr, stCAN_SWObj *pstObj)\plain\f4\fs20\cf0
 \par \tab Description:
 \par \plain\f4\fs20\cf0\i
-\tab \tab This is the interrupt service routine for the CCU60 node
+\tab \tab This function fills the forwarded SW message object with
 
-\par \tab \tab I0. If the content of the corresponding compare timer
+\par \tab \tab the content of the chosen HW message object.
 
-\par \tab \tab (configurable) equals the content of the capture/compare
+\par \tab \tab For Receive Message object use function CAN_vReleaseObj, to
 
-\par \tab \tab register or if a capture event occurs at the associated
+\par \tab \tab release the message object.
 
-\par \tab \tab port pin, the interrupt request flag is set and an
+\par \tab \tab The structure of the SW message object is defined in the
 
-\par \tab \tab interrupt is triggered (only if enabled).
-
-\par \tab \tab Please note that you have to add application specific code
-
-\par \tab \tab to this function.
+\par \tab \tab header file CAN.H (see stCAN_SWObj).
 
 \par \plain\f4\fs20\cf0 \tab Returnvalue:
 \par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubObjNr:
+
+\par \tab \tab Number of the message object to be read (0-127)
+
+\par \tab \tab *pstObj:
+
+\par \tab \tab Pointer on a message object to be filled by this function
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void CAN_vTransmit(ubyte ubObjNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function triggers the CAN controller to send the
+
+\par \tab \tab selected message.
+
+\par \tab \tab If the selected message object is a TRANSMIT OBJECT then
+
+\par \tab \tab this function triggers the sending of a data frame. If
+
+\par \tab \tab however the selected message object is a RECEIVE OBJECT
+
+\par \tab \tab this function triggers the sending of a remote frame.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubObjNr:
+
+\par \tab \tab Number of the message object (0-127)
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void CAN_vLoadData(ubyte ubObjNr, ubyte *ubpubData)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab If a hardware TRANSMIT OBJECT has to be loaded with data
+
+\par \tab \tab but not with a new identifier, this function may be used
+
+\par \tab \tab instead of the function CAN_vConfigMsgObj. The message
+
+\par \tab \tab object should be accessed by calling the function
+
+\par \tab \tab CAN_ubRequestMsgObj before calling this function. This
+
+\par \tab \tab prevents the CAN controller from working with invalid data.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubObjNr:
+
+\par \tab \tab Number of the message object to be configured (0-127)
+
+\par \tab \tab *ubpubData:
+
+\par \tab \tab Pointer on a data buffer
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab ubyte CAN_ubWriteFIFO(ubyte ubObjNr, stCAN_SWObj *pstObj)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function sets up the next free TRANSMIT message object
+
+\par \tab \tab which is part of a FIFO. This includes the 8 data bytes,
+
+\par \tab \tab the identifier (11- or 29-bit) and the data number (0-8
+
+\par \tab \tab bytes). The direction bit (DIR) and the EDE-bit can not be
+
+\par \tab \tab changed. The acceptance mask register and the Frame Counter
+
+\par \tab \tab remains unchanged. This function checks whether the choosen
+
+\par \tab \tab message object is still executing a transmit request, or if
+
+\par \tab \tab the object can be accessed exclusively.
+
+\par \tab \tab The structure of the SW message object is defined in the
+
+\par \tab \tab header file CAN.H (see CAN_SWObj).
+
+\par \tab \tab Note:
+
+\par \tab \tab This function can only used for TRANSMIT objects which are
+
+\par \tab \tab configured for FIFO base functionality.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b 0: message object is busy (a transfer is active); 1: the\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubObjNr:
+
+\par \tab \tab Number of the FIFO base object
+
+\par \tab \tab *pstObj:
+
+\par \tab \tab Pointer on a message object
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab ubyte CAN_ubReadFIFO(ubyte ubObjNr, stCAN_SWObj *pstObj)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function reads the next RECEIVE message object which
+
+\par \tab \tab is part of a FIFO. It checks whether the selected RECEIVE
+
+\par \tab \tab OBJECT has received a new message. If so the forwarded SW
+
+\par \tab \tab message object is filled with the content of the HW message
+
+\par \tab \tab object and the functions returns the value "1". The
+
+\par \tab \tab structure of the SW message object is defined in the header
+
+\par \tab \tab file CAN.H (see CAN_SWObj).
+
+\par \tab \tab Note:
+
+\par \tab \tab This function can only used for RECEIVE objects which are
+
+\par \tab \tab configured for FIFO base functionality.
+
+\par \tab \tab Be sure that no interrupt is enabled for the FIFO objects.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b 0: the message object has not received a new message; 1:\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab ubObjNr:
+
+\par \tab \tab Number of the FIFO base object
+
+\par \tab \tab *pstObj:
+
+\par \tab \tab Pointer on a message object to be filled by this function
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab CAN_viSRN0()\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab 
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b \plain\f4\fs20\cf0
 \par \plain\f4\fs20\cf0 \tab Parameters:
 \par \plain\f4\fs20\cf0\b 
 \tab \tab None
@@ -702,118 +630,370 @@
 \par \plain\f4\fs24\cf0 Initialization:
 \par \plain\f4\fs20\cf0\b
 \par
-\tab Configuration of KERNEL REGISTERS :\par 
-\tab - CCU60 Module is enabled.\par 
-\tab - The CCU60 module clock = 80.000 MHz.\par 
-\tab - T12 is enabled.\par 
-\tab - T13 is enabled.\par 
-\tab - MCM is enabled.\par 
+\tab Configuration of Kernel State Configuration Register:\par 
+\tab - Enable the CAN module(MODEN)\par 
+\tab - Enable Bit Protection for MODEN\par 
 \par 
-\tab Configuration of CCU60 Timer 12:\par 
-\tab - Timer 12 Input clock factor (T12CLK) is 0\par 
-\tab - prescaler factor is 0\par 
-\tab - Timer 12 run bit is set\par 
-\tab - Single shot mode is disabled\par 
-\tab - Timer 12 works in edge aligned mode\par 
-\tab - Interrupt on period match is enabled\par 
-\tab - Interrupt on one match is disabled\par 
-\tab - No External run selection is selected.\par 
-\tab - Timer mode is selected.\par 
-\tab -\par 
+\tab Configuration of the Module Clock:\par 
+\tab - the CAN module clock = 40.00 MHz\par 
+\tab - Normal divider mode selected\par 
 \par 
-\tab Configuration of T13HR Signal:\par 
-\tab - Signal T13HRA is selected as Input\par 
+\tab Panel Control\par 
+\tab - wait until Panel has finished the initialisation\par 
 \par 
-\tab Configuration of CCU60 Timer 13:\par 
-\tab - Timer 13 Input Clock factor (T13CLK) is 0\par 
-\tab - prescaler factor is 0\par 
-\tab - Timer 13 run bit is set\par 
-\tab - No External run selection is selected.\par 
-\tab - Timer mode is selected.\par 
-\tab -\par 
-\tab - Single shot mode is disabled\par 
-\tab - Interrupt on period match is enabled\par 
-\tab - Interrupt on compare match is disabled\par 
+\tab Configuration of CAN Node 0:\par 
 \par 
-\tab Configuration of Multi Channel Mode:\par 
-\tab - Multi channel mode is disabled\par 
+\tab General Configuration of the Node 0:\par 
+\tab - set INIT and CCE\par 
+\tab - enable interrupt generation when a message transfer is completed\par 
+\tab - transfer OK interrupt node pointer: MultiCAN SRN 0\par 
 \par 
-\tab Configuration of CCU60 Channel 0:\par 
-\tab - Channel 0 is disabled\par 
-\tab - T12 modulation for output CC60 is disabled\par 
-\tab - T13 modulation for output CC60 is disabled\par 
-\tab - T13 modulation for output CC60 is disabled\par 
+\tab - load NODE 0 interrupt pointer register\par 
 \par 
-\tab - Generation interrupt on flag ICC60R is enabled\par 
-\tab - Generation interrupt on flag ICC60F is disabled\par 
+\tab Configuration of the used CAN Port Pins:\par 
+\tab - Loop-back mode is disabled\par 
+\tab - P2.0 is used for CAN0 Receive input(RXDC0C)\par 
+\tab - P2.1 is used for CAN0 Transmit output(TXDC0C)\par 
 \par 
-\tab Configuration of CCU60 Channel 1:\par 
-\tab - Compare mode 1 is selected\par 
-\tab - T12 modulation for output CC61 is disabled\par 
-\tab - T13 modulation for output CC61 is disabled\par 
-\tab - T12 modulation for output COUT61 is enabled\par 
-\tab - T13 modulation for output COUT61 is disabled\par 
-\tab - The trap functionality of the pin COUT61 is disabled\par 
-\tab - The compare output COUT61 drives passive level while CC61ST is '0'\par 
-\tab - The passive level of the output COUT61 is '0'\par 
-\tab - Dead time generation is disabled\par 
+\tab Configuration of the Node 0 Baud Rate:\par 
+\tab - required baud rate = 500.000 kbaud\par 
+\tab - real baud rate     = 500.000 kbaud\par 
+\tab - sample point       = 60.00 %\par 
+\tab - there are 5 time quanta before sample point\par 
+\tab - there are 4 time quanta after sample point\par 
+\tab - the (re)synchronization jump width is 2 time quanta\par 
 \par 
-\tab - Generation interrupt on flag ICC61R is enabled\par 
-\tab - Generation interrupt on flag ICC61F is disabled\par 
+\tab Configuration of the Node 0 Error Counter:\par 
+\tab - the error warning threshold value (warning level) is 96\par 
 \par 
-\tab Configuration of CCU60 Channel 2:\par 
-\tab - Compare mode 1 is selected\par 
-\tab - T12 modulation for output CC62 is disabled\par 
-\tab - T13 modulation for output CC62 is disabled\par 
-\tab - T12 modulation for output COUT62 is enabled\par 
-\tab - T13 modulation for output COUT62 is disabled\par 
-\tab - The trap functionality of the pin COUT62 is disabled\par 
-\tab - The compare output COUT62 drives passive level while CC62ST is '0'\par 
-\tab - The passive level of the output COUT62 is '0'\par 
-\tab - Dead time generation is disabled\par 
+\tab Configuration of the Frame Counter:\par 
+\tab - Frame Counter Mode: the counter is incremented upon the reception\par 
+\tab and transmission of frames\par 
+\tab - frame counter: 0x0000\par 
 \par 
-\tab - Generation interrupt on flag ICC62R is enabled\par 
-\tab - Generation interrupt on flag ICC62F is disabled\par 
+\tab Configuration of CAN Node 1:\par 
 \par 
-\tab Configuration of CCU60 Channel 3:\par 
-\tab - T13 modulation for output COUT63 is enabled\par 
-\tab - The trap functionality of the pin COUT63 is disabled\par 
-\tab - The compare output COUT63 drives passive level while CC63ST is '0'\par 
-\tab - The passive level of the output COUT63 is '0'\par 
-\tab - T13 output is not inverted\par 
+\tab General Configuration of the Node 1:\par 
+\tab - set INIT and CCE\par 
 \par 
-\tab Configuration of CCU60 trap control:\par 
-\tab - Trap can only be generated by SW by setting the bit TRPF\par 
-\tab - The trap state is left when a zero-match of T12 (while counting up)\par 
-\tab is detected (synchronization to T12)\par 
-\tab - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0\par 
-\tab and TRPM1)\par 
-\tab - Trap interrupt is disabled\par 
+\tab Configuration of CAN Node 2:\par 
 \par 
-\tab Configuration of CCU60 interrupt control:\par 
-\tab - For channel 0 interrupts is node I0 selected\par 
-\tab - For channel 1 interrupts is node I0 selected\par 
-\tab - For channel 2 interrupts is node I0 selected\par 
-\tab - For correct hall event interrupt is node I0 selected\par 
-\tab - For error interrupts is node I0 selected\par 
-\tab - For T12 interrupts is node I0 selected\par 
-\tab - For T13 interrupts is node I0 selected\par 
+\tab General Configuration of the Node 2:\par 
+\tab - set INIT and CCE\par 
 \par 
-\tab Configuration of the used CCU60 Channel Port Pins:\par 
-\tab - P10.4 is used for CCU60 output(COUT61)\par 
-\tab - P10.5 is used for CCU60 output(COUT62)\par 
-\tab - P10.7 is used for  CCU60 output(COUT63)\par 
+\tab Configuration of CAN Node 3:\par 
 \par 
-\tab Configuration of the used CCU60 Channels Interrupts:\par 
-\tab NodeI0 service request node configuration:\par 
-\tab - NodeI0 interrupt priority level (ILVL) = 1\par 
-\tab - NodeI0 interrupt group level (GLVL) = 0\par 
-\tab - NodeI0 group priority extension (GPX) = 0\par 
+\tab General Configuration of the Node 3:\par 
+\tab - set INIT and CCE\par 
 \par 
-\tab Configuration of T12, T13 ---- CCU60_TCTR4 Register:\par 
-\tab - Enable shadow transfer of T12 and T13\par 
-\tab - Timer 12 run bit is set\par 
-\tab - Timer 13 run bit is set\par 
+\tab Configuration of CAN Node 4:\par 
+\par 
+\tab General Configuration of the Node 4:\par 
+\tab - set INIT and CCE\par 
+\par 
+\tab Configuration of the CAN Message Object List Structure:\par 
+\par 
+\tab Allocate MOs for list 1:\par 
+\par 
+\tab Configuration of the CAN Message Objects 0 - 127:\par 
+\tab Configuration of Message Object 0:\par 
+\par 
+\tab General Configuration of the Message Object 0 :\par 
+\tab - message object 0 is valid\par 
+\tab - message object is used as receive object\par 
+\tab - this message object is assigned to list 1 (node 0)\par 
+\par 
+\tab Configuration of Message Object 0 Arbitration:\par 
+\tab - priority class 1; transmit acceptance filtering is based on the list\par 
+\tab order\par 
+\tab - standard 11-bit identifier\par 
+\tab - identifier 11-bit:      0x505\par 
+\par 
+\tab Configuration of Message Object 0 acceptance mask:\par 
+\tab - only accept receive frames with matching IDE bit\par 
+\tab - acceptance mask 11-bit: 0x7FF\par 
+\par 
+\tab Configuration of Message Object 0 interrupt pointer:\par 
+\tab - use message pending register 0 bit position 0\par 
+\tab - receive interrupt node pointer: MultiCAN SRN 0\par 
+\par 
+\tab Configuration of Message Object 0 FIFO/Gateway pointer:\par 
+\par 
+\tab Configuration of Message Object 0 Function control:\par 
+\tab - this object is a STANDARD MESSAGE OBJECT\par 
+\tab - 8 valid data bytes\par 
+\tab - enable receive interrupt; bit RXPND is set after successful\par 
+\tab reception of a frame\par 
+\par 
+\tab Configuration of Message Object 1:\par 
+\tab - message object 1 is not valid\par 
+\tab Configuration of Message Object 2:\par 
+\tab - message object 2 is not valid\par 
+\tab Configuration of Message Object 3:\par 
+\tab - message object 3 is not valid\par 
+\tab Configuration of Message Object 4:\par 
+\tab - message object 4 is not valid\par 
+\tab Configuration of Message Object 5:\par 
+\tab - message object 5 is not valid\par 
+\tab Configuration of Message Object 6:\par 
+\tab - message object 6 is not valid\par 
+\tab Configuration of Message Object 7:\par 
+\tab - message object 7 is not valid\par 
+\tab Configuration of Message Object 8:\par 
+\tab - message object 8 is not valid\par 
+\tab Configuration of Message Object 9:\par 
+\tab - message object 9 is not valid\par 
+\tab Configuration of Message Object 10:\par 
+\tab - message object 10 is not valid\par 
+\tab Configuration of Message Object 11:\par 
+\tab - message object 11 is not valid\par 
+\tab Configuration of Message Object 12:\par 
+\tab - message object 12 is not valid\par 
+\tab Configuration of Message Object 13:\par 
+\tab - message object 13 is not valid\par 
+\tab Configuration of Message Object 14:\par 
+\tab - message object 14 is not valid\par 
+\tab Configuration of Message Object 15:\par 
+\tab - message object 15 is not valid\par 
+\tab Configuration of Message Object 16:\par 
+\tab - message object 16 is not valid\par 
+\tab Configuration of Message Object 17:\par 
+\tab - message object 17 is not valid\par 
+\tab Configuration of Message Object 18:\par 
+\tab - message object 18 is not valid\par 
+\tab Configuration of Message Object 19:\par 
+\tab - message object 19 is not valid\par 
+\tab Configuration of Message Object 20:\par 
+\tab - message object 20 is not valid\par 
+\tab Configuration of Message Object 21:\par 
+\tab - message object 21 is not valid\par 
+\tab Configuration of Message Object 22:\par 
+\tab - message object 22 is not valid\par 
+\tab Configuration of Message Object 23:\par 
+\tab - message object 23 is not valid\par 
+\tab Configuration of Message Object 24:\par 
+\tab - message object 24 is not valid\par 
+\tab Configuration of Message Object 25:\par 
+\tab - message object 25 is not valid\par 
+\tab Configuration of Message Object 26:\par 
+\tab - message object 26 is not valid\par 
+\tab Configuration of Message Object 27:\par 
+\tab - message object 27 is not valid\par 
+\tab Configuration of Message Object 28:\par 
+\tab - message object 28 is not valid\par 
+\tab Configuration of Message Object 29:\par 
+\tab - message object 29 is not valid\par 
+\tab Configuration of Message Object 30:\par 
+\tab - message object 30 is not valid\par 
+\tab Configuration of Message Object 31:\par 
+\tab - message object 31 is not valid\par 
+\tab Configuration of Message Object 32:\par 
+\tab - message object 32 is not valid\par 
+\tab Configuration of Message Object 33:\par 
+\tab - message object 33 is not valid\par 
+\tab Configuration of Message Object 34:\par 
+\tab - message object 34 is not valid\par 
+\tab Configuration of Message Object 35:\par 
+\tab - message object 35 is not valid\par 
+\tab Configuration of Message Object 36:\par 
+\tab - message object 36 is not valid\par 
+\tab Configuration of Message Object 37:\par 
+\tab - message object 37 is not valid\par 
+\tab Configuration of Message Object 38:\par 
+\tab - message object 38 is not valid\par 
+\tab Configuration of Message Object 39:\par 
+\tab - message object 39 is not valid\par 
+\tab Configuration of Message Object 40:\par 
+\tab - message object 40 is not valid\par 
+\tab Configuration of Message Object 41:\par 
+\tab - message object 41 is not valid\par 
+\tab Configuration of Message Object 42:\par 
+\tab - message object 42 is not valid\par 
+\tab Configuration of Message Object 43:\par 
+\tab - message object 43 is not valid\par 
+\tab Configuration of Message Object 44:\par 
+\tab - message object 44 is not valid\par 
+\tab Configuration of Message Object 45:\par 
+\tab - message object 45 is not valid\par 
+\tab Configuration of Message Object 46:\par 
+\tab - message object 46 is not valid\par 
+\tab Configuration of Message Object 47:\par 
+\tab - message object 47 is not valid\par 
+\tab Configuration of Message Object 48:\par 
+\tab - message object 48 is not valid\par 
+\tab Configuration of Message Object 49:\par 
+\tab - message object 49 is not valid\par 
+\tab Configuration of Message Object 50:\par 
+\tab - message object 50 is not valid\par 
+\tab Configuration of Message Object 51:\par 
+\tab - message object 51 is not valid\par 
+\tab Configuration of Message Object 52:\par 
+\tab - message object 52 is not valid\par 
+\tab Configuration of Message Object 53:\par 
+\tab - message object 53 is not valid\par 
+\tab Configuration of Message Object 54:\par 
+\tab - message object 54 is not valid\par 
+\tab Configuration of Message Object 55:\par 
+\tab - message object 55 is not valid\par 
+\tab Configuration of Message Object 56:\par 
+\tab - message object 56 is not valid\par 
+\tab Configuration of Message Object 57:\par 
+\tab - message object 57 is not valid\par 
+\tab Configuration of Message Object 58:\par 
+\tab - message object 58 is not valid\par 
+\tab Configuration of Message Object 59:\par 
+\tab - message object 59 is not valid\par 
+\tab Configuration of Message Object 60:\par 
+\tab - message object 60 is not valid\par 
+\tab Configuration of Message Object 61:\par 
+\tab - message object 61 is not valid\par 
+\tab Configuration of Message Object 62:\par 
+\tab - message object 62 is not valid\par 
+\tab Configuration of Message Object 63:\par 
+\tab - message object 63 is not valid\par 
+\tab Configuration of Message Object 64:\par 
+\tab - message object 64 is not valid\par 
+\tab Configuration of Message Object 65:\par 
+\tab - message object 65 is not valid\par 
+\tab Configuration of Message Object 66:\par 
+\tab - message object 66 is not valid\par 
+\tab Configuration of Message Object 67:\par 
+\tab - message object 67 is not valid\par 
+\tab Configuration of Message Object 68:\par 
+\tab - message object 68 is not valid\par 
+\tab Configuration of Message Object 69:\par 
+\tab - message object 69 is not valid\par 
+\tab Configuration of Message Object 70:\par 
+\tab - message object 70 is not valid\par 
+\tab Configuration of Message Object 71:\par 
+\tab - message object 71 is not valid\par 
+\tab Configuration of Message Object 72:\par 
+\tab - message object 72 is not valid\par 
+\tab Configuration of Message Object 73:\par 
+\tab - message object 73 is not valid\par 
+\tab Configuration of Message Object 74:\par 
+\tab - message object 74 is not valid\par 
+\tab Configuration of Message Object 75:\par 
+\tab - message object 75 is not valid\par 
+\tab Configuration of Message Object 76:\par 
+\tab - message object 76 is not valid\par 
+\tab Configuration of Message Object 77:\par 
+\tab - message object 77 is not valid\par 
+\tab Configuration of Message Object 78:\par 
+\tab - message object 78 is not valid\par 
+\tab Configuration of Message Object 79:\par 
+\tab - message object 79 is not valid\par 
+\tab Configuration of Message Object 80:\par 
+\tab - message object 80 is not valid\par 
+\tab Configuration of Message Object 81:\par 
+\tab - message object 81 is not valid\par 
+\tab Configuration of Message Object 82:\par 
+\tab - message object 82 is not valid\par 
+\tab Configuration of Message Object 83:\par 
+\tab - message object 83 is not valid\par 
+\tab Configuration of Message Object 84:\par 
+\tab - message object 84 is not valid\par 
+\tab Configuration of Message Object 85:\par 
+\tab - message object 85 is not valid\par 
+\tab Configuration of Message Object 86:\par 
+\tab - message object 86 is not valid\par 
+\tab Configuration of Message Object 87:\par 
+\tab - message object 87 is not valid\par 
+\tab Configuration of Message Object 88:\par 
+\tab - message object 88 is not valid\par 
+\tab Configuration of Message Object 89:\par 
+\tab - message object 89 is not valid\par 
+\tab Configuration of Message Object 90:\par 
+\tab - message object 90 is not valid\par 
+\tab Configuration of Message Object 91:\par 
+\tab - message object 91 is not valid\par 
+\tab Configuration of Message Object 92:\par 
+\tab - message object 92 is not valid\par 
+\tab Configuration of Message Object 93:\par 
+\tab - message object 93 is not valid\par 
+\tab Configuration of Message Object 94:\par 
+\tab - message object 94 is not valid\par 
+\tab Configuration of Message Object 95:\par 
+\tab - message object 95 is not valid\par 
+\tab Configuration of Message Object 96:\par 
+\tab - message object 96 is not valid\par 
+\tab Configuration of Message Object 97:\par 
+\tab - message object 97 is not valid\par 
+\tab Configuration of Message Object 98:\par 
+\tab - message object 98 is not valid\par 
+\tab Configuration of Message Object 99:\par 
+\tab - message object 99 is not valid\par 
+\tab Configuration of Message Object 100:\par 
+\tab - message object 100 is not valid\par 
+\tab Configuration of Message Object 101:\par 
+\tab - message object 101 is not valid\par 
+\tab Configuration of Message Object 102:\par 
+\tab - message object 102 is not valid\par 
+\tab Configuration of Message Object 103:\par 
+\tab - message object 103 is not valid\par 
+\tab Configuration of Message Object 104:\par 
+\tab - message object 104 is not valid\par 
+\tab Configuration of Message Object 105:\par 
+\tab - message object 105 is not valid\par 
+\tab Configuration of Message Object 106:\par 
+\tab - message object 106 is not valid\par 
+\tab Configuration of Message Object 107:\par 
+\tab - message object 107 is not valid\par 
+\tab Configuration of Message Object 108:\par 
+\tab - message object 108 is not valid\par 
+\tab Configuration of Message Object 109:\par 
+\tab - message object 109 is not valid\par 
+\tab Configuration of Message Object 110:\par 
+\tab - message object 110 is not valid\par 
+\tab Configuration of Message Object 111:\par 
+\tab - message object 111 is not valid\par 
+\tab Configuration of Message Object 112:\par 
+\tab - message object 112 is not valid\par 
+\tab Configuration of Message Object 113:\par 
+\tab - message object 113 is not valid\par 
+\tab Configuration of Message Object 114:\par 
+\tab - message object 114 is not valid\par 
+\tab Configuration of Message Object 115:\par 
+\tab - message object 115 is not valid\par 
+\tab Configuration of Message Object 116:\par 
+\tab - message object 116 is not valid\par 
+\tab Configuration of Message Object 117:\par 
+\tab - message object 117 is not valid\par 
+\tab Configuration of Message Object 118:\par 
+\tab - message object 118 is not valid\par 
+\tab Configuration of Message Object 119:\par 
+\tab - message object 119 is not valid\par 
+\tab Configuration of Message Object 120:\par 
+\tab - message object 120 is not valid\par 
+\tab Configuration of Message Object 121:\par 
+\tab - message object 121 is not valid\par 
+\tab Configuration of Message Object 122:\par 
+\tab - message object 122 is not valid\par 
+\tab Configuration of Message Object 123:\par 
+\tab - message object 123 is not valid\par 
+\tab Configuration of Message Object 124:\par 
+\tab - message object 124 is not valid\par 
+\tab Configuration of Message Object 125:\par 
+\tab - message object 125 is not valid\par 
+\tab Configuration of Message Object 126:\par 
+\tab - message object 126 is not valid\par 
+\tab Configuration of Message Object 127:\par 
+\tab - message object 127 is not valid\par 
+\par 
+\tab Configuration of Service Request Nodes 0 - 15:\par 
+\tab SRN0 service request node configuration:\par 
+\tab - SRN0 interrupt priority level (ILVL) = 15\par 
+\tab - SRN0 interrupt group level (GLVL) = 0\par 
+\tab - SRN0 group priority extension (GPX) = 0\par 
+\par 
+\tab Use PEC channel 4 for CAN INT 0:\par 
+\tab - normal interrupt\par 
+\tab - pointers are not modified\par 
+\tab - transfer a word\par 
+\tab - service End of PEC interrrupt by a EOP interrupt node is disabled\par 
+\tab - channel link mode is disabled\par 
+\par 
+\tab Initialization of the FIFO Pointer:\par 
 \par 
 
 }

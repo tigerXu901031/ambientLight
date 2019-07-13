@@ -1,5 +1,21 @@
 #include "ledCtrl.h"
 
+const rgb_type colorArrOrign[color_max] = {
+    /* color_green */
+    {0, 255, 0},
+    /* color_blue */
+    {0, 0, 255},
+    /* color_red */
+    {255, 0, 0},
+    /* color_orange */
+    {200, 100, 0},
+    /* color_yellow */
+    {255, 255, 0},
+    /* color_purple */
+    {204, 0, 255},
+    /* color_off */
+    {0, 0, 0}};
+
 rgb_type colorArr[color_max] = {
     /* color_green */
     {0, 255, 0},
@@ -25,9 +41,9 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
         darknessLevel++;
         for (j = 0; j < color_max; j++)
         {
-            colorArr[j].blue = colorArr[j].blue * (1 - (0.5 * darknessLevel));
-            colorArr[j].green = colorArr[j].green * (1 - (0.5 * darknessLevel));
-            colorArr[j].red = colorArr[j].red * (1 - (0.5 * darknessLevel));
+            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.5 * darknessLevel));
+            colorArr[j].green = colorArrOrign[j].green * (1 - (0.5 * darknessLevel));
+            colorArr[j].red = colorArrOrign[j].red * (1 - (0.5 * darknessLevel));
         }
         if (darknessLevel == 2)
         {
@@ -286,6 +302,10 @@ static void ledMode9Ctrl(ledMode_enum oldInpMode)
         i = 0;
         secCnt = 0;
     }
+    else
+    {
+        
+    }
 
     for(j = 0; j < LED_NUM; j ++)
     {
@@ -475,7 +495,7 @@ static void ledMode13Ctrl(ledMode_enum oldInpMode)
     }
 }
 
-void ledModeTransitionUpdate(ledMode_enum userInpMode)
+void ledModeTransitionUpdate(ledMode_enum userInpMode, uint8 isUpdate)
 {
     static ledMode_enum oldUserInpMode = 0xff;
     switch (userInpMode)

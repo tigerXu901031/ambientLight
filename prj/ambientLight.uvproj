@@ -127,7 +127,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -158,11 +158,11 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4097</DriverSelection>
           </Flash1>
-          <Flash2>BIN\UL2OCDS.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash2>BIN\DAS166.DLL</Flash2>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <Target166>
@@ -266,7 +266,7 @@
             <nConstSelection>1</nConstSelection>
             <NearDataString></NearDataString>
             <NearConstString></NearConstString>
-            <iStartStopString></iStartStopString>
+            <iStartStopString>0xC00000 - 0xCBFFFF</iStartStopString>
             <InterruptVectorAddress></InterruptVectorAddress>
             <WarningLevel>2</WarningLevel>
             <DisableWarningNumbers></DisableWarningNumbers>
@@ -314,16 +314,6 @@
           <GroupName>srv</GroupName>
           <Files>
             <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\srv\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>can.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\srv\can.h</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\srv\led.c</FilePath>
@@ -337,6 +327,16 @@
               <FileName>type.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\srv\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>canSrv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\srv\canSrv.c</FilePath>
+            </File>
+            <File>
+              <FileName>canSrv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\canSrv.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -392,6 +392,26 @@
               <FileName>XC22xxREGS.H</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\XC22xxREGS.H</FilePath>
+            </File>
+            <File>
+              <FileName>io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\drv\io.c</FilePath>
+            </File>
+            <File>
+              <FileName>io.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\io.h</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\drv\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\can.h</FilePath>
             </File>
           </Files>
         </Group>

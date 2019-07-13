@@ -13,7 +13,7 @@
 //                the MAIN module.
 //
 //----------------------------------------------------------------------------
-// @Date          2019/6/30 19:43:29
+// @Date          2019/7/11 7:54:29
 //
 //****************************************************************************
 
@@ -118,7 +118,8 @@ void MAIN_vChangeFreq(void);
 #include  "XC22xxREGS.H"
 #include  "SCS.H"
 
-#include  "ccu60.h"
+#include  "io.h"
+#include  "CAN.H"
 
 // USER CODE BEGIN (MAIN_Header,10)
 

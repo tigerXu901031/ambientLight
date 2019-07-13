@@ -9,6 +9,7 @@
         "main.h": "c",
         "clk.h": "c",
         "xc22xxregs.h": "c",
-        "led.h": "c"
+        "led.h": "c",
+        "CAN.C": "cpp"
     }
 }

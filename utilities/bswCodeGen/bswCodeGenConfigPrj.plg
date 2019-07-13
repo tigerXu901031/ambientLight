@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\Mac\Home\Documents\work\personal\Github\ambientLight\utilities\bswCodeGen\bswCodeGenConfigPrj.uvproj
+Project File Date:  06/30/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling main.c...
+compiling SCS.C...
+compiling ccu60.c...
+CCU60.C(135): error C67: 'CCU60_KSCFG': undefined identifier
+CCU60.C(137): warning C140: '_nop_' undefined; assuming 'extern int _nop_()'
+CCU60.C(156): error C67: 'CCU60_T12PR': undefined identifier
+CCU60.C(176): error C67: 'CCU60_T13PR': undefined identifier
+CCU60.C(178): error C67: 'CCU60_TCTR0': undefined identifier
+CCU60.C(179): error C67: 'CCU60_TCTR2': undefined identifier
+CCU60.C(198): error C67: 'CCU60_CC60SR': undefined identifier
+CCU60.C(217): error C67: 'CCU60_CC61SR': undefined identifier
+CCU60.C(236): error C67: 'CCU60_CC62SR': undefined identifier
+CCU60.C(249): error C67: 'CCU60_CC63SR': undefined identifier
+CCU60.C(253): error C67: 'CCU60_T12DTC': undefined identifier
+CCU60.C(256): error C67: 'CCU60_T12MSEL': undefined identifier
+CCU60.C(259): error C67: 'CCU60_MODCTR': undefined identifier
+CCU60.C(284): error C67: 'CCU60_INP': undefined identifier
+CCU60.C(287): error C67: 'CCU60_IEN': undefined identifier
+CCU60.C(298): error C67: 'P10_IOCR04': undefined identifier
+CCU60.C(299): error C67: 'P10_IOCR05': undefined identifier
+CCU60.C(300): error C67: 'P10_IOCR07': undefined identifier
+CCU60.C(302): error C67: 'CCU60_PISELL': undefined identifier
+CCU60.C(312): error C67: 'CCU60_0IC': undefined identifier
+CCU60.C(321): error C67: 'CCU60_TCTR4': undefined identifier
+CCU60.C(365): error C67: 'CCU60_IS': undefined identifier
+CCU60.C(373): error C67: 'CCU60_ISR': undefined identifier
+CCU60.C(376): error C67: 'CCU60_IS': undefined identifier
+CCU60.C(384): error C67: 'CCU60_ISR': undefined identifier
+CCU60.C(387): error C67: 'CCU60_IS': undefined identifier
+CCU60.C(395): error C67: 'CCU60_ISR': undefined identifier
+CCU60.C(398): error C67: 'CCU60_IS': undefined identifier
+CCU60.C(406): error C67: 'CCU60_ISR': undefined identifier
+CCU60.C(409): error C67: 'CCU60_IS': undefined identifier
+CCU60.C(417): error C67: 'CCU60_ISR': undefined identifier
+Target not created

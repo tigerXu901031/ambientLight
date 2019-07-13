@@ -14,7 +14,6 @@ typedef struct
     {
         uint8 dummySig;
     }output;
-
 }canSignals;
 
 extern void canUpdate(canSignals* canSignalObj);

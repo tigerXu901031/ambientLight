@@ -97,7 +97,7 @@ void taskSlow()
     /* TODO: add entry time stamp record and some delay logic
        to ensure the time interval between two taskSlow is 100ms */
     /* test purpose only */
-    testFun();
+    // testFun();
 
     /* get the user input from can */
     canUpdate(&canSigObj);
