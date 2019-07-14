@@ -1,0 +1,10 @@
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\bin\x86\Debug\ledControl_client.exe.config
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\bin\x86\Debug\ledControl_client.exe
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\bin\x86\Debug\ledControl_client.pdb
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.csprojAssemblyReference.cache
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.FormMain.resources
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.Properties.Resources.resources
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.csproj.GenerateResource.cache
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.exe
+\\Mac\Home\Documents\work\personal\Github\ambientLight\pcClient\ledControl_client\obj\x86\Debug\ledControl_client.pdb

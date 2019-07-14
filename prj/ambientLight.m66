@@ -1,4 +1,4 @@
-L166 LINKER/LOCATER V5.25                                                               07/13/2019  13:39:42  PAGE 1
+L166 LINKER/LOCATER V5.25                                                               07/13/2019  22:19:52  PAGE 1
 
 
 L166 LINKER/LOCATER V5.25, INVOKED BY:
@@ -59,7 +59,7 @@ INPUT MODULES INCLUDED:
 
 INTERRUPT PROCEDURES OF MODULE:  ..\bin\ambientLight (MAIN)
 
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 2
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 2
 
 
 
@@ -119,7 +119,7 @@ NCODE                                CODE  ---    1  NCODE       ?PR?MAIN
                                                      NCODE       ?PR?LED
                                                      NCODE       ?PR?CANSRV
                                                      NCODE       ?PR?CCU60
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 3
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 3
 
 
                                                      NCODE       ?PR?CLK
@@ -179,7 +179,7 @@ PUBLIC SYMBOLS OF MODULE:  ..\bin\ambientLight (MAIN)
       00F600H     ?C_SYSSTKBOT                     VAR   ---  IDATA   ?C_SYSSTACK
       00F800H     ?C_SYSSTKTOP                     VAR   ---  IDATA   ?C_SYSSTACK
       E00000H     ?C_USRSTKBOT                     VAR   ---  NDATA   ?C_USERSTACK
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 4
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 4
 
 
       000000H     ?L?VECSC                         CONST ---  ---     ---
@@ -239,7 +239,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C018B8H     GLOBAL    LABEL     ---     ---   main
 
       C018B8H     BLOCK     LVL=0     00E2H   ---   main
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 5
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 5
 
 
       C018B8H     BLOCK     LVL=1     00E2H   ---   
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C01956H     LINE      ---       ---     ---   #67
       C01958H     LINE      ---       ---     ---   #68
       C0195AH     LINE      ---       ---     ---   #69
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 6
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 6
 
 
       C0195AH     LINE      ---       ---     ---   #70
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
 
       C000F6H     BLOCK     LVL=0     0002H   ---   taskFast
       C000F6H     LINE      ---       ---     ---   #118
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 7
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 7
 
 
       C000F6H     LINE      ---       ---     ---   #123
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
 
       C0050AH     BLOCK     LVL=0     00B0H   ---   ledMode3Ctrl
       C0050CH     BLOCK     LVL=1     00AAH   ---   
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 8
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 8
 
 
       E0064DH     SYMBOL    VAR       ---     ---   i
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C005E4H     LINE      ---       ---     ---   #127
       C005E8H     LINE      ---       ---     ---   #128
       C005E8H     LINE      ---       ---     ---   #132
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 9
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 9
 
 
       C005E8H     LINE      ---       ---     ---   #134
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C0074EH     LINE      ---       ---     ---   #194
       C00752H     LINE      ---       ---     ---   #196
       C0075AH     LINE      ---       ---     ---   #198
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 10
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 10
 
 
       C0075EH     LINE      ---       ---     ---   #200
@@ -599,7 +599,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C008CCH     LINE      ---       ---     ---   #255
       C008D0H     LINE      ---       ---     ---   #256
       C008D0H     LINE      ---       ---     ---   #257
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 11
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 11
 
 
       C008D0H     LINE      ---       ---     ---   #258
@@ -659,7 +659,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00970H     LINE      ---       ---     ---   #321
       C0097AH     LINE      ---       ---     ---   #323
       C0097EH     LINE      ---       ---     ---   #324
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 12
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 12
 
 
       C00986H     LINE      ---       ---     ---   #326
@@ -719,7 +719,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       E00643H     SYMBOL    VAR       ---     ---   i
       00004DH     SYMBOL    REG       ---     ---   j
       ---         BLOCKEND  LVL=1     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 13
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 13
 
 
       C00A98H     LINE      ---       ---     ---   #389
@@ -779,7 +779,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00B80H     LINE      ---       ---     ---   #450
       C00B80H     LINE      ---       ---     ---   #454
       C00B80H     LINE      ---       ---     ---   #456
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 14
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 14
 
 
       C00B82H     LINE      ---       ---     ---   #458
@@ -839,7 +839,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00CA8H     LINE      ---       ---     ---   #520
       C00CA8H     LINE      ---       ---     ---   #521
       C00CACH     LINE      ---       ---     ---   #522
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 15
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 15
 
 
       C00CAEH     LINE      ---       ---     ---   #523
@@ -899,7 +899,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C017C8H     LINE      ---       ---     ---   #77
       C017C8H     LINE      ---       ---     ---   #79
       C017E6H     LINE      ---       ---     ---   #80
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 16
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 16
 
 
       C017EEH     LINE      ---       ---     ---   #81
@@ -959,7 +959,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C0199AH     PUBLIC    LABEL     ---     ---   CCU60_vInit
       C01A22H     PUBLIC    LABEL     ---     ---   CCU60_viNodeI0
       E00650H     PUBLIC    VAR       ---     ---   leftCnt
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 17
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 17
 
 
       E00652H     PUBLIC    VAR       ---     ---   rightCnt
@@ -1019,7 +1019,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C01AAEH     PUBLIC    LABEL     ---     ---   MAIN_vUnlockProtecReg
 
       C01A7CH     BLOCK     LVL=0     0032H   ---   MAIN_vChangeFreq
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 18
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 18
 
 
       C01A7CH     LINE      ---       ---     ---   #25
@@ -1079,7 +1079,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C01B2CH     BLOCK     LVL=0     000EH   ---   delay
       000008H     SYMBOL    REG       ---     ---   cycle
       C01B2CH     BLOCK     LVL=1     000CH   ---   
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 19
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 19
 
 
       000005H     SYMBOL    REG       ---     ---   i
@@ -1139,7 +1139,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C01BBEH     LINE      ---       ---     ---   #32
       C01BC8H     LINE      ---       ---     ---   #33
       C01BD2H     LINE      ---       ---     ---   #34
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 20
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 20
 
 
       C01BDAH     LINE      ---       ---     ---   #35
@@ -1199,7 +1199,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C016B0H     LINE      ---       ---     ---   #430
       C016B4H     LINE      ---       ---     ---   #442
       C016B4H     LINE      ---       ---     ---   #214
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 21
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 21
 
 
       C016BAH     LINE      ---       ---     ---   #217
@@ -1259,7 +1259,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C01738H     LINE      ---       ---     ---   #238
       C01740H     LINE      ---       ---     ---   #587
       C01746H     LINE      ---       ---     ---   #589
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 22
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 22
 
 
       C0174AH     LINE      ---       ---     ---   #591
@@ -1319,7 +1319,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       00F1BBH.7   SYMBOL    ESBIT     ---     ---   PLLCON1_PACK
       00F1BCH     SYMBOL    ESFR      ---     ---   PLLCON2
       00F1BDH.7   SYMBOL    ESBIT     ---     ---   PLLCON2_K1ACK
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 23
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 23
 
 
       00F1BEH     SYMBOL    ESFR      ---     ---   PLLCON3
@@ -1379,7 +1379,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00134H     LINE      ---       ---     ---   #1606
       C00136H     LINE      ---       ---     ---   #1607
       C0013AH     LINE      ---       ---     ---   #1608
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 24
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 24
 
 
       C0013EH     LINE      ---       ---     ---   #1621
@@ -1439,7 +1439,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C001EEH     LINE      ---       ---     ---   #1804
       C001F0H     LINE      ---       ---     ---   #1805
       C001F2H     LINE      ---       ---     ---   #1806
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 25
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 25
 
 
       C001F4H     LINE      ---       ---     ---   #1807
@@ -1499,7 +1499,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00272H     LINE      ---       ---     ---   #1937
       C00276H     LINE      ---       ---     ---   #1938
       C0027AH     LINE      ---       ---     ---   #1939
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 26
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 26
 
 
       C0027CH     LINE      ---       ---     ---   #1940
@@ -1559,7 +1559,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
 
       C002CEH     BLOCK     LVL=0     00C8H   ---   ?C_UTILFUNCS
       C002CEH     LINE      ---       ---     ---   #2071
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 27
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 27
 
 
       C002D2H     LINE      ---       ---     ---   #2072
@@ -1619,7 +1619,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00374H     LINE      ---       ---     ---   #2144
       C00376H     LINE      ---       ---     ---   #2146
       C00378H     LINE      ---       ---     ---   #2147
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 28
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 28
 
 
       C0037CH     LINE      ---       ---     ---   #2148
@@ -1679,7 +1679,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00D16H     LINE      ---       ---     ---   #144
       C00D18H     LINE      ---       ---     ---   #146
       C00D1AH     LINE      ---       ---     ---   #155
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 29
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 29
 
 
       C00D26H     LINE      ---       ---     ---   #162
@@ -1739,7 +1739,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C00F3EH     LINE      ---       ---     ---   #923
       C00F48H     LINE      ---       ---     ---   #924
       C00F4AH     LINE      ---       ---     ---   #928
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 30
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 30
 
 
       C00F62H     LINE      ---       ---     ---   #929
@@ -1799,7 +1799,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C010D8H     LINE      ---       ---     ---   #1089
       C010D8H     LINE      ---       ---     ---   #1091
       C010E6H     LINE      ---       ---     ---   #1093
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 31
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 31
 
 
       C010F6H     LINE      ---       ---     ---   #1095
@@ -1859,7 +1859,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
       C0131CH     LINE      ---       ---     ---   #1213
       C0131CH     LINE      ---       ---     ---   #1215
       C0132CH     LINE      ---       ---     ---   #1218
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 32
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 32
 
 
       C0133CH     LINE      ---       ---     ---   #1220
@@ -1919,7 +1919,7 @@ SYMBOL TABLE OF MODULE:  ..\bin\ambientLight (MAIN)
 
       C014D2H     BLOCK     LVL=0     0094H   ---   ?C_FPMUL
       ---         BLOCKEND  LVL=0     ---     ---   
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 33
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 33
 
 
       C01566H     PUBLIC    LABEL     ---     ---   ?C_CASTF
@@ -1979,7 +1979,7 @@ FUNCTION . . . . . . . . . . . REG MASK
     MODULE:  ..\bin\clk.obj (CLK)
    DEFINED:  ..\bin\SCS.obj (SCS)
 
-L166 LINKER/LOCATER V5.25                                                             07/13/2019  13:39:42  PAGE 34
+L166 LINKER/LOCATER V5.25                                                             07/13/2019  22:19:52  PAGE 34
 
 
 *** WARNING L20: DATA TYPES DIFFERENT

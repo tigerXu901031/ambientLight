@@ -387,8 +387,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>164</TopLine>
-      <CurrentLine>203</CurrentLine>
+      <TopLine>25</TopLine>
+      <CurrentLine>25</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\ledCtrlPrj1.c</PathWithFileName>
       <FilenameWithoutPath>ledCtrlPrj1.c</FilenameWithoutPath>
@@ -525,10 +525,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>24</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>142</TopLine>
-      <CurrentLine>160</CurrentLine>
+      <CurrentLine>170</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\drv\clk.c</PathWithFileName>
       <FilenameWithoutPath>clk.c</FilenameWithoutPath>
@@ -667,8 +667,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1297</TopLine>
+      <CurrentLine>1308</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\drv\can.c</PathWithFileName>
       <FilenameWithoutPath>can.c</FilenameWithoutPath>
@@ -1017,7 +1017,7 @@
         <FloatingRect_left>1430</FloatingRect_left>
         <FloatingRect_bottom>1010</FloatingRect_bottom>
         <FloatingRect_right>1680</FloatingRect_right>
-        <ContainerPercent>40</ContainerPercent>
+        <ContainerPercent>41</ContainerPercent>
         <ActiveTab>0</ActiveTab>
         <Visible>1</Visible>
         <Dynamic>0</Dynamic>
@@ -1034,9 +1034,9 @@
         <DockType>2</DockType>
         <DockLocation>4</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_top>356</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
-        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_bottom>627</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
@@ -1059,9 +1059,9 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_top>356</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
-        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_bottom>627</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
@@ -1084,9 +1084,9 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_top>356</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
-        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_bottom>627</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
@@ -1109,9 +1109,9 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_top>356</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
-        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_bottom>627</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
@@ -1134,9 +1134,9 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>355</DockedRect_top>
+        <DockedRect_top>356</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
-        <DockedRect_bottom>626</DockedRect_bottom>
+        <DockedRect_bottom>627</DockedRect_bottom>
         <DockedRect_right>1920</DockedRect_right>
         <FloatingRect_top>302</FloatingRect_top>
         <FloatingRect_left>1080</FloatingRect_left>
@@ -1159,7 +1159,7 @@
         <DockType>2</DockType>
         <DockLocation>1</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1184,7 +1184,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1209,7 +1209,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1234,7 +1234,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1259,7 +1259,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1284,7 +1284,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1309,7 +1309,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1334,7 +1334,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -1359,7 +1359,7 @@
         <DockType>4</DockType>
         <DockLocation>2</DockLocation>
         <Pinned>0</Pinned>
-        <DockedRect_top>630</DockedRect_top>
+        <DockedRect_top>619</DockedRect_top>
         <DockedRect_left>1255</DockedRect_left>
         <DockedRect_bottom>998</DockedRect_bottom>
         <DockedRect_right>1592</DockedRect_right>
@@ -2030,7 +2030,7 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <ActiveTab>2</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\src\app\task.c</Name>
@@ -2041,20 +2041,26 @@
         <Doc>
           <Name>..\src\app\ledCtrlPrj1.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>166</TopLine>
-          <CurrentLine>203</CurrentLine>
+          <TopLine>25</TopLine>
+          <CurrentLine>25</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\drv\clk.c</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>24</ColumnNumber>
           <TopLine>142</TopLine>
-          <CurrentLine>160</CurrentLine>
+          <CurrentLine>170</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\app\main.c</Name>
           <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>6</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\src\drv\can.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1297</TopLine>
+          <CurrentLine>1308</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
