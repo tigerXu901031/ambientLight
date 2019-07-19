@@ -135,5 +135,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zfIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zfIcon2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zf3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

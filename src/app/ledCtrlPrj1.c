@@ -39,8 +39,9 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
     uint8 j = 0;
     if (oldInpMode != ledMode_1)
     {
+        /* darknessLevel: 0 - highest, 1 - middle, 2 - lowest */
         darknessLevel++;
-        if (darknessLevel == 2)
+        if (darknessLevel == 3)
         {
             darknessLevel = 0;
         }
@@ -50,9 +51,9 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
         }
         for (j = 0; j < color_max; j++)
         {
-            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.5 * darknessLevel));
-            colorArr[j].green = colorArrOrign[j].green * (1 - (0.5 * darknessLevel));
-            colorArr[j].red = colorArrOrign[j].red * (1 - (0.5 * darknessLevel));
+            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.25 * darknessLevel));
+            colorArr[j].green = colorArrOrign[j].green * (1 - (0.25 * darknessLevel));
+            colorArr[j].red = colorArrOrign[j].red * (1 - (0.25 * darknessLevel));
         }
     }
 }
