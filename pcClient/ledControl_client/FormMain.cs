@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -101,6 +102,8 @@ namespace ledControl_client
         UInt32 canChn = 0;
 
         UInt32 isDevOpen = 0;
+
+        uint brightnessLevel = 0;
 
         /*------------兼容ZLG的函数描述---------------------------------*/
         [DllImport("controlcan.dll")]
@@ -204,7 +207,7 @@ namespace ledControl_client
                 {
                     
                 }
-                isDevOpen = 1;
+                
 
                 VCI_INIT_CONFIG canConfig = new VCI_INIT_CONFIG();
                 canConfig.Mode = 0;
@@ -231,12 +234,194 @@ namespace ledControl_client
                 else
                 {
                     richTextBox1.AppendText("start Succeed\n");
+                    isDevOpen = 1;
                 }
             }
             else
             {
 
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            uint sendReturnSts = 0;
+            VCI_CAN_OBJ sendMsgObj = new VCI_CAN_OBJ();
+
+            if((brightnessLevel == 0) || (isDevOpen == 0))
+            {
+                // highest brightness level so do nothing
+            }
+            else if((brightnessLevel == 1) || (brightnessLevel == 2))
+            {
+                brightnessLevel = brightnessLevel - 1;
+                sendMsgObj.ID = 0x505;
+                sendMsgObj.RemoteFlag = 0;
+                sendMsgObj.ExternFlag = 0;
+                sendMsgObj.SendType = 0;
+                sendMsgObj.DataLen = 8;
+
+                unsafe
+                {
+                    sendMsgObj.Data[0] = 1;
+                    sendMsgObj.Data[1] = 0;
+                    sendMsgObj.Data[2] = 0;
+                    sendMsgObj.Data[3] = 0;
+                    sendMsgObj.Data[4] = 0;
+                    sendMsgObj.Data[5] = 0;
+                    sendMsgObj.Data[6] = 0;
+                    sendMsgObj.Data[7] = 0;
+                }
+                sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+                Thread.Sleep(200);
+
+                sendMsgObj.ID = 0x505;
+                sendMsgObj.RemoteFlag = 0;
+                sendMsgObj.ExternFlag = 0;
+                sendMsgObj.SendType = 0;
+                sendMsgObj.DataLen = 8;
+
+                unsafe
+                {
+                    sendMsgObj.Data[0] = 0;
+                    sendMsgObj.Data[1] = 0;
+                    sendMsgObj.Data[2] = 0;
+                    sendMsgObj.Data[3] = 0;
+                    sendMsgObj.Data[4] = 0;
+                    sendMsgObj.Data[5] = 0;
+                    sendMsgObj.Data[6] = 0;
+                    sendMsgObj.Data[7] = 0;
+                }
+                sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+                Thread.Sleep(200);
+
+                sendMsgObj.ID = 0x505;
+                sendMsgObj.RemoteFlag = 0;
+                sendMsgObj.ExternFlag = 0;
+                sendMsgObj.SendType = 0;
+                sendMsgObj.DataLen = 8;
+
+                unsafe
+                {
+                    sendMsgObj.Data[0] = 1;
+                    sendMsgObj.Data[1] = 0;
+                    sendMsgObj.Data[2] = 0;
+                    sendMsgObj.Data[3] = 0;
+                    sendMsgObj.Data[4] = 0;
+                    sendMsgObj.Data[5] = 0;
+                    sendMsgObj.Data[6] = 0;
+                    sendMsgObj.Data[7] = 0;
+                }
+                sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+                Thread.Sleep(200);
+            }
+            //else if((brightnessLevel == 2))
+            //{
+            //    brightnessLevel = brightnessLevel - 1;
+            //    sendMsgObj.ID = 0x505;
+            //    sendMsgObj.RemoteFlag = 0;
+            //    sendMsgObj.ExternFlag = 0;
+            //    sendMsgObj.SendType = 0;
+            //    sendMsgObj.DataLen = 8;
+
+            //    unsafe
+            //    {
+            //        sendMsgObj.Data[0] = 1;
+            //        sendMsgObj.Data[1] = 0;
+            //        sendMsgObj.Data[2] = 0;
+            //        sendMsgObj.Data[3] = 0;
+            //        sendMsgObj.Data[4] = 0;
+            //        sendMsgObj.Data[5] = 0;
+            //        sendMsgObj.Data[6] = 0;
+            //        sendMsgObj.Data[7] = 0;
+            //    }
+            //    sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+            //    Thread.Sleep(300);
+            //}
+            else
+            {
+                // some thing wrong
+            }
+
+            // back to the led mode which selected
+            sendReturnSts = 0;
+            sendMsgObj.ID = 0x505;
+            sendMsgObj.RemoteFlag = 0;
+            sendMsgObj.ExternFlag = 0;
+            sendMsgObj.SendType = 0;
+            sendMsgObj.DataLen = 8;
+            ledMode = (byte)comboBoxLedModeSelection.SelectedIndex;
+            unsafe
+            {
+                sendMsgObj.Data[0] = (byte)ledMode;
+                sendMsgObj.Data[1] = 0;
+                sendMsgObj.Data[2] = 0;
+                sendMsgObj.Data[3] = 0;
+                sendMsgObj.Data[4] = 0;
+                sendMsgObj.Data[5] = 0;
+                sendMsgObj.Data[6] = 0;
+                sendMsgObj.Data[7] = 0;
+            }
+            sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            uint sendReturnSts = 0;
+            VCI_CAN_OBJ sendMsgObj = new VCI_CAN_OBJ();
+
+            if ((brightnessLevel == 2) || (isDevOpen == 0))
+            {
+                // lowest brightness level so do nothing
+            }
+            else if ((brightnessLevel == 0) || (brightnessLevel == 1))
+            {
+                brightnessLevel = brightnessLevel + 1;
+                sendMsgObj.ID = 0x505;
+                sendMsgObj.RemoteFlag = 0;
+                sendMsgObj.ExternFlag = 0;
+                sendMsgObj.SendType = 0;
+                sendMsgObj.DataLen = 8;
+
+                unsafe
+                {
+                    sendMsgObj.Data[0] = 1;
+                    sendMsgObj.Data[1] = 0;
+                    sendMsgObj.Data[2] = 0;
+                    sendMsgObj.Data[3] = 0;
+                    sendMsgObj.Data[4] = 0;
+                    sendMsgObj.Data[5] = 0;
+                    sendMsgObj.Data[6] = 0;
+                    sendMsgObj.Data[7] = 0;
+                }
+                sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
+                Thread.Sleep(200);
+            }
+            else
+            {
+                // something wrong
+            }
+
+            // back to the led mode which selected
+            sendReturnSts = 0;
+            sendMsgObj.ID = 0x505;
+            sendMsgObj.RemoteFlag = 0;
+            sendMsgObj.ExternFlag = 0;
+            sendMsgObj.SendType = 0;
+            sendMsgObj.DataLen = 8;
+            ledMode = (byte)comboBoxLedModeSelection.SelectedIndex;
+            unsafe
+            {
+                sendMsgObj.Data[0] = (byte)ledMode;
+                sendMsgObj.Data[1] = 0;
+                sendMsgObj.Data[2] = 0;
+                sendMsgObj.Data[3] = 0;
+                sendMsgObj.Data[4] = 0;
+                sendMsgObj.Data[5] = 0;
+                sendMsgObj.Data[6] = 0;
+                sendMsgObj.Data[7] = 0;
+            }
+            sendReturnSts = VCI_Transmit(devType, devId, canChn, ref sendMsgObj, 1);
         }
     }
 }
