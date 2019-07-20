@@ -525,10 +525,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>44</ColumnNumber>
+      <ColumnNumber>85</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>24</CurrentLine>
+      <TopLine>138</TopLine>
+      <CurrentLine>157</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\drv\clk.c</PathWithFileName>
       <FilenameWithoutPath>clk.c</FilenameWithoutPath>
@@ -2047,14 +2047,14 @@
         <Doc>
           <Name>..\src\drv\clk.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>142</TopLine>
+          <TopLine>138</TopLine>
           <CurrentLine>160</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\app\main.c</Name>
           <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>6</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\drv\can.c</Name>
